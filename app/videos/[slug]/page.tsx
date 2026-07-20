@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: video.shortTitle,
     description: video.summary,
     openGraph: {
-      title: `${video.shortTitle} | Kennedyish`,
+      title: `${video.shortTitle} | Brian Kennedy`,
       description: video.summary,
       type: "video.other",
       images: [video.image],
@@ -156,4 +156,3 @@ export default async function VideoPage({ params }: PageProps) {
     </>
   );
 }
-

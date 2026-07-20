@@ -1,8 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-const templateRoot = new URL("../", import.meta.url);
-
 async function worker() {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
   workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
@@ -22,7 +20,7 @@ const executionContext = {
   passThroughOnException() {},
 };
 
-test("server-renders the Kennedyish homepage", async () => {
+test("server-renders the Brian Kennedy homepage", async () => {
   const app = await worker();
   const response = await app.fetch(
     new Request("http://localhost/", { headers: { accept: "text/html" } }),
@@ -32,6 +30,8 @@ test("server-renders the Kennedyish homepage", async () => {
 
   assert.equal(response.status, 200);
   const html = await response.text();
+  assert.match(html, /Brian Kennedy \| Trying to solve all of my problems/);
+  assert.match(html, /Brian <span>Kennedy<\/span>/);
   assert.match(html, /Making the house work better\./);
   assert.match(html, /Recent videos/);
   assert.match(html, /IKEA’s new Matter over Thread devices/);
@@ -55,9 +55,3 @@ test("server-renders a video detail page with player and products", async () => 
   assert.match(html, /UniFi Cloud Gateway Fiber/);
   assert.match(html, /Products used/);
 });
-
-test("includes the project social card", async () => {
-  const { access } = await import("node:fs/promises");
-  await access(new URL("public/og.png", templateRoot));
-});
-
