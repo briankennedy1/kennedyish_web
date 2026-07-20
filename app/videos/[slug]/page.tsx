@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SiteHeader } from "../../components/SiteHeader";
+import { sitePath } from "../../../lib/site-path";
 import { getVideo, videos } from "../../../lib/videos";
 
 type PageProps = {
@@ -11,6 +12,8 @@ type PageProps = {
 export function generateStaticParams() {
   return videos.map((video) => ({ slug: video.slug }));
 }
+
+export const dynamicParams = false;
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
@@ -25,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: `${video.shortTitle} | Brian Kennedy`,
       description: video.description || video.title,
       type: "video.other",
-      images: [video.image],
+      images: [sitePath(video.image)],
     },
   };
 }
@@ -78,7 +81,11 @@ export default async function VideoPage({ params }: PageProps) {
                 >
                   <div className="product-thumb">
                     {product.image ? (
-                      <img src={product.image} alt="" loading="lazy" />
+                      <img
+                        src={sitePath(product.image)}
+                        alt=""
+                        loading="lazy"
+                      />
                     ) : (
                       <span>{product.name.slice(0, 2).toUpperCase()}</span>
                     )}

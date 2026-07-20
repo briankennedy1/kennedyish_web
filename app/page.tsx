@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { VideoCard } from "./components/VideoCard";
 import { videos } from "../lib/videos";
+import { sitePath } from "../lib/site-path";
 
 const videosNewestFirst = [...videos].sort(
   (a, b) => Date.parse(b.publishedDate) - Date.parse(a.publishedDate),
@@ -13,7 +14,7 @@ export default function Home() {
         <section className="about-band" id="about">
           <div className="about-layout">
             <div className="about-photo">
-              <img src="/images/000full.jpg" alt="Brian Kennedy" />
+              <img src={sitePath("/images/000full.jpg")} alt="Brian Kennedy" />
             </div>
             <div className="about-content">
               <h2 className="about-headline">
@@ -72,7 +73,7 @@ export default function Home() {
                     >
                       <img
                         className="button-logo"
-                        src="/images/products/youtube.svg"
+                        src={sitePath("/images/products/youtube.svg")}
                         alt=""
                         aria-hidden="true"
                       />
