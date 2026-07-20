@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { Hanken_Grotesk } from "next/font/google";
+import { HashScroll } from "./components/HashScroll";
 import "./globals.css";
 
 const hanken = Hanken_Grotesk({
@@ -20,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase,
     title: {
-      default: "Brian Kennedy | Trying to solve all of my problems",
+      default: "Brian Kennedy | Looking to solve all my problems",
       template: "%s | Brian Kennedy",
     },
     description:
@@ -30,14 +31,14 @@ export async function generateMetadata(): Promise<Metadata> {
       shortcut: "/images/avatar.jpg",
     },
     openGraph: {
-      title: "Brian Kennedy | Trying to solve all of my problems",
+      title: "Brian Kennedy | Looking to solve all my problems",
       description:
         "Projects, tech, and the house in between. Watch every episode and find the gear used in each build.",
       type: "website",
     },
     twitter: {
       card: "summary",
-      title: "Brian Kennedy | Trying to solve all of my problems",
+      title: "Brian Kennedy | Looking to solve all my problems",
       description: "Projects, tech, and the house in between.",
     },
   };
@@ -51,7 +52,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={hanken.variable}>{children}</body>
+      <body className={hanken.variable}>
+        {children}
+        <HashScroll />
+      </body>
     </html>
   );
 }

@@ -1,160 +1,110 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from "next/link";
-import { SiteFooter } from "./components/SiteFooter";
-import { SiteHeader } from "./components/SiteHeader";
 import { VideoCard } from "./components/VideoCard";
 import { videos } from "../lib/videos";
 
-const featured = videos[0];
+const videosNewestFirst = [...videos].sort(
+  (a, b) => Date.parse(b.publishedDate) - Date.parse(a.publishedDate),
+);
 
 export default function Home() {
   return (
     <>
-      <SiteHeader />
       <main>
-        <section className="hero">
-          <div className="shell hero-inner">
-            <p className="overline light">Projects · Tech · Home</p>
-            <h1>Making the house work better.</h1>
-            <p className="hero-copy">
-              I’m Brian. I test smart-home gear, rebuild networks, and take on
-              the projects that make everyday life a little less annoying.
-            </p>
-            <div className="hero-actions">
-              <Link className="button button-paper" href={`/videos/${featured.slug}`}>
-                Watch the latest <span aria-hidden="true">→</span>
-              </Link>
-              <a
-                className="button button-ghost"
-                href="https://www.youtube.com/@kennedyish"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Visit YouTube
-              </a>
+        <section className="about-band" id="about">
+          <div className="about-layout">
+            <div className="about-photo">
+              <img src="/images/000full.jpg" alt="Brian Kennedy" />
             </div>
-            <div className="hero-note" aria-label="Channel information">
-              <img src="/images/avatar.jpg" alt="Brian Kennedy" />
-              <div>
-                <strong>Brian Kennedy</strong>
-                <span>@kennedyish · 14.8K subscribers</span>
+            <div className="about-content">
+              <h2 className="about-headline">
+                Brian <span>Kennedy</span>
+              </h2>
+              <p className="about-tagline">Looking to solve all my problems</p>
+              <div className="about-lower">
+                <div className="about-intro">
+                  <p className="about-copy">
+                    Hi, I&apos;m Brian. I spent 10 years traveling the world
+                    mountain biking on{" "}
+                    <a
+                      href="https://www.youtube.com/@bkxc"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      YouTube
+                    </a>{" "}
+                    and now I&apos;m trying to make my house nice.
+                  </p>
+                  <p className="about-copy">
+                    I live in Northern California with my amazing wife Sarah.
+                  </p>
+                  <p className="about-copy">
+                    When I&apos;m not working on my house, I spend a lot of time at
+                    my private mountain bike club,{" "}
+                    <a
+                      href="https://www.everstoke.bike/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Everstoke
+                    </a>
+                    , in The Lost Sierra.
+                  </p>
+                  <ol className="about-steps">
+                    <li>
+                      <span>Step 1:</span>
+                      <h3>Make my current house nice.</h3>
+                    </li>
+                    <li>
+                      <span>Step 2:</span>
+                      <h3>Buy a bad house and fix it up.</h3>
+                    </li>
+                    <li>
+                      <span>Step 3:</span>
+                      <h3>Build a new house from scratch.</h3>
+                    </li>
+                  </ol>
+                  <div className="about-actions">
+                    <a
+                      className="button button-youtube"
+                      href="https://www.youtube.com/@kennedyish"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <img
+                        className="button-logo"
+                        src="/images/products/youtube.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      YouTube
+                    </a>
+                    <a
+                      className="button button-gradient"
+                      href="mailto:kennedyishcontact@gmail.com"
+                    >
+                      <span aria-hidden="true">💬</span> Contact
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section shell featured-section">
-          <div className="section-heading">
-            <div>
-              <p className="overline">Latest project</p>
-              <h2>Fresh from the workbench.</h2>
-            </div>
-            <p>
-              A practical look at the gear, decisions, and little surprises
-              behind the newest upgrade.
-            </p>
+        <section className="section shell videos-section" id="videos">
+          <h2 className="videos-title">Videos</h2>
+          <div className="video-grid video-grid-lead">
+            {videosNewestFirst.slice(0, 2).map((video) => (
+              <VideoCard key={video.slug} video={video} />
+            ))}
           </div>
-
-          <article className="featured-card">
-            <div className="featured-copy">
-              <p className="card-meta coral">
-                New · {featured.duration} · {featured.views}
-              </p>
-              <h3>{featured.title}</h3>
-              <p>{featured.summary}</p>
-              <Link className="button button-coral" href={`/videos/${featured.slug}`}>
-                Watch the episode <span aria-hidden="true">→</span>
-              </Link>
-            </div>
-            <Link
-              className="featured-image"
-              href={`/videos/${featured.slug}`}
-              aria-label={`Watch ${featured.title}`}
-            >
-              <img src={featured.image} alt="" />
-              <span className="feature-play" aria-hidden="true">
-                ▶
-              </span>
-            </Link>
-          </article>
-        </section>
-
-        <section className="section shell" id="videos">
-          <div className="section-heading videos-heading">
-            <div>
-              <p className="overline">Field notes</p>
-              <h2>Recent videos</h2>
-            </div>
-            <a
-              className="text-link desktop-link"
-              href="https://www.youtube.com/@kennedyish/videos"
-              target="_blank"
-              rel="noreferrer"
-            >
-              See all on YouTube <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-          <div className="video-grid">
-            {videos.slice(1).map((video) => (
+          <div className="video-grid video-grid-three">
+            {videosNewestFirst.slice(2).map((video) => (
               <VideoCard key={video.slug} video={video} />
             ))}
           </div>
         </section>
-
-        <section className="about-band" id="about">
-          <div className="shell about-grid">
-            <div className="about-intro">
-              <p className="overline light">The long game</p>
-              <h2>One house. A lot of unfinished business.</h2>
-              <p>
-                I’m looking to solve all of my problems—one network rack, smart
-                plug, cable run, and questionable purchase at a time.
-              </p>
-            </div>
-            <ol className="about-steps">
-              <li>
-                <span>01</span>
-                <div>
-                  <h3>Make this house nice.</h3>
-                  <p>Useful upgrades, cleaner systems, and fewer mystery cables.</p>
-                </div>
-              </li>
-              <li>
-                <span>02</span>
-                <div>
-                  <h3>Buy a bad house.</h3>
-                  <p>Then fix it up with the benefit of everything learned here.</p>
-                </div>
-              </li>
-              <li>
-                <span>03</span>
-                <div>
-                  <h3>Build one from scratch.</h3>
-                  <p>The someday project: a house designed around how it really works.</p>
-                </div>
-              </li>
-            </ol>
-          </div>
-        </section>
-
-        <section className="subscribe-band">
-          <div className="shell subscribe-inner">
-            <div>
-              <p className="overline light">Keep up with the projects</p>
-              <h2>The next problem is already waiting.</h2>
-            </div>
-            <a
-              className="button button-paper"
-              href="https://www.youtube.com/@kennedyish?sub_confirmation=1"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Subscribe on YouTube <span aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </section>
       </main>
-      <SiteFooter />
     </>
   );
 }
