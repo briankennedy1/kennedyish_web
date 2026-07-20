@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { Hanken_Grotesk } from "next/font/google";
 import { HashScroll } from "./components/HashScroll";
+import { sitePath } from "../lib/site-path";
 import "./globals.css";
 
 const hanken = Hanken_Grotesk({
@@ -10,16 +10,11 @@ const hanken = Hanken_Grotesk({
   display: "swap",
 });
 
-export async function generateMetadata(): Promise<Metadata> {
-  const headerList = await headers();
-  const host = headerList.get("x-forwarded-host") ?? headerList.get("host");
-  const protocol =
-    headerList.get("x-forwarded-proto") ??
-    (host?.startsWith("localhost") ? "http" : "https");
-  const metadataBase = host ? new URL(`${protocol}://${host}`) : undefined;
-
+export function generateMetadata(): Metadata {
   return {
-    metadataBase,
+    metadataBase: new URL(
+      process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+    ),
     title: {
       default: "Brian Kennedy | Looking to solve all my problems",
       template: "%s | Brian Kennedy",
@@ -27,8 +22,8 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       "Brian Kennedy tests smart-home gear, rebuilds home networks, and tackles projects that make the house work better.",
     icons: {
-      icon: "/images/avatar.jpg",
-      shortcut: "/images/avatar.jpg",
+      icon: sitePath("/images/avatar.jpg"),
+      shortcut: sitePath("/images/avatar.jpg"),
     },
     openGraph: {
       title: "Brian Kennedy | Looking to solve all my problems",

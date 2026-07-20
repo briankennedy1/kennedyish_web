@@ -1,15 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Video } from "../../lib/videos";
+import { sitePath } from "../../lib/site-path";
 
 export function VideoCard({ video }: { video: Video }) {
   return (
     <a
       className="video-card"
-      href={`/videos/${video.slug}`}
+      href={sitePath(`/videos/${video.slug}/`)}
       aria-label={`View details for ${video.title}`}
     >
       <div className="video-card-image">
-        <img src={video.image} alt="" />
+        <img src={sitePath(video.image)} alt="" />
       </div>
       <div className="video-card-copy">
         <h3>{video.title}</h3>
