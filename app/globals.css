@@ -1629,17 +1629,17 @@ a {
 
 .home-page .about-photo {
   position: relative;
-  width: min(100%, 320px);
+  width: min(100%, 440px);
   height: auto;
   min-height: 0;
-  margin: 0 auto;
+  margin: 0 0 0 clamp(18px, 5vw, 72px);
   padding: 14px;
   align-self: start;
-  justify-self: center;
+  justify-self: start;
   grid-column: 1;
   grid-row: 2;
   z-index: 1;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1;
   overflow: visible;
   background: var(--home-paper);
   box-shadow: 7px 9px 0 rgba(22, 36, 58, 0.26);
@@ -1739,11 +1739,12 @@ a {
 .home-page .about-lower {
   position: relative;
   grid-column: 1 / -1;
-  grid-row: 3;
+  grid-row: 2;
   z-index: 3;
   width: min(620px, 52%);
-  margin-top: clamp(-195px, -14vw, -165px);
-  justify-self: center;
+  margin-top: 0;
+  margin-right: clamp(18px, 5vw, 72px);
+  justify-self: end;
 }
 
 .home-page .about-intro {
@@ -1762,26 +1763,22 @@ a {
   rotate: -0.45deg;
 }
 
-.home-page .about-intro::before,
-.home-page .about-intro::after {
+.home-page .about-intro::before {
   content: "";
   position: absolute;
   z-index: 3;
   width: 112px;
   height: 27px;
   top: -13px;
+  left: 50%;
+  translate: -50%;
+  rotate: -3deg;
   background: rgba(241, 232, 213, 0.84);
   box-shadow: 1px 2px 0 rgba(22, 36, 58, 0.12);
 }
 
-.home-page .about-intro::before {
-  left: 9%;
-  rotate: -3deg;
-}
-
 .home-page .about-intro::after {
-  right: 9%;
-  rotate: 2.5deg;
+  content: none;
 }
 
 .home-page .about-copy {
@@ -1798,10 +1795,14 @@ a {
   text-decoration-thickness: 2px;
 }
 
+.home-page .about-copy strong {
+  font-weight: 900;
+}
+
 .home-page .about-steps {
   position: relative;
   grid-column: 1 / -1;
-  grid-row: 5;
+  grid-row: 4;
   z-index: 2;
   width: 100%;
   margin: 0;
@@ -1920,7 +1921,7 @@ a {
 .home-page .about-actions {
   position: relative;
   grid-column: 1 / -1;
-  grid-row: 4;
+  grid-row: 3;
   z-index: 2;
   width: 100%;
   margin: 0;
@@ -2212,7 +2213,7 @@ a {
   .home-page .about-photo {
     grid-column: 1;
     grid-row: 2;
-    width: min(100%, 320px);
+    width: min(100%, 400px);
     height: auto;
     min-height: 0;
     margin: 0 auto;
@@ -2238,7 +2239,9 @@ a {
     grid-column: 1;
     grid-row: 3;
     width: min(100%, 620px);
-    margin-top: -150px;
+    margin-right: 0;
+    margin-top: -180px;
+    justify-self: center;
   }
 
   .home-page .about-actions {
@@ -2271,7 +2274,7 @@ a {
   }
 
   .home-page .about-photo {
-    width: min(100%, 270px);
+    width: min(100%, 360px);
     height: auto;
     margin: 0 auto;
     padding: 8px;
@@ -2297,7 +2300,7 @@ a {
   }
 
   .home-page .about-lower {
-    margin-top: -145px;
+    margin-top: -185px;
   }
 
   .home-page .about-intro {

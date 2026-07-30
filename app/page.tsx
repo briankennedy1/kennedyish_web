@@ -25,8 +25,11 @@ export default function Home() {
             <div className="about-lower">
               <div className="about-intro">
                 <p className="about-copy">
-                  Hi, I&apos;m Brian. I spent 10 years traveling the world
-                  mountain biking on{" "}
+                  Hi, I&apos;m Brian. I spent{" "}
+                  <strong>
+                    10 years traveling the world and mountain biking
+                  </strong>{" "}
+                  on{" "}
                   <a
                     href="https://www.youtube.com/@bkxc"
                     target="_blank"
