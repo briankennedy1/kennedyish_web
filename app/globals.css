@@ -1767,20 +1767,29 @@ a {
 
 .home-page .about-tagline::before,
 .home-page .about-tagline::after {
-  content: "";
+  content: "✶";
   position: absolute;
-  width: 9px;
-  height: 9px;
+  width: 13px;
+  height: 12px;
   top: 50%;
   translate: 0 -50%;
-  border: 1px solid rgba(22, 36, 58, 0.72);
-  border-radius: 50%;
+  border: 0;
+  border-radius: 0;
+  display: grid;
+  place-items: center;
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0 50%);
+  color: rgba(22, 36, 58, 0.88);
   background:
-    linear-gradient(135deg, transparent 43%, rgba(22, 36, 58, 0.64) 44% 56%, transparent 57%),
-    #d2c7ae;
+    linear-gradient(145deg, #f4ead3 0 18%, #c0af8e 56%, #8d7958 100%);
   box-shadow:
-    inset 1px 1px 0 rgba(255, 255, 255, 0.7),
-    1px 1px 1px rgba(22, 36, 58, 0.22);
+    inset 1px 1px 0 rgba(255, 255, 255, 0.72),
+    inset -1px -1px 0 rgba(22, 36, 58, 0.2);
+  filter: drop-shadow(0 1px 1px rgba(22, 36, 58, 0.34));
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 1;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 .home-page .about-tagline::before {
@@ -1987,105 +1996,138 @@ a {
   position: relative;
   isolation: isolate;
   min-width: 184px;
-  min-height: 60px;
-  padding: 0 28px;
+  min-height: 54px;
+  padding: 0 38px;
   overflow: visible;
-  border: 3px solid #b58b35;
-  border-radius: 18px;
-  outline: 2px solid #f0d27b;
-  outline-offset: -1px;
+  border: 2px solid var(--home-navy);
+  border-radius: 5px;
+  outline: 0;
+  color: var(--home-navy);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.72),
+      rgba(255, 255, 255, 0.08) 34%,
+      rgba(22, 36, 58, 0.08) 100%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(22, 36, 58, 0.025) 0 1px,
+      transparent 1px 4px
+    ),
+    var(--home-cream);
   box-shadow:
-    0 4px 0 #725522,
-    0 9px 12px rgba(22, 36, 58, 0.32),
-    inset 0 2px 0 rgba(255, 255, 255, 0.48),
-    inset 0 -4px 0 rgba(22, 36, 58, 0.2);
+    0 3px 0 rgba(22, 36, 58, 0.34),
+    0 6px 8px rgba(22, 36, 58, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    inset 0 -2px 0 rgba(22, 36, 58, 0.12);
   clip-path: none;
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-hanken), "Arial Black", sans-serif;
   font-weight: 900;
-  letter-spacing: -0.025em;
-  text-shadow: 0 1px 0 rgba(22, 36, 58, 0.38);
-  transition:
-    translate 140ms ease,
-    rotate 140ms ease,
-    box-shadow 140ms ease;
+  letter-spacing: 0.02em;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.72),
+    0 -1px 0 rgba(22, 36, 58, 0.22);
+  transition: none;
 }
 
 .home-page .about-actions .button::before {
-  content: "";
+  content: "✶";
   position: absolute;
-  z-index: -1;
-  inset: 3px;
-  border-radius: 12px;
+  z-index: 2;
+  width: 13px;
+  height: 12px;
+  top: 50%;
+  left: 12px;
+  translate: 0 -50%;
+  border: 0;
+  border-radius: 0;
+  display: grid;
+  place-items: center;
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0 50%);
+  color: rgba(22, 36, 58, 0.88);
   pointer-events: none;
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.5) 0 5%,
-      rgba(255, 255, 255, 0.13) 14%,
-      transparent 34%
-    ),
-    radial-gradient(
-      ellipse at 50% 118%,
-      rgba(22, 36, 58, 0.22),
-      transparent 56%
-    );
+  background: linear-gradient(145deg, #f4ead3 0 18%, #c0af8e 56%, #8d7958 100%);
+  box-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.72),
+    inset -1px -1px 0 rgba(22, 36, 58, 0.2);
+  filter: drop-shadow(0 1px 1px rgba(22, 36, 58, 0.34));
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 1;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 .home-page .about-actions .button::after {
-  content: "";
+  content: "✶";
   position: absolute;
-  z-index: -2;
-  width: 72%;
-  height: 10px;
-  right: 5%;
-  bottom: -11px;
-  border-radius: 50%;
-  background: rgba(22, 36, 58, 0.26);
-  filter: blur(2px);
+  z-index: 2;
+  width: 13px;
+  height: 12px;
+  top: 50%;
+  right: 12px;
+  translate: 0 -50%;
+  border: 0;
+  border-radius: 0;
+  display: grid;
+  place-items: center;
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0 50%);
+  color: rgba(22, 36, 58, 0.88);
   pointer-events: none;
+  background: linear-gradient(145deg, #f4ead3 0 18%, #c0af8e 56%, #8d7958 100%);
+  box-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.72),
+    inset -1px -1px 0 rgba(22, 36, 58, 0.2);
+  filter: drop-shadow(0 1px 1px rgba(22, 36, 58, 0.34));
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 900;
+  line-height: 1;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
 .home-page .about-actions .button-youtube {
-  rotate: -2deg;
-  background:
-    radial-gradient(
-      circle at 28% 18%,
-      rgba(255, 255, 255, 0.24),
-      transparent 28%
-    ),
-    #cf4f45;
+  rotate: -0.35deg;
 }
 
 .home-page .about-actions .button-gradient {
-  color: var(--home-paper);
-  rotate: 1.5deg;
-  background:
-    radial-gradient(
-      circle at 28% 18%,
-      rgba(255, 255, 255, 0.25),
-      transparent 28%
-    ),
-    #3f827e;
+  color: var(--home-navy);
+  rotate: 0.35deg;
 }
 
-.home-page .about-actions .button:hover {
-  translate: 0 -2px;
-  rotate: 0deg;
-  box-shadow:
-    0 5px 0 #725522,
-    0 12px 14px rgba(22, 36, 58, 0.35),
-    inset 0 2px 0 rgba(255, 255, 255, 0.52),
-    inset 0 -4px 0 rgba(22, 36, 58, 0.2);
-  transform: none;
-}
-
+.home-page .about-actions .button:hover,
 .home-page .about-actions .button:active {
-  translate: 0 2px;
+  translate: none;
+  transform: none;
   box-shadow:
-    0 2px 0 #725522,
-    0 5px 7px rgba(22, 36, 58, 0.28),
-    inset 0 2px 0 rgba(255, 255, 255, 0.42),
-    inset 0 -3px 0 rgba(22, 36, 58, 0.22);
+    0 3px 0 rgba(22, 36, 58, 0.34),
+    0 6px 8px rgba(22, 36, 58, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    inset 0 -2px 0 rgba(22, 36, 58, 0.12);
+}
+
+.home-page .about-actions .button-logo {
+  width: 24px;
+  height: 20px;
+  padding: 4px;
+  border-radius: 5px;
+  background: var(--home-tomato);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -2px 0 rgba(22, 36, 58, 0.18);
+}
+
+.home-page .about-actions .button-gradient > span {
+  width: 23px;
+  height: 23px;
+  border: 1px solid rgba(22, 36, 58, 0.55);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(78, 140, 135, 0.22);
+  font-size: 12px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.56);
 }
 
 .home-page .videos-section {
