@@ -117,7 +117,7 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
   assert.match(html, /zombie apocalypse, World War III/);
   assert.match(
     html,
-    /one full leg of split phase instead of having to use many extension cords/,
+    /one full leg of a split-phase system instead of having to use many extension cords/,
   );
   assert.doesNotMatch(html, /youtube-nocookie\.com\/embed/);
   assert.doesNotMatch(html, /Products used/);
