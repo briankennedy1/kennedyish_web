@@ -9,6 +9,7 @@ export type Product = {
 export type MiniProject = {
   label: string;
   subtitle: string;
+  note?: string;
   image: string;
   imageAlt: string;
   products: Product[];
@@ -45,6 +46,8 @@ export const videos: Video[] = [
       {
         label: "BAD",
         subtitle: "you know better, don't build this",
+        note:
+          "If it's a life or death situation, you should know how to make a suicide cord. It's called that because once you plug it in to power, the other side is energized and EASILY able to give you a shock. I obviously DO NOT recommend this at all. But if it's the zombie apocalypse, World War III or a week after a 9.5 earthquake with no help in sight this is one way to power up a circuit.",
         image: "/images/video-6/combined-extensioncord-art-v2.png",
         imageAlt:
           "A homemade extension cord assembled with a lighted male plug and plug cover",

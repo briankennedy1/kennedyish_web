@@ -677,7 +677,7 @@ a {
   box-shadow: 7px 8px 0 rgba(22, 36, 58, 0.22);
   clip-path: polygon(0.8% 4%, 99.2% 0, 100% 94%, 1.2% 100%);
   rotate: 0.35deg;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Courier New", Courier, monospace;
   font-size: clamp(30px, 4.5vw, 56px);
   font-weight: 900;
   letter-spacing: -0.045em;
@@ -850,11 +850,62 @@ a {
     transparent 0.9px
   );
   background-size: 14px 14px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Courier New", Courier, monospace;
   font-size: 25px;
   font-weight: 900;
   letter-spacing: -0.035em;
   line-height: 1.08;
+}
+
+.mini-project-note {
+  position: relative;
+  width: min(880px, 92%);
+  margin: 58px auto 4px;
+  padding: 38px 42px 34px;
+  color: var(--art-charcoal);
+  background-color: var(--art-paper);
+  background-image:
+    radial-gradient(
+      circle at 18% 24%,
+      rgba(37, 36, 34, 0.09) 0 0.65px,
+      transparent 0.95px
+    ),
+    linear-gradient(
+      91deg,
+      transparent 0 96%,
+      rgba(37, 36, 34, 0.035) 96% 100%
+    );
+  background-size:
+    13px 13px,
+    100% 100%;
+  box-shadow: 7px 9px 0 rgba(22, 36, 58, 0.22);
+  rotate: -0.45deg;
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(16px, 1.7vw, 21px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.58;
+}
+
+.mini-project-note::before,
+.mini-project-note::after {
+  content: "";
+  position: absolute;
+  width: 104px;
+  height: 27px;
+  top: -13px;
+  background: rgba(241, 232, 213, 0.86);
+  box-shadow: 1px 2px 0 rgba(22, 36, 58, 0.12);
+}
+
+.mini-project-note::before {
+  left: 14%;
+  rotate: -4deg;
+}
+
+.mini-project-note::after {
+  right: 13%;
+  rotate: 3deg;
 }
 
 .mini-project-section .affiliate-note {
@@ -1272,6 +1323,14 @@ a {
   .mini-project-section .affiliate-note {
     margin-right: auto;
     margin-left: auto;
+  }
+
+  .mini-project-note {
+    width: 100%;
+    margin-top: 44px;
+    padding: 30px 22px 26px;
+    font-size: 15px;
+    line-height: 1.55;
   }
 
   .product-card {

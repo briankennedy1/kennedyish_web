@@ -75,6 +75,9 @@ export function VideoDetail({ video }: { video: Video }) {
                 ))}
               </div>
 
+              {project.note && (
+                <p className="mini-project-note">{project.note}</p>
+              )}
             </div>
             <p className="affiliate-note">
               Some links may be affiliate links. If you buy through them, it
