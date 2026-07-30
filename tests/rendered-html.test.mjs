@@ -30,6 +30,7 @@ test("server-renders the Brian Kennedy homepage", async () => {
 
   assert.equal(response.status, 200);
   const html = await response.text();
+  assert.match(html, /<main class="home-page">/);
   assert.match(html, /Brian Kennedy \| Looking to solve all my problems/);
   assert.match(html, /Brian <span>Kennedy<\/span>/);
   assert.match(html, /Looking to solve all my problems/);

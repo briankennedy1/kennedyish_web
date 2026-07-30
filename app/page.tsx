@@ -10,7 +10,7 @@ const videosNewestFirst = videos
 export default function Home() {
   return (
     <>
-      <main>
+      <main className="home-page">
         <section className="about-band" id="about">
           <div className="about-layout">
             <div className="about-photo">
