@@ -75,11 +75,11 @@ export function VideoDetail({ video }: { video: Video }) {
                 ))}
               </div>
 
-              <p className="affiliate-note">
-                Some links may be affiliate links. If you buy through them, it
-                will support the channel at no extra cost to you.
-              </p>
             </div>
+            <p className="affiliate-note">
+              Some links may be affiliate links. If you buy through them, it
+              will support the channel at no extra cost to you.
+            </p>
           </section>
         ))}
 
