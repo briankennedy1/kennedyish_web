@@ -1664,12 +1664,22 @@ a {
   content: none;
 }
 
+.home-page .about-photo-frame {
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--home-navy);
+  overflow: hidden;
+}
+
 .home-page .about-photo img {
   width: 100%;
   height: 100%;
   min-height: 0;
-  border: 2px solid var(--home-navy);
+  border: 0;
   object-position: 54% center;
+  scale: 1.54;
+  translate: 0 58px;
+  transform-origin: 54% 38%;
   filter: saturate(0.88) contrast(1.03);
 }
 
@@ -1714,26 +1724,38 @@ a {
 }
 
 .home-page .about-tagline {
+  position: relative;
   width: fit-content;
   max-width: 100%;
   margin: 34px auto 0;
-  padding: 12px 20px 14px;
-  color: var(--home-navy);
-  background-color: var(--home-paper);
-  background-image: radial-gradient(
-    circle at 20% 30%,
-    rgba(37, 36, 34, 0.09) 0 0.65px,
-    transparent 0.95px
-  );
-  background-size: 13px 13px;
-  box-shadow: 6px 7px 0 rgba(22, 36, 58, 0.22);
-  clip-path: polygon(0.8% 4%, 99.2% 0, 100% 94%, 1.2% 100%);
-  rotate: 0.45deg;
-  font-family: "Courier New", Courier, monospace;
-  font-size: clamp(19px, 2vw, 27px);
+  padding: 10px 19px 11px;
+  border: 2px solid rgba(72, 35, 17, 0.78);
+  border-radius: 3px;
+  color: #4b2816;
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(79, 38, 16, 0.11),
+      transparent 72%
+    );
+  box-shadow:
+    inset 0 0 0 1px rgba(48, 22, 11, 0.48),
+    inset 0 0 9px rgba(69, 31, 13, 0.3),
+    0 1px 0 rgba(250, 247, 239, 0.18);
+  clip-path: none;
+  rotate: -0.35deg;
+  font-family: var(--font-hanken), "Arial Black", sans-serif;
+  font-size: clamp(17px, 1.8vw, 24px);
   font-style: normal;
   font-weight: 900;
-  line-height: 1.05;
+  letter-spacing: 0.055em;
+  line-height: 1;
+  text-shadow:
+    0 -1px 0 rgba(42, 17, 8, 0.92),
+    1px 1px 0 rgba(244, 192, 83, 0.18),
+    0 0 4px rgba(62, 27, 11, 0.4);
+  filter: saturate(0.85);
+  mix-blend-mode: multiply;
 }
 
 .home-page .about-lower {
@@ -1802,7 +1824,7 @@ a {
 .home-page .about-steps {
   position: relative;
   grid-column: 1 / -1;
-  grid-row: 4;
+  grid-row: 3;
   z-index: 2;
   width: 100%;
   margin: 0;
@@ -1920,11 +1942,9 @@ a {
 
 .home-page .about-actions {
   position: relative;
-  grid-column: 1 / -1;
-  grid-row: 3;
   z-index: 2;
   width: 100%;
-  margin: 0;
+  margin: 34px 0 10px;
   gap: 24px;
   justify-content: center;
   align-items: center;
@@ -2240,18 +2260,18 @@ a {
     grid-row: 3;
     width: min(100%, 620px);
     margin-right: 0;
-    margin-top: -180px;
+    margin-top: -60px;
     justify-self: center;
   }
 
   .home-page .about-actions {
     grid-column: 1;
-    grid-row: 4;
+    grid-row: auto;
   }
 
   .home-page .about-steps {
     grid-column: 1;
-    grid-row: 5;
+    grid-row: 4;
   }
 
   .home-page .about-tagline {
@@ -2294,13 +2314,13 @@ a {
 
   .home-page .about-tagline {
     margin-top: 28px;
-    padding: 11px 14px 12px;
-    font-size: clamp(18px, 5.5vw, 23px);
+    padding: 9px 13px 10px;
+    font-size: clamp(16px, 4.8vw, 21px);
     text-align: center;
   }
 
   .home-page .about-lower {
-    margin-top: -185px;
+    margin-top: -60px;
   }
 
   .home-page .about-intro {

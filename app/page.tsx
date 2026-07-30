@@ -20,7 +20,9 @@ export default function Home() {
               <p className="about-tagline">home improvement tech</p>
             </div>
             <div className="about-photo">
-              <img src={sitePath("/images/000full.jpg")} alt="Brian Kennedy" />
+              <div className="about-photo-frame">
+                <img src={sitePath("/images/000full.jpg")} alt="Brian Kennedy" />
+              </div>
             </div>
             <div className="about-lower">
               <div className="about-intro">
@@ -55,30 +57,30 @@ export default function Home() {
                   , in The Lost Sierra.
                 </p>
               </div>
-            </div>
-            <div className="about-actions">
-              <a
-                className="button button-youtube"
-                href="https://www.youtube.com/@kennedyish"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <img
-                  className="button-logo"
-                  src={sitePath("/images/products/youtube.svg")}
-                  alt=""
-                  aria-hidden="true"
-                />
-                YouTube
-              </a>
-              <a
-                className="button button-gradient"
-                href="mailto:kennedyishcontact@gmail.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <span aria-hidden="true">💬</span> Contact
-              </a>
+              <div className="about-actions">
+                <a
+                  className="button button-youtube"
+                  href="https://www.youtube.com/@kennedyish"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <img
+                    className="button-logo"
+                    src={sitePath("/images/products/youtube.svg")}
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  YouTube
+                </a>
+                <a
+                  className="button button-gradient"
+                  href="mailto:kennedyishcontact@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span aria-hidden="true">💬</span> Contact
+                </a>
+              </div>
             </div>
             <ol className="about-steps">
               <li>
