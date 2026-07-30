@@ -678,7 +678,7 @@ a {
   clip-path: polygon(0.8% 4%, 99.2% 0, 100% 94%, 1.2% 100%);
   rotate: 0.35deg;
   font-family: "Courier New", Courier, monospace;
-  font-size: clamp(30px, 4.5vw, 56px);
+  font-size: clamp(24px, 3vw, 42px);
   font-weight: 900;
   letter-spacing: -0.045em;
   line-height: 0.98;
