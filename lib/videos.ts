@@ -161,6 +161,9 @@ export const videos: Video[] = [
         label: "UGLY",
         subtitle: "it's better than bad",
         theme: "blue",
+        image: "/images/video-6/inletbox-lighted-cord-assembly-art-v4.png",
+        imageAlt:
+          "A lighted extension cord connected to a covered inlet box assembly",
         note:
           'This is a much better way to energize a dead circuit, but it\'s still not great. The box cover gives you a bit more protection, but you\'re still exposed to danger. Uses all the same tools and materials as the "BAD" cord with three added pieces.',
         products: [

@@ -126,7 +126,7 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
   assert.match(html, /it&#x27;s better than bad/);
   assert.match(
     html,
-    /mini-project-section mini-project-section-blue[\s\S]*?mini-project-art-heading-only/,
+    /mini-project-section mini-project-section-blue[\s\S]*?inletbox-lighted-cord-assembly-art-v4\.png/,
   );
   assert.match(
     html,
