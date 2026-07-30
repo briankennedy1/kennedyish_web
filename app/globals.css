@@ -637,7 +637,7 @@ a {
 
 .mini-project-heading {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   margin-bottom: 54px;
   text-align: center;
@@ -712,13 +712,13 @@ a {
   z-index: 1;
   width: 100%;
   max-height: 560px;
-  margin-top: -62px;
+  margin-top: -136px;
   object-fit: contain;
   filter: drop-shadow(10px 12px 0 rgba(22, 36, 58, 0.2));
 }
 
 .mini-project-product-grid {
-  margin-top: 42px;
+  margin-top: 18px;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
@@ -1242,7 +1242,7 @@ a {
   }
 
   .mini-project-art > img {
-    margin-top: -36px;
+    margin-top: -72px;
   }
 
   .mini-project-product-card {
