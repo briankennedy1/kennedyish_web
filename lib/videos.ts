@@ -158,7 +158,7 @@ export const videos: Video[] = [
         ],
       },
       {
-        label: "UGLY",
+        label: "LESS BAD",
         subtitle: "it's better than bad",
         theme: "blue",
         image: "/images/video-6/inletbox-lighted-cord-assembly-art-v4.png",

@@ -126,7 +126,7 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
   assert.doesNotMatch(html, /mini-project-step-grid/);
   assert.doesNotMatch(html, /step-01-generator-off\.png/);
   assert.doesNotMatch(html, /step-09-share-power\.png/);
-  assert.match(html, />UGLY</);
+  assert.match(html, />LESS BAD</);
   assert.match(html, /it&#x27;s better than bad/);
   assert.match(
     html,
@@ -153,7 +153,7 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
     /Uses all the same tools and materials as the &quot;BAD&quot; cord with three added pieces\./,
   );
   assert.ok(
-    html.indexOf(">UGLY<") <
+    html.indexOf(">LESS BAD<") <
       html.indexOf("Some links may be affiliate links"),
   );
   assert.match(html, /mini-project-affiliate-footer/);
