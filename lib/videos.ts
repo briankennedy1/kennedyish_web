@@ -162,13 +162,19 @@ export const videos: Video[] = [
         subtitle: "it's better than bad",
         theme: "blue",
         note:
-          'This is a much better way to energize a dead circuit, but it\'s still not great. The box cover gives you a bit more protection, but you\'re still exposed to danger. Uses all the same tools and materials as the "BAD" cord with two added pieces.',
+          'This is a much better way to energize a dead circuit, but it\'s still not great. The box cover gives you a bit more protection, but you\'re still exposed to danger. Uses all the same tools and materials as the "BAD" cord with three added pieces.',
         products: [
           {
             name: "weatherproof box",
             url: "https://amzn.to/3RF9WD2",
             source: "Amazon",
             image: "/images/video-6/outdoorbox-art-v1.png",
+          },
+          {
+            name: "strain relief",
+            url: "https://amzn.to/4wx5568",
+            source: "Amazon",
+            image: "/images/video-6/strain-art-v1.png",
           },
           {
             name: "inlet receptacle",

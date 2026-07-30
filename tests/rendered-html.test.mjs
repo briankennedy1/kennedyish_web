@@ -134,6 +134,10 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
   );
   assert.match(
     html,
+    /href="https:\/\/amzn\.to\/4wx5568"[^>]*>[\s\S]*?strain-art-v1\.png[\s\S]*?strain relief/,
+  );
+  assert.match(
+    html,
     /href="https:\/\/amzn\.to\/4c8Vb28"[^>]*>[\s\S]*?box-art-v2\.png[\s\S]*?inlet receptacle/,
   );
   assert.match(
@@ -142,7 +146,7 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
   );
   assert.match(
     html,
-    /Uses all the same tools and materials as the &quot;BAD&quot; cord with two added pieces\./,
+    /Uses all the same tools and materials as the &quot;BAD&quot; cord with three added pieces\./,
   );
   assert.ok(
     html.indexOf(">UGLY<") <
