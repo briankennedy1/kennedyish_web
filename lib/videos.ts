@@ -1,9 +1,17 @@
 export type Product = {
   name: string;
-  description: string;
+  description?: string;
   url: string;
   source: string;
   image?: string;
+};
+
+export type MiniProject = {
+  label: string;
+  subtitle: string;
+  image: string;
+  imageAlt: string;
+  products: Product[];
 };
 
 export type Video = {
@@ -17,6 +25,7 @@ export type Video = {
   published: string;
   publishedDate: string;
   image: string;
+  projects?: MiniProject[];
   products: Product[];
 };
 
@@ -32,6 +41,35 @@ export const videos: Video[] = [
     published: "Today",
     publishedDate: "July 29, 2026",
     image: "/images/powering-house-electric-truck-placeholder.jpg",
+    projects: [
+      {
+        label: "BAD",
+        subtitle: "you know better, don't build this",
+        image: "/images/video-6/combined-extensioncord-art-v2.png",
+        imageAlt:
+          "A homemade extension cord assembled with a lighted male plug and plug cover",
+        products: [
+          {
+            name: "Extension Cord",
+            url: "https://amzn.to/4q6smcN",
+            source: "Amazon",
+            image: "/images/video-6/extensioncord-art-v2.png",
+          },
+          {
+            name: "Lighted Male Plug",
+            url: "https://amzn.to/4yIkgux",
+            source: "Amazon",
+            image: "/images/video-6/lightedoutlet-art-v2.png",
+          },
+          {
+            name: "Plug Cover",
+            url: "https://amzn.to/4vTBeU3",
+            source: "Amazon",
+            image: "/images/video-6/outletcover-art-v2.png",
+          },
+        ],
+      },
+    ],
     products: [],
   },
   {

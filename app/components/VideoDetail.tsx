@@ -37,6 +37,53 @@ export function VideoDetail({ video }: { video: Video }) {
           </div>
         </section>
 
+        {video.projects?.map((project) => (
+          <section className="mini-project-section" key={project.label}>
+            <div className="shell">
+              <div className="mini-project-heading">
+                <p className="mini-project-label">{project.label}</p>
+                <h2>{project.subtitle}</h2>
+              </div>
+
+              <div className="mini-project-art">
+                <img
+                  src={sitePath(project.image)}
+                  alt={project.imageAlt}
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="mini-project-product-grid">
+                {project.products.map((product) => (
+                  <a
+                    className="mini-project-product-card"
+                    href={product.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    key={product.name}
+                  >
+                    <div className="mini-project-product-image">
+                      {product.image && (
+                        <img
+                          src={sitePath(product.image)}
+                          alt=""
+                          loading="lazy"
+                        />
+                      )}
+                    </div>
+                    <h3>{product.name}</h3>
+                  </a>
+                ))}
+              </div>
+
+              <p className="affiliate-note">
+                Some links may be affiliate links. If you buy through them, it
+                will support the channel at no extra cost to you.
+              </p>
+            </div>
+          </section>
+        ))}
+
         {video.products.length > 0 && (
           <section className="products-section">
             <div className="shell">
@@ -68,7 +115,7 @@ export function VideoDetail({ video }: { video: Video }) {
                     <div>
                       <span className="product-source">{product.source}</span>
                       <h3>{product.name}</h3>
-                      <p>{product.description}</p>
+                      {product.description && <p>{product.description}</p>}
                     </div>
                   </a>
                 ))}

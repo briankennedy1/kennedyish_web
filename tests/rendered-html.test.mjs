@@ -86,6 +86,21 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
   );
   assert.match(html, /July 29, 2026/);
   assert.match(html, /powering-house-electric-truck-placeholder\.jpg/);
+  assert.match(html, />BAD</);
+  assert.match(html, /you know better, don&#x27;t build this/);
+  assert.match(html, /combined-extensioncord-art-v2\.png/);
+  assert.match(
+    html,
+    /href="https:\/\/amzn\.to\/4q6smcN"[^>]*>[\s\S]*?extensioncord-art-v2\.png[\s\S]*?Extension Cord/,
+  );
+  assert.match(
+    html,
+    /href="https:\/\/amzn\.to\/4yIkgux"[^>]*>[\s\S]*?lightedoutlet-art-v2\.png[\s\S]*?Lighted Male Plug/,
+  );
+  assert.match(
+    html,
+    /href="https:\/\/amzn\.to\/4vTBeU3"[^>]*>[\s\S]*?outletcover-art-v2\.png[\s\S]*?Plug Cover/,
+  );
   assert.doesNotMatch(html, /youtube-nocookie\.com\/embed/);
   assert.doesNotMatch(html, /Products used/);
 });
