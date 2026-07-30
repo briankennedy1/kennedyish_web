@@ -67,6 +67,18 @@ export const videos: Video[] = [
             source: "Amazon",
             image: "/images/video-6/outletcover-art-v2.png",
           },
+          {
+            name: "Klein Stripper",
+            url: "https://amzn.to/4pKtgLP",
+            source: "Amazon",
+            image: "/images/video-6/kleincatapult-art-v1.png",
+          },
+          {
+            name: "Klein Screwdriver",
+            url: "https://amzn.to/4x3XJ9U",
+            source: "Amazon",
+            image: "/images/video-6/kleindriver-art-v3.png",
+          },
         ],
       },
     ],

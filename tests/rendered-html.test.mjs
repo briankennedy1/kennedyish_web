@@ -101,6 +101,14 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
     html,
     /href="https:\/\/amzn\.to\/4vTBeU3"[^>]*>[\s\S]*?outletcover-art-v2\.png[\s\S]*?Plug Cover/,
   );
+  assert.match(
+    html,
+    /href="https:\/\/amzn\.to\/4pKtgLP"[^>]*>[\s\S]*?kleincatapult-art-v1\.png[\s\S]*?Klein Stripper/,
+  );
+  assert.match(
+    html,
+    /href="https:\/\/amzn\.to\/4x3XJ9U"[^>]*>[\s\S]*?kleindriver-art-v3\.png[\s\S]*?Klein Screwdriver/,
+  );
   assert.doesNotMatch(html, /youtube-nocookie\.com\/embed/);
   assert.doesNotMatch(html, /Products used/);
 });
