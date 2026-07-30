@@ -1667,7 +1667,7 @@ a {
 .home-page .about-photo-frame {
   width: 100%;
   height: 100%;
-  border: 2px solid var(--home-navy);
+  border: 1px solid rgba(22, 36, 58, 0.38);
   overflow: hidden;
 }
 
@@ -1729,7 +1729,7 @@ a {
   max-width: 100%;
   margin: 34px auto 0;
   padding: 11px 38px 12px;
-  border: 2px solid var(--home-navy);
+  border: 1px solid rgba(22, 36, 58, 0.38);
   border-radius: 5px;
   color: var(--home-navy);
   background:
@@ -1746,8 +1746,8 @@ a {
     ),
     var(--home-cream);
   box-shadow:
-    0 3px 0 rgba(22, 36, 58, 0.34),
-    0 6px 8px rgba(22, 36, 58, 0.2),
+    0 2px 0 rgba(22, 36, 58, 0.18),
+    0 5px 7px rgba(22, 36, 58, 0.13),
     inset 0 1px 0 rgba(255, 255, 255, 0.78),
     inset 0 -2px 0 rgba(22, 36, 58, 0.12);
   clip-path: none;
@@ -1798,6 +1798,20 @@ a {
 
 .home-page .about-tagline::after {
   right: 12px;
+}
+
+.home-page .about-tagline::before,
+.home-page .about-tagline::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 0;
+  clip-path: none;
+  background: url("/images/ui/t20-screwhead.png") center / contain no-repeat;
+  box-shadow: none;
+  filter: drop-shadow(0 1px 1px rgba(22, 36, 58, 0.28));
+  font-size: 0;
+  text-shadow: none;
 }
 
 .home-page .about-lower {
@@ -1928,7 +1942,7 @@ a {
   margin: 0;
   padding: clamp(22px, 2.5vw, 34px);
   aspect-ratio: 4 / 3;
-  border: 2px solid var(--home-navy);
+  border: 1px solid rgba(22, 36, 58, 0.38);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1999,7 +2013,7 @@ a {
   min-height: 54px;
   padding: 0 38px;
   overflow: visible;
-  border: 2px solid var(--home-navy);
+  border: 1px solid rgba(22, 36, 58, 0.38);
   border-radius: 5px;
   outline: 0;
   color: var(--home-navy);
@@ -2017,8 +2031,8 @@ a {
     ),
     var(--home-cream);
   box-shadow:
-    0 3px 0 rgba(22, 36, 58, 0.34),
-    0 6px 8px rgba(22, 36, 58, 0.2),
+    0 2px 0 rgba(22, 36, 58, 0.18),
+    0 5px 7px rgba(22, 36, 58, 0.13),
     inset 0 1px 0 rgba(255, 255, 255, 0.78),
     inset 0 -2px 0 rgba(22, 36, 58, 0.12);
   clip-path: none;
@@ -2028,7 +2042,9 @@ a {
   text-shadow:
     0 1px 0 rgba(255, 255, 255, 0.72),
     0 -1px 0 rgba(22, 36, 58, 0.22);
-  transition: none;
+  transition:
+    translate 75ms ease-out,
+    box-shadow 75ms ease-out;
 }
 
 .home-page .about-actions .button::before {
@@ -2087,6 +2103,20 @@ a {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.28);
 }
 
+.home-page .about-actions .button::before,
+.home-page .about-actions .button::after {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 0;
+  clip-path: none;
+  background: url("/images/ui/t20-screwhead.png") center / contain no-repeat;
+  box-shadow: none;
+  filter: drop-shadow(0 1px 1px rgba(22, 36, 58, 0.28));
+  font-size: 0;
+  text-shadow: none;
+}
+
 .home-page .about-actions .button-youtube {
   rotate: -0.35deg;
 }
@@ -2096,15 +2126,24 @@ a {
   rotate: 0.35deg;
 }
 
-.home-page .about-actions .button:hover,
-.home-page .about-actions .button:active {
+.home-page .about-actions .button:hover {
   translate: none;
   transform: none;
   box-shadow:
-    0 3px 0 rgba(22, 36, 58, 0.34),
-    0 6px 8px rgba(22, 36, 58, 0.2),
+    0 2px 0 rgba(22, 36, 58, 0.18),
+    0 5px 7px rgba(22, 36, 58, 0.13),
     inset 0 1px 0 rgba(255, 255, 255, 0.78),
     inset 0 -2px 0 rgba(22, 36, 58, 0.12);
+}
+
+.home-page .about-actions .button:active {
+  translate: 0 2px;
+  transform: none;
+  box-shadow:
+    0 1px 0 rgba(22, 36, 58, 0.34),
+    0 3px 4px rgba(22, 36, 58, 0.17),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72),
+    inset 0 -1px 0 rgba(22, 36, 58, 0.14);
 }
 
 .home-page .about-actions .button-logo {
