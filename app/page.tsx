@@ -20,7 +20,7 @@ export default function Home() {
               <h2 className="about-headline">
                 Brian <span>Kennedy</span>
               </h2>
-              <p className="about-tagline">Looking to solve all my problems</p>
+              <p className="about-tagline">home improvement tech</p>
               <div className="about-lower">
                 <div className="about-intro">
                   <p className="about-copy">

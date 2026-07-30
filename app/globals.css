@@ -1602,8 +1602,9 @@ a {
   min-height: 0;
   margin: 0 auto;
   padding: clamp(24px, 3vw, 38px);
-  grid-template-columns: minmax(320px, 0.82fr) minmax(520px, 1.18fr);
-  gap: clamp(30px, 4vw, 58px);
+  grid-template-columns: minmax(280px, 0.6fr) minmax(600px, 1.4fr);
+  gap: clamp(28px, 3vw, 46px);
+  align-items: center;
   border: 3px solid var(--home-navy);
   background-color: var(--home-mustard);
   background-image:
@@ -1629,10 +1630,14 @@ a {
 
 .home-page .about-photo {
   position: relative;
-  min-height: 680px;
-  margin: 5px 0 8px;
+  width: min(100%, 320px);
+  height: auto;
+  min-height: 0;
+  margin: clamp(56px, 6vw, 82px) auto 0;
   padding: 12px;
-  align-self: stretch;
+  align-self: start;
+  justify-self: center;
+  aspect-ratio: 3 / 4;
   overflow: visible;
   border: 3px solid var(--home-navy);
   background: var(--home-paper);
@@ -1661,9 +1666,9 @@ a {
 .home-page .about-photo img {
   width: 100%;
   height: 100%;
-  min-height: 650px;
+  min-height: 0;
   border: 2px solid var(--home-navy);
-  object-position: 60% center;
+  object-position: 54% center;
   filter: saturate(0.88) contrast(1.03);
 }
 
@@ -1964,13 +1969,13 @@ a {
 
 @media (max-width: 1050px) {
   .home-page .about-layout {
-    grid-template-columns: minmax(290px, 0.75fr) minmax(430px, 1.25fr);
+    grid-template-columns: minmax(250px, 0.62fr) minmax(430px, 1.38fr);
     gap: 28px;
   }
 
   .home-page .about-photo,
   .home-page .about-photo img {
-    min-height: 620px;
+    min-height: 0;
   }
 
   .home-page .about-content {
@@ -1989,14 +1994,16 @@ a {
   }
 
   .home-page .about-photo {
-    height: min(78vw, 640px);
+    width: min(100%, 320px);
+    height: auto;
     min-height: 0;
-    margin: 0 8px;
+    margin: 0 auto;
+    justify-self: center;
   }
 
   .home-page .about-photo img {
     min-height: 0;
-    object-position: 50% 30%;
+    object-position: 54% center;
   }
 
   .home-page .about-content {
@@ -2028,8 +2035,9 @@ a {
   }
 
   .home-page .about-photo {
-    height: min(112vw, 510px);
-    margin: 0 3px;
+    width: min(100%, 270px);
+    height: auto;
+    margin: 0 auto;
     padding: 8px;
     box-shadow: 6px 7px 0 rgba(22, 36, 58, 0.28);
   }

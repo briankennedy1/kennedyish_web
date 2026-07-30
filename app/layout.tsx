@@ -16,7 +16,7 @@ export function generateMetadata(): Metadata {
       process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
     ),
     title: {
-      default: "Brian Kennedy | Looking to solve all my problems",
+      default: "Brian Kennedy | home improvement tech",
       template: "%s | Brian Kennedy",
     },
     description:
@@ -26,14 +26,14 @@ export function generateMetadata(): Metadata {
       shortcut: sitePath("/images/avatar.jpg"),
     },
     openGraph: {
-      title: "Brian Kennedy | Looking to solve all my problems",
+      title: "Brian Kennedy | home improvement tech",
       description:
         "Projects, tech, and the house in between. Watch every episode and find the gear used in each build.",
       type: "website",
     },
     twitter: {
       card: "summary",
-      title: "Brian Kennedy | Looking to solve all my problems",
+      title: "Brian Kennedy | home improvement tech",
       description: "Projects, tech, and the house in between.",
     },
   };
