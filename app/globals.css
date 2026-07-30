@@ -1814,7 +1814,7 @@ a {
   position: relative;
   min-width: 0;
   min-height: 0;
-  padding: 14px 14px 0;
+  padding: 14px;
   overflow: visible;
   color: var(--home-navy);
   background-color: var(--home-paper);
@@ -1887,10 +1887,11 @@ a {
 
 .home-page .about-step-panel > span {
   display: block;
+  opacity: 0.72;
   font-family: "Courier New", Courier, monospace;
-  font-size: clamp(22px, 2.3vw, 32px);
-  font-weight: 900;
-  letter-spacing: -0.055em;
+  font-size: clamp(15px, 1.4vw, 19px);
+  font-weight: 700;
+  letter-spacing: 0.035em;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -1910,10 +1911,10 @@ a {
   padding: 0;
   color: currentColor;
   font-family: "Courier New", Courier, monospace;
-  font-size: clamp(18px, 1.6vw, 25px);
+  font-size: clamp(26px, 2.6vw, 36px);
   font-weight: 900;
-  letter-spacing: -0.035em;
-  line-height: 1.08;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
 }
 
 .home-page .about-actions {
@@ -2256,14 +2257,14 @@ a {
   }
 
   .home-page .about-step-panel > span {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .home-page .about-steps h3 {
     margin: 0;
     padding: 0;
-    font-size: clamp(17px, 4.8vw, 20px);
-    line-height: 1.12;
+    font-size: clamp(23px, 6vw, 28px);
+    line-height: 1.04;
   }
 
   .home-page .about-actions {
