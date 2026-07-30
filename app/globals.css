@@ -1957,7 +1957,7 @@ a {
 .home-page .video-card-copy h3,
 .home-page .video-grid-three .video-card-copy h3 {
   color: var(--home-navy);
-  font-family: "Courier New", Courier, monospace;
+  font-family: var(--font-hanken), "Helvetica Neue", sans-serif;
   font-size: clamp(19px, 2vw, 27px);
   font-weight: 900;
   letter-spacing: -0.045em;
