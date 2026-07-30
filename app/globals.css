@@ -1826,6 +1826,7 @@ a {
 .home-page .about-actions {
   margin-top: 32px;
   gap: 18px;
+  justify-content: center;
 }
 
 .home-page .about-actions .button {

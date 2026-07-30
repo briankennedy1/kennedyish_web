@@ -51,20 +51,6 @@ export default function Home() {
                   </a>
                   , in The Lost Sierra.
                 </p>
-                <ol className="about-steps">
-                  <li>
-                    <span>Step 1:</span>
-                    <h3>Make my current house nice.</h3>
-                  </li>
-                  <li>
-                    <span>Step 2:</span>
-                    <h3>Buy a bad house and fix it up.</h3>
-                  </li>
-                  <li>
-                    <span>Step 3:</span>
-                    <h3>Build a new house from scratch.</h3>
-                  </li>
-                </ol>
                 <div className="about-actions">
                   <a
                     className="button button-youtube"
@@ -87,6 +73,20 @@ export default function Home() {
                     <span aria-hidden="true">💬</span> Contact
                   </a>
                 </div>
+                <ol className="about-steps">
+                  <li>
+                    <span>Step 1:</span>
+                    <h3>Make my current house nice.</h3>
+                  </li>
+                  <li>
+                    <span>Step 2:</span>
+                    <h3>Buy a bad house and fix it up.</h3>
+                  </li>
+                  <li>
+                    <span>Step 3:</span>
+                    <h3>Build a new house from scratch.</h3>
+                  </li>
+                </ol>
               </div>
             </div>
           </div>
