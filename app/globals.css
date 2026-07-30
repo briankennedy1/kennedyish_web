@@ -781,6 +781,10 @@ a {
   background-color: var(--art-mustard);
 }
 
+.mini-project-product-card:nth-child(2) .mini-project-product-image img {
+  transform: scale(0.82);
+}
+
 .mini-project-product-card:nth-child(3) .mini-project-product-image {
   background-color: var(--art-tomato);
 }
