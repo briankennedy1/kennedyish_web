@@ -109,6 +109,10 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
     html,
     /href="https:\/\/amzn\.to\/4x3XJ9U"[^>]*>[\s\S]*?kleindriver-art-redo-v1\.png[\s\S]*?Klein Screwdriver/,
   );
+  assert.match(
+    html,
+    /href="https:\/\/amzn\.to\/4fGFnEZ"[^>]*>[\s\S]*?kleinsidecutters-art-v1\.png[\s\S]*?Klein Sidecutters/,
+  );
   assert.match(html, /If it&#x27;s a life or death situation/);
   assert.match(html, /zombie apocalypse, World War III/);
   assert.doesNotMatch(html, /youtube-nocookie\.com\/embed/);

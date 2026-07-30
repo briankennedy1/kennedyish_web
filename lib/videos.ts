@@ -82,6 +82,12 @@ export const videos: Video[] = [
             source: "Amazon",
             image: "/images/video-6/kleindriver-art-redo-v1.png",
           },
+          {
+            name: "Klein Sidecutters",
+            url: "https://amzn.to/4fGFnEZ",
+            source: "Amazon",
+            image: "/images/video-6/kleinsidecutters-art-v1.png",
+          },
         ],
       },
     ],
