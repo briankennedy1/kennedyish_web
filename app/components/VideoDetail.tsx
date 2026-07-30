@@ -11,13 +11,21 @@ export function VideoDetail({ video }: { video: Video }) {
         <section className="video-detail-hero" aria-label="Video player">
           <div className="shell video-detail">
             <div className="player-frame">
-              <iframe
-                src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}?rel=0`}
-                title={video.title}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              />
+              {video.youtubeId ? (
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${video.youtubeId}?rel=0`}
+                  title={video.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              ) : (
+                <img
+                  src={sitePath(video.image)}
+                  alt={`Placeholder for ${video.title}`}
+                  fetchPriority="high"
+                />
+              )}
             </div>
             <div className="video-detail-copy">
               <h1>{video.title}</h1>
@@ -29,47 +37,49 @@ export function VideoDetail({ video }: { video: Video }) {
           </div>
         </section>
 
-        <section className="products-section">
-          <div className="shell">
-            <div className="section-heading products-heading">
-              <div>
-                <h2>Products used</h2>
+        {video.products.length > 0 && (
+          <section className="products-section">
+            <div className="shell">
+              <div className="section-heading products-heading">
+                <div>
+                  <h2>Products used</h2>
+                </div>
               </div>
+              <div className="product-grid">
+                {video.products.map((product) => (
+                  <a
+                    className="product-card"
+                    href={product.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    key={product.name}
+                  >
+                    <div className="product-thumb">
+                      {product.image ? (
+                        <img
+                          src={sitePath(product.image)}
+                          alt=""
+                          loading="lazy"
+                        />
+                      ) : (
+                        <span>{product.name.slice(0, 2).toUpperCase()}</span>
+                      )}
+                    </div>
+                    <div>
+                      <span className="product-source">{product.source}</span>
+                      <h3>{product.name}</h3>
+                      <p>{product.description}</p>
+                    </div>
+                  </a>
+                ))}
+              </div>
+              <p className="affiliate-note">
+                Some links may be affiliate links. If you buy through them, it
+                will support the channel at no extra cost to you.
+              </p>
             </div>
-            <div className="product-grid">
-              {video.products.map((product) => (
-                <a
-                  className="product-card"
-                  href={product.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  key={product.name}
-                >
-                  <div className="product-thumb">
-                    {product.image ? (
-                      <img
-                        src={sitePath(product.image)}
-                        alt=""
-                        loading="lazy"
-                      />
-                    ) : (
-                      <span>{product.name.slice(0, 2).toUpperCase()}</span>
-                    )}
-                  </div>
-                  <div>
-                    <span className="product-source">{product.source}</span>
-                    <h3>{product.name}</h3>
-                    <p>{product.description}</p>
-                  </div>
-                </a>
-              ))}
-            </div>
-            <p className="affiliate-note">
-              Some links may be affiliate links. If you buy through them, it will
-              support the channel at no extra cost to you.
-            </p>
-          </div>
-        </section>
+          </section>
+        )}
       </main>
     </>
   );

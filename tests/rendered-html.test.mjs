@@ -44,6 +44,7 @@ test("server-renders the Brian Kennedy homepage", async () => {
     ),
     [5, 4, 3, 2, 1],
   );
+  assert.doesNotMatch(html, /Powering my house with my electric truck/);
   assert.doesNotMatch(html, /codex-preview|Building your site/);
 });
 
@@ -64,4 +65,27 @@ test("server-renders a chronological short video URL with player and products", 
   assert.match(html, /UniFi Cloud Gateway Fiber/);
   assert.match(html, /Products used/);
   assert.match(html, /rel="canonical" href="http:\/\/localhost:3000\/2\/"/);
+});
+
+test("server-renders the unlisted video draft at its direct short URL", async () => {
+  const app = await worker();
+  const response = await app.fetch(
+    new Request("http://localhost/6", {
+      headers: { accept: "text/html" },
+    }),
+    environment(),
+    executionContext,
+  );
+
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Powering my house with my electric truck/);
+  assert.match(
+    html,
+    /My truck has a TON of battery energy, but how do I get that power into my house\?/,
+  );
+  assert.match(html, /July 29, 2026/);
+  assert.match(html, /powering-house-electric-truck-placeholder\.jpg/);
+  assert.doesNotMatch(html, /youtube-nocookie\.com\/embed/);
+  assert.doesNotMatch(html, /Products used/);
 });

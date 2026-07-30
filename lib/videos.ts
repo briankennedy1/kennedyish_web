@@ -9,7 +9,8 @@ export type Product = {
 export type Video = {
   number: number;
   slug: string;
-  youtubeId: string;
+  youtubeId?: string;
+  listed?: boolean;
   title: string;
   shortTitle: string;
   description: string;
@@ -20,6 +21,19 @@ export type Video = {
 };
 
 export const videos: Video[] = [
+  {
+    number: 6,
+    slug: "powering-house-electric-truck",
+    listed: false,
+    title: "Powering my house with my electric truck",
+    shortTitle: "Powering my house with my electric truck",
+    description:
+      "My truck has a TON of battery energy, but how do I get that power into my house?",
+    published: "Today",
+    publishedDate: "July 29, 2026",
+    image: "/images/powering-house-electric-truck-placeholder.jpg",
+    products: [],
+  },
   {
     number: 5,
     slug: "ikea-matter-home-assistant",

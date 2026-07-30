@@ -3,9 +3,9 @@ import { VideoCard } from "./components/VideoCard";
 import { videos } from "../lib/videos";
 import { sitePath } from "../lib/site-path";
 
-const videosNewestFirst = [...videos].sort(
-  (a, b) => Date.parse(b.publishedDate) - Date.parse(a.publishedDate),
-);
+const videosNewestFirst = videos
+  .filter((video) => video.listed !== false)
+  .sort((a, b) => Date.parse(b.publishedDate) - Date.parse(a.publishedDate));
 
 export default function Home() {
   return (
