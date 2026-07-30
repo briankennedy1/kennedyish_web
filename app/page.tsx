@@ -51,44 +51,44 @@ export default function Home() {
                   </a>
                   , in The Lost Sierra.
                 </p>
-                <div className="about-actions">
-                  <a
-                    className="button button-youtube"
-                    href="https://www.youtube.com/@kennedyish"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      className="button-logo"
-                      src={sitePath("/images/products/youtube.svg")}
-                      alt=""
-                      aria-hidden="true"
-                    />
-                    YouTube
-                  </a>
-                  <a
-                    className="button button-gradient"
-                    href="mailto:kennedyishcontact@gmail.com"
-                  >
-                    <span aria-hidden="true">💬</span> Contact
-                  </a>
-                </div>
-                <ol className="about-steps">
-                  <li>
-                    <span>Step 1:</span>
-                    <h3>Make my current house nice.</h3>
-                  </li>
-                  <li>
-                    <span>Step 2:</span>
-                    <h3>Buy a bad house and fix it up.</h3>
-                  </li>
-                  <li>
-                    <span>Step 3:</span>
-                    <h3>Build a new house from scratch.</h3>
-                  </li>
-                </ol>
               </div>
             </div>
+            <div className="about-actions">
+              <a
+                className="button button-youtube"
+                href="https://www.youtube.com/@kennedyish"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  className="button-logo"
+                  src={sitePath("/images/products/youtube.svg")}
+                  alt=""
+                  aria-hidden="true"
+                />
+                YouTube
+              </a>
+              <a
+                className="button button-gradient"
+                href="mailto:kennedyishcontact@gmail.com"
+              >
+                <span aria-hidden="true">💬</span> Contact
+              </a>
+            </div>
+            <ol className="about-steps">
+              <li>
+                <span>Step 1:</span>
+                <h3>Make my current house nice.</h3>
+              </li>
+              <li>
+                <span>Step 2:</span>
+                <h3>Buy a bad house and fix it up.</h3>
+              </li>
+              <li>
+                <span>Step 3:</span>
+                <h3>Build a new house from scratch.</h3>
+              </li>
+            </ol>
           </div>
         </section>
 
