@@ -136,6 +136,14 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
     html,
     /href="https:\/\/amzn\.to\/4c8Vb28"[^>]*>[\s\S]*?box-art-v2\.png[\s\S]*?inlet receptacle/,
   );
+  assert.match(
+    html,
+    /This is a much better way to energize a dead circuit, but it&#x27;s still not great\./,
+  );
+  assert.match(
+    html,
+    /Uses all the same tools and materials as the &quot;BAD&quot; cord with two added pieces\./,
+  );
   assert.ok(
     html.indexOf(">UGLY<") <
       html.indexOf("Some links may be affiliate links"),
