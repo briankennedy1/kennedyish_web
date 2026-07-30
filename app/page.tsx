@@ -77,16 +77,22 @@ export default function Home() {
             </div>
             <ol className="about-steps">
               <li>
-                <span>Step 1:</span>
-                <h3>Make my current house nice.</h3>
+                <div className="about-step-panel">
+                  <span>Step 1:</span>
+                  <h3>Make my current house nice.</h3>
+                </div>
               </li>
               <li>
-                <span>Step 2:</span>
-                <h3>Buy a bad house and fix it up.</h3>
+                <div className="about-step-panel">
+                  <span>Step 2:</span>
+                  <h3>Buy a bad house and fix it up.</h3>
+                </div>
               </li>
               <li>
-                <span>Step 3:</span>
-                <h3>Build a new house from scratch.</h3>
+                <div className="about-step-panel">
+                  <span>Step 3:</span>
+                  <h3>Build a new house from scratch.</h3>
+                </div>
               </li>
             </ol>
           </div>
