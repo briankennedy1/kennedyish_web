@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { VideoDetail } from "../../components/VideoDetail";
-import { sitePath } from "../../../lib/site-path";
-import { getVideo, videos } from "../../../lib/videos";
+import { VideoDetail } from "../components/VideoDetail";
+import { sitePath } from "../../lib/site-path";
+import { getVideoByNumber, videos } from "../../lib/videos";
 
 type PageProps = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ number: string }>;
 };
 
 export function generateStaticParams() {
-  return videos.map((video) => ({ slug: video.slug }));
+  return videos.map((video) => ({ number: video.number.toString() }));
 }
 
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { slug } = await params;
-  const video = getVideo(slug);
+  const { number } = await params;
+  const video = getVideoByNumber(number);
 
   if (!video) return {};
 
@@ -36,8 +36,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function VideoPage({ params }: PageProps) {
-  const { slug } = await params;
-  const video = getVideo(slug);
+  const { number } = await params;
+  const video = getVideoByNumber(number);
   if (!video) notFound();
 
   return <VideoDetail video={video} />;

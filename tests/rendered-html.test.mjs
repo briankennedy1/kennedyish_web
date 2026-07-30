@@ -38,13 +38,19 @@ test("server-renders the Brian Kennedy homepage", async () => {
     html.indexOf("IKEA’s new Matter over Thread devices") <
       html.indexOf("Cleaning up my MESS of a home network"),
   );
+  assert.deepEqual(
+    [...html.matchAll(/class="video-card" href="\/(\d+)\//g)].map(
+      ([, number]) => Number(number),
+    ),
+    [5, 4, 3, 2, 1],
+  );
   assert.doesNotMatch(html, /codex-preview|Building your site/);
 });
 
-test("server-renders a video detail page with player and products", async () => {
+test("server-renders a chronological short video URL with player and products", async () => {
   const app = await worker();
   const response = await app.fetch(
-    new Request("http://localhost/videos/rebuilding-home-network", {
+    new Request("http://localhost/2", {
       headers: { accept: "text/html" },
     }),
     environment(),
@@ -57,4 +63,5 @@ test("server-renders a video detail page with player and products", async () => 
   assert.match(html, /youtube-nocookie\.com\/embed\/xtVD7qWAVH0/);
   assert.match(html, /UniFi Cloud Gateway Fiber/);
   assert.match(html, /Products used/);
+  assert.match(html, /rel="canonical" href="http:\/\/localhost:3000\/2\/"/);
 });

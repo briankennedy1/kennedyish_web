@@ -6,7 +6,7 @@ export function VideoCard({ video }: { video: Video }) {
   return (
     <a
       className="video-card"
-      href={sitePath(`/videos/${video.slug}/`)}
+      href={sitePath(`/${video.number}/`)}
       aria-label={`View details for ${video.title}`}
     >
       <div className="video-card-image">

@@ -7,6 +7,7 @@ export type Product = {
 };
 
 export type Video = {
+  number: number;
   slug: string;
   youtubeId: string;
   title: string;
@@ -20,6 +21,7 @@ export type Video = {
 
 export const videos: Video[] = [
   {
+    number: 5,
     slug: "ikea-matter-home-assistant",
     youtubeId: "9T-vmiHgYFI",
     title:
@@ -111,6 +113,7 @@ export const videos: Video[] = [
     ],
   },
   {
+    number: 4,
     slug: "cleaning-up-home-network",
     youtubeId: "CT7ARZAsB0E",
     title: "Cleaning up my MESS of a home network",
@@ -166,6 +169,7 @@ export const videos: Video[] = [
     ],
   },
   {
+    number: 3,
     slug: "wifi-7-outdoors",
     youtubeId: "tsxr_ECLVNs",
     title: "WiFi 7 is fast, but it can’t break through walls | UniFi U7 Pro Outdoor",
@@ -270,6 +274,7 @@ export const videos: Video[] = [
     ],
   },
   {
+    number: 2,
     slug: "rebuilding-home-network",
     youtubeId: "xtVD7qWAVH0",
     title: "Rebuilding my home network for ridiculous internet speeds",
@@ -325,6 +330,7 @@ export const videos: Video[] = [
     ],
   },
   {
+    number: 1,
     slug: "ditching-power-bricks-usb-c",
     youtubeId: "2_4LWblPQPs",
     title: "Ditching power bricks for USB-C",
@@ -390,4 +396,13 @@ export const videos: Video[] = [
 
 export function getVideo(slug: string) {
   return videos.find((video) => video.slug === slug);
+}
+
+export function getVideoByNumber(number: string | number) {
+  const parsedNumber =
+    typeof number === "number" ? number : Number(number);
+
+  if (!Number.isInteger(parsedNumber)) return undefined;
+
+  return videos.find((video) => video.number === parsedNumber);
 }
