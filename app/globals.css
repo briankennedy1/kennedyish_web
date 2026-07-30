@@ -639,6 +639,9 @@ a {
 }
 
 .mini-project-heading {
+  position: relative;
+  z-index: 1;
+  width: 100%;
   margin-bottom: 54px;
   text-align: center;
 }

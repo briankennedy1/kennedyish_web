@@ -40,12 +40,11 @@ export function VideoDetail({ video }: { video: Video }) {
         {video.projects?.map((project) => (
           <section className="mini-project-section" key={project.label}>
             <div className="shell">
-              <div className="mini-project-heading">
-                <p className="mini-project-label">{project.label}</p>
-                <h2>{project.subtitle}</h2>
-              </div>
-
               <div className="mini-project-art">
+                <div className="mini-project-heading">
+                  <p className="mini-project-label">{project.label}</p>
+                  <h2>{project.subtitle}</h2>
+                </div>
                 <img
                   src={sitePath(project.image)}
                   alt={project.imageAlt}
