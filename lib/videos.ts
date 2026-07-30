@@ -77,7 +77,7 @@ export const videos: Video[] = [
             name: "Klein Screwdriver",
             url: "https://amzn.to/4x3XJ9U",
             source: "Amazon",
-            image: "/images/video-6/kleindriver-art-v3.png",
+            image: "/images/video-6/kleindriver-art-redo-v1.png",
           },
         ],
       },
