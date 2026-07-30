@@ -91,27 +91,27 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
   assert.match(html, /combined-extensioncord-art-v2\.png/);
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/4q6smcN"[^>]*>[\s\S]*?extensioncord-art-v2\.png[\s\S]*?Extension Cord/,
+    /href="https:\/\/amzn\.to\/4q6smcN"[^>]*>[\s\S]*?extensioncord-art-v2\.png[\s\S]*?extension cord/,
   );
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/4yIkgux"[^>]*>[\s\S]*?lightedoutlet-art-v2\.png[\s\S]*?Lighted Male Plug/,
+    /href="https:\/\/amzn\.to\/4yIkgux"[^>]*>[\s\S]*?lightedoutlet-art-v2\.png[\s\S]*?lighted male plug/,
   );
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/4vTBeU3"[^>]*>[\s\S]*?outletcover-art-v2\.png[\s\S]*?Plug Cover/,
+    /href="https:\/\/amzn\.to\/4vTBeU3"[^>]*>[\s\S]*?outletcover-art-v2\.png[\s\S]*?plug cover/,
   );
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/4pKtgLP"[^>]*>[\s\S]*?kleincatapult-art-v1\.png[\s\S]*?Klein Stripper/,
+    /href="https:\/\/amzn\.to\/4pKtgLP"[^>]*>[\s\S]*?kleincatapult-art-v1\.png[\s\S]*?klein stripper/,
   );
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/4x3XJ9U"[^>]*>[\s\S]*?kleindriver-art-redo-v1\.png[\s\S]*?Klein Screwdriver/,
+    /href="https:\/\/amzn\.to\/4x3XJ9U"[^>]*>[\s\S]*?kleindriver-art-redo-v1\.png[\s\S]*?klein screwdriver/,
   );
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/4fGFnEZ"[^>]*>[\s\S]*?kleinsidecutters-art-v1\.png[\s\S]*?Klein Sidecutters/,
+    /href="https:\/\/amzn\.to\/4fGFnEZ"[^>]*>[\s\S]*?kleinsidecutters-art-v1\.png[\s\S]*?klein sidecutters/,
   );
   assert.match(html, /If it&#x27;s a life or death situation/);
   assert.match(html, /zombie apocalypse, World War III/);

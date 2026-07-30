@@ -53,37 +53,37 @@ export const videos: Video[] = [
           "A homemade extension cord assembled with a lighted male plug and plug cover",
         products: [
           {
-            name: "Extension Cord",
+            name: "extension cord",
             url: "https://amzn.to/4q6smcN",
             source: "Amazon",
             image: "/images/video-6/extensioncord-art-v2.png",
           },
           {
-            name: "Lighted Male Plug",
+            name: "lighted male plug",
             url: "https://amzn.to/4yIkgux",
             source: "Amazon",
             image: "/images/video-6/lightedoutlet-art-v2.png",
           },
           {
-            name: "Plug Cover",
+            name: "plug cover",
             url: "https://amzn.to/4vTBeU3",
             source: "Amazon",
             image: "/images/video-6/outletcover-art-v2.png",
           },
           {
-            name: "Klein Stripper",
+            name: "klein stripper",
             url: "https://amzn.to/4pKtgLP",
             source: "Amazon",
             image: "/images/video-6/kleincatapult-art-v1.png",
           },
           {
-            name: "Klein Screwdriver",
+            name: "klein screwdriver",
             url: "https://amzn.to/4x3XJ9U",
             source: "Amazon",
             image: "/images/video-6/kleindriver-art-redo-v1.png",
           },
           {
-            name: "Klein Sidecutters",
+            name: "klein sidecutters",
             url: "https://amzn.to/4fGFnEZ",
             source: "Amazon",
             image: "/images/video-6/kleinsidecutters-art-v1.png",
