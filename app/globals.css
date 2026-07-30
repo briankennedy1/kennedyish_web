@@ -1728,34 +1728,67 @@ a {
   width: fit-content;
   max-width: 100%;
   margin: 34px auto 0;
-  padding: 10px 19px 11px;
-  border: 2px solid rgba(72, 35, 17, 0.78);
-  border-radius: 3px;
-  color: #4b2816;
+  padding: 11px 38px 12px;
+  border: 2px solid var(--home-navy);
+  border-radius: 5px;
+  color: var(--home-navy);
   background:
-    radial-gradient(
-      ellipse at center,
-      rgba(79, 38, 16, 0.11),
-      transparent 72%
-    );
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.72),
+      rgba(255, 255, 255, 0.08) 34%,
+      rgba(22, 36, 58, 0.08) 100%
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(22, 36, 58, 0.025) 0 1px,
+      transparent 1px 4px
+    ),
+    var(--home-cream);
   box-shadow:
-    inset 0 0 0 1px rgba(48, 22, 11, 0.48),
-    inset 0 0 9px rgba(69, 31, 13, 0.3),
-    0 1px 0 rgba(250, 247, 239, 0.18);
+    0 3px 0 rgba(22, 36, 58, 0.34),
+    0 6px 8px rgba(22, 36, 58, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    inset 0 -2px 0 rgba(22, 36, 58, 0.12);
   clip-path: none;
-  rotate: -0.35deg;
+  rotate: 0.25deg;
   font-family: var(--font-hanken), "Arial Black", sans-serif;
-  font-size: clamp(17px, 1.8vw, 24px);
+  font-size: clamp(16px, 1.65vw, 22px);
   font-style: normal;
   font-weight: 900;
-  letter-spacing: 0.055em;
+  letter-spacing: 0.04em;
   line-height: 1;
   text-shadow:
-    0 -1px 0 rgba(42, 17, 8, 0.92),
-    1px 1px 0 rgba(244, 192, 83, 0.18),
-    0 0 4px rgba(62, 27, 11, 0.4);
-  filter: saturate(0.85);
-  mix-blend-mode: multiply;
+    0 1px 0 rgba(255, 255, 255, 0.72),
+    0 -1px 0 rgba(22, 36, 58, 0.22);
+  filter: none;
+  mix-blend-mode: normal;
+}
+
+.home-page .about-tagline::before,
+.home-page .about-tagline::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  top: 50%;
+  translate: 0 -50%;
+  border: 1px solid rgba(22, 36, 58, 0.72);
+  border-radius: 50%;
+  background:
+    linear-gradient(135deg, transparent 43%, rgba(22, 36, 58, 0.64) 44% 56%, transparent 57%),
+    #d2c7ae;
+  box-shadow:
+    inset 1px 1px 0 rgba(255, 255, 255, 0.7),
+    1px 1px 1px rgba(22, 36, 58, 0.22);
+}
+
+.home-page .about-tagline::before {
+  left: 12px;
+}
+
+.home-page .about-tagline::after {
+  right: 12px;
 }
 
 .home-page .about-lower {
@@ -2314,8 +2347,8 @@ a {
 
   .home-page .about-tagline {
     margin-top: 28px;
-    padding: 9px 13px 10px;
-    font-size: clamp(16px, 4.8vw, 21px);
+    padding: 10px 32px 11px;
+    font-size: clamp(15px, 4.5vw, 19px);
     text-align: center;
   }
 
