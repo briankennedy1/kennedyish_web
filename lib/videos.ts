@@ -161,7 +161,20 @@ export const videos: Video[] = [
         label: "UGLY",
         subtitle: "it's better than bad",
         theme: "blue",
-        products: [],
+        products: [
+          {
+            name: "weatherproof box",
+            url: "https://amzn.to/3RF9WD2",
+            source: "Amazon",
+            image: "/images/video-6/outdoorbox-art-v1.png",
+          },
+          {
+            name: "inlet receptacle",
+            url: "https://amzn.to/4c8Vb28",
+            source: "Amazon",
+            image: "/images/video-6/box-art-v2.png",
+          },
+        ],
       },
     ],
     products: [],

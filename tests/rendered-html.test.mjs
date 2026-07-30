@@ -128,6 +128,14 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
     html,
     /mini-project-section mini-project-section-blue[\s\S]*?mini-project-art-heading-only/,
   );
+  assert.match(
+    html,
+    /href="https:\/\/amzn\.to\/3RF9WD2"[^>]*>[\s\S]*?outdoorbox-art-v1\.png[\s\S]*?weatherproof box/,
+  );
+  assert.match(
+    html,
+    /href="https:\/\/amzn\.to\/4c8Vb28"[^>]*>[\s\S]*?box-art-v2\.png[\s\S]*?inlet receptacle/,
+  );
   assert.ok(
     html.indexOf(">UGLY<") <
       html.indexOf("Some links may be affiliate links"),
