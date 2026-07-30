@@ -6,6 +6,13 @@ export type Product = {
   image?: string;
 };
 
+export type MiniProjectStep = {
+  number: number;
+  text: string;
+  image: string;
+  imageAlt: string;
+};
+
 export type MiniProject = {
   label: string;
   subtitle: string;
@@ -13,6 +20,7 @@ export type MiniProject = {
   image: string;
   imageAlt: string;
   products: Product[];
+  steps?: MiniProjectStep[];
 };
 
 export type Video = {
@@ -87,6 +95,64 @@ export const videos: Video[] = [
             url: "https://amzn.to/4fGFnEZ",
             source: "Amazon",
             image: "/images/video-6/kleinsidecutters-art-v1.png",
+          },
+        ],
+        steps: [
+          {
+            number: 1,
+            text: "Turn generator power off",
+            image: "/images/video-6/steps01/step-01-generator-off.png",
+            imageAlt: "Generator with its power switch turned off",
+          },
+          {
+            number: 2,
+            text: "Break connection with main grid power",
+            image: "/images/video-6/steps01/step-02-grid-disconnected.png",
+            imageAlt: "Broken electrical connection between the grid and a house",
+          },
+          {
+            number: 3,
+            text: "turn all breakers off",
+            image: "/images/video-6/steps01/step-03-breakers-off.png",
+            imageAlt: "Electrical panel with every breaker switched off",
+          },
+          {
+            number: 4,
+            text: "keep cover plug on non-lighted side",
+            image: "/images/video-6/steps01/step-04-cover-on.png",
+            imageAlt: "Covered plug beside an electrical hazard symbol",
+          },
+          {
+            number: 5,
+            text: "Insert lighted plug into DEAD power receptacle",
+            image: "/images/video-6/steps01/step-05-lighted-plug.png",
+            imageAlt: "Lighted plug being inserted into a dead receptacle",
+          },
+          {
+            number: 6,
+            text:
+              "remove plastic cover and plug non lighted side into generator power source",
+            image: "/images/video-6/steps01/step-06-generator-plug.png",
+            imageAlt: "Uncovered plug aligned with a generator receptacle",
+          },
+          {
+            number: 7,
+            text: "turn generator power on",
+            image: "/images/video-6/steps01/step-07-generator-on.png",
+            imageAlt: "Generator with its power switch turned on",
+          },
+          {
+            number: 8,
+            text: "Single circuit will be powered",
+            image: "/images/video-6/steps01/step-08-single-circuit.png",
+            imageAlt: "House with one energized circuit",
+          },
+          {
+            number: 9,
+            text:
+              "Turn on other home breakers to share power to other circuits on same leg",
+            image: "/images/video-6/steps01/step-09-share-power.png",
+            imageAlt: "Electrical panel sharing power with several home circuits",
           },
         ],
       },

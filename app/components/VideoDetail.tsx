@@ -78,6 +78,27 @@ export function VideoDetail({ video }: { video: Video }) {
               {project.note && (
                 <p className="mini-project-note">{project.note}</p>
               )}
+
+              {project.steps && (
+                <div className="mini-project-step-grid">
+                  {project.steps.map((step) => (
+                    <article
+                      className="mini-project-step-card"
+                      key={step.number}
+                    >
+                      <p className="mini-project-step-number">
+                        Step {step.number}
+                      </p>
+                      <img
+                        src={sitePath(step.image)}
+                        alt={step.imageAlt}
+                        loading="lazy"
+                      />
+                      <p className="mini-project-step-text">{step.text}</p>
+                    </article>
+                  ))}
+                </div>
+              )}
             </div>
             <p className="affiliate-note">
               Some links may be affiliate links. If you buy through them, it

@@ -912,6 +912,84 @@ a {
   rotate: 3deg;
 }
 
+.mini-project-step-grid {
+  margin-top: 62px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px 24px;
+}
+
+.mini-project-step-card {
+  position: relative;
+  min-width: 0;
+  padding: 18px;
+  background-color: var(--art-paper);
+  background-image: radial-gradient(
+    circle at 20% 30%,
+    rgba(37, 36, 34, 0.08) 0 0.6px,
+    transparent 0.9px
+  );
+  background-size: 14px 14px;
+  box-shadow: 5px 7px 0 rgba(22, 36, 58, 0.18);
+}
+
+.mini-project-step-card::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 82px;
+  height: 23px;
+  top: -10px;
+  left: 50%;
+  translate: -50%;
+  rotate: -2deg;
+  background: rgba(241, 232, 213, 0.86);
+  box-shadow: 1px 2px 0 rgba(22, 36, 58, 0.1);
+}
+
+.mini-project-step-card:nth-child(3n + 1) {
+  rotate: -0.45deg;
+}
+
+.mini-project-step-card:nth-child(3n + 2) {
+  rotate: 0.35deg;
+}
+
+.mini-project-step-card:nth-child(3n) {
+  rotate: -0.2deg;
+}
+
+.mini-project-step-number,
+.mini-project-step-text {
+  font-family: "Courier New", Courier, monospace;
+  color: var(--art-navy);
+}
+
+.mini-project-step-number {
+  margin: 2px 0 13px;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.mini-project-step-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 2px solid var(--art-navy);
+  object-fit: cover;
+}
+
+.mini-project-step-text {
+  min-height: 5.4em;
+  margin: 15px 1px 2px;
+  font-size: clamp(16px, 1.55vw, 19px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.35;
+}
+
 .mini-project-section .affiliate-note {
   width: fit-content;
   position: relative;
@@ -1133,6 +1211,10 @@ a {
 
   .episode-facts {
     width: min(100%, 440px);
+  }
+
+  .mini-project-step-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1362,6 +1444,31 @@ a {
     padding: 30px 22px 26px;
     font-size: 15px;
     line-height: 1.55;
+  }
+
+  .mini-project-step-grid {
+    margin-top: 50px;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .mini-project-step-card {
+    padding: 14px;
+  }
+
+  .mini-project-step-card:nth-child(n) {
+    rotate: 0deg;
+  }
+
+  .mini-project-step-number {
+    margin-bottom: 11px;
+    font-size: 20px;
+  }
+
+  .mini-project-step-text {
+    min-height: 0;
+    margin-top: 13px;
+    font-size: 17px;
   }
 
   .product-card {

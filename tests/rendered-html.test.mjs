@@ -119,6 +119,21 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
     html,
     /one full leg of a split-phase system instead of having to use many extension cords/,
   );
+  assert.match(html, /Step <!-- -->1/);
+  assert.match(html, /step-01-generator-off\.png/);
+  assert.match(html, /Turn generator power off/);
+  assert.match(html, /Break connection with main grid power/);
+  assert.match(html, /Insert lighted plug into DEAD power receptacle/);
+  assert.match(
+    html,
+    /remove plastic cover and plug non lighted side into generator power source/,
+  );
+  assert.match(html, /Step <!-- -->9/);
+  assert.match(html, /step-09-share-power\.png/);
+  assert.match(
+    html,
+    /Turn on other home breakers to share power to other circuits on same leg/,
+  );
   assert.doesNotMatch(html, /youtube-nocookie\.com\/embed/);
   assert.doesNotMatch(html, /Products used/);
 });
