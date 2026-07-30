@@ -758,6 +758,7 @@ a {
 }
 
 .mini-project-product-image {
+  position: relative;
   aspect-ratio: 4 / 3;
   display: grid;
   place-items: center;
@@ -782,7 +783,12 @@ a {
 }
 
 .mini-project-product-card:nth-child(2) .mini-project-product-image img {
-  transform: scale(0.82);
+  position: absolute;
+  inset: 12px 20px;
+  width: calc(100% - 40px);
+  height: calc(100% - 24px);
+  padding: 0;
+  transform: none;
 }
 
 .mini-project-product-card:nth-child(3) .mini-project-product-image {
