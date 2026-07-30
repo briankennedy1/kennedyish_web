@@ -2158,15 +2158,8 @@ a {
 }
 
 .home-page .about-actions .button-gradient > span {
-  width: 23px;
-  height: 23px;
-  border: 1px solid rgba(22, 36, 58, 0.55);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  background: rgba(78, 140, 135, 0.22);
-  font-size: 12px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.56);
+  font-size: 17px;
+  line-height: 1;
 }
 
 .home-page .videos-section {
