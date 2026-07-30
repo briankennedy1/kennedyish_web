@@ -71,6 +71,8 @@ export default function Home() {
               <a
                 className="button button-gradient"
                 href="mailto:kennedyishcontact@gmail.com"
+                target="_blank"
+                rel="noreferrer"
               >
                 <span aria-hidden="true">💬</span> Contact
               </a>
