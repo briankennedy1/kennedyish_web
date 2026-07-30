@@ -2237,10 +2237,7 @@ a {
   background-size: 13px 13px;
   box-shadow: 7px 9px 0 rgba(22, 36, 58, 0.26);
   rotate: -0.7deg;
-  transition:
-    translate 120ms ease,
-    rotate 180ms ease,
-    box-shadow 180ms ease;
+  transition: none;
 }
 
 .home-page .video-card::before {
@@ -2261,16 +2258,19 @@ a {
   rotate: 0.55deg;
 }
 
-.home-page .video-card:hover {
-  box-shadow: 4px 6px 0 rgba(22, 36, 58, 0.28);
-  translate: 3px 3px;
-  rotate: 0deg;
-}
-
 .home-page .video-card-image {
   border: 2px solid var(--home-navy);
   border-radius: 0;
   background: var(--home-mustard);
+}
+
+.home-page .video-card-image img {
+  transition: transform 300ms cubic-bezier(0.2, 0.75, 0.25, 1);
+  transform-origin: center;
+}
+
+.home-page .video-card:hover .video-card-image img {
+  transform: scale(1.06);
 }
 
 .home-page .video-card-image::after {
