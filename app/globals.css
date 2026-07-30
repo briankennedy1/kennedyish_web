@@ -585,7 +585,7 @@ a {
   --art-charcoal: #252422;
 
   position: relative;
-  padding: 112px 0;
+  padding: 64px 0;
   overflow: hidden;
   color: var(--art-navy);
   background-color: var(--art-cream);
@@ -607,35 +607,32 @@ a {
 
 .mini-project-section::before,
 .mini-project-section::after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-}
-
-.mini-project-section::before {
-  width: 330px;
-  height: 330px;
-  top: -170px;
-  right: -95px;
-  border-radius: 50%;
-  background: var(--art-mustard);
-  box-shadow: 9px 11px 0 rgba(22, 36, 58, 0.14);
-}
-
-.mini-project-section::after {
-  width: 420px;
-  height: 120px;
-  left: -150px;
-  bottom: 64px;
-  rotate: -7deg;
-  background: var(--art-teal);
-  box-shadow: 9px 11px 0 rgba(22, 36, 58, 0.12);
-  clip-path: polygon(0 18%, 8% 9%, 17% 15%, 25% 5%, 34% 13%, 44% 4%, 55% 11%, 65% 3%, 74% 12%, 84% 5%, 93% 14%, 100% 8%, 98% 86%, 88% 93%, 77% 87%, 65% 96%, 54% 89%, 42% 97%, 31% 90%, 19% 96%, 8% 88%, 0 94%);
+  content: none;
 }
 
 .mini-project-section > .shell {
   position: relative;
   z-index: 1;
+  padding: clamp(42px, 4vw, 56px) clamp(22px, 4vw, 52px);
+  background-color: var(--art-mustard);
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(22, 36, 58, 0.34) 0 2px,
+      transparent 2.3px
+    ),
+    radial-gradient(
+      circle at 22% 38%,
+      rgba(250, 247, 239, 0.12) 0 0.7px,
+      transparent 1px
+    );
+  background-position:
+    14px 14px,
+    0 0;
+  background-size:
+    18px 18px,
+    13px 13px;
+  box-shadow: 6px 8px 0 rgba(22, 36, 58, 0.2);
 }
 
 .mini-project-heading {
@@ -664,8 +661,22 @@ a {
 }
 
 .mini-project-heading h2 {
-  margin: 34px auto 0;
+  position: relative;
+  width: fit-content;
+  max-width: 94%;
+  margin: 46px auto 0;
+  padding: 15px 30px 18px;
   color: var(--art-navy);
+  background-color: var(--art-paper);
+  background-image: radial-gradient(
+    circle at 20% 30%,
+    rgba(37, 36, 34, 0.09) 0 0.65px,
+    transparent 0.95px
+  );
+  background-size: 13px 13px;
+  box-shadow: 7px 8px 0 rgba(22, 36, 58, 0.22);
+  clip-path: polygon(0.8% 4%, 99.2% 0, 100% 94%, 1.2% 100%);
+  rotate: 0.35deg;
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(30px, 4.5vw, 56px);
   font-weight: 900;
@@ -673,46 +684,27 @@ a {
   line-height: 0.98;
 }
 
+.mini-project-heading h2::before {
+  content: "";
+  position: absolute;
+  width: 96px;
+  height: 25px;
+  top: -12px;
+  left: 50%;
+  translate: -50%;
+  rotate: -2.5deg;
+  background: rgba(241, 232, 213, 0.82);
+  box-shadow: 1px 2px 0 rgba(22, 36, 58, 0.12);
+}
+
 .mini-project-art {
   position: relative;
   min-height: 380px;
-  padding: clamp(24px, 5vw, 68px);
-  border: 3px solid var(--art-navy);
+  margin-top: -30px;
+  padding: 8px clamp(8px, 3vw, 38px) 12px;
   display: grid;
   place-items: center;
-  overflow: hidden;
-  background-color: var(--art-mustard);
-  background-image: radial-gradient(
-    circle,
-    rgba(22, 36, 58, 0.34) 0 2px,
-    transparent 2.3px
-  );
-  background-position: 14px 14px;
-  background-size: 18px 18px;
-  box-shadow: 12px 14px 0 var(--art-navy);
-  clip-path: polygon(0.5% 1.2%, 99.2% 0, 100% 98.4%, 1.1% 100%);
-}
-
-.mini-project-art::before,
-.mini-project-art::after {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  width: 112px;
-  height: 30px;
-  background: rgba(250, 247, 239, 0.78);
-}
-
-.mini-project-art::before {
-  top: 17px;
-  left: 16%;
-  rotate: -7deg;
-}
-
-.mini-project-art::after {
-  right: 14%;
-  bottom: 19px;
-  rotate: 6deg;
+  overflow: visible;
 }
 
 .mini-project-art img {
@@ -720,6 +712,7 @@ a {
   z-index: 1;
   width: 100%;
   max-height: 560px;
+  margin-top: -62px;
   object-fit: contain;
   filter: drop-shadow(10px 12px 0 rgba(22, 36, 58, 0.2));
 }
@@ -732,37 +725,60 @@ a {
 }
 
 .mini-project-product-card {
+  position: relative;
   min-width: 0;
-  border: 3px solid var(--art-navy);
-  overflow: hidden;
+  padding: 14px 14px 0;
+  overflow: visible;
   background: var(--art-paper);
-  box-shadow: 8px 10px 0 var(--art-navy);
-  clip-path: polygon(0.8% 0.7%, 99% 0, 100% 98.7%, 0 100%);
+  box-shadow: 7px 9px 0 rgba(22, 36, 58, 0.26);
   transition:
     translate 120ms ease,
     box-shadow 180ms ease;
 }
 
+.mini-project-product-card::before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  width: 92px;
+  height: 26px;
+  top: -11px;
+  left: 50%;
+  translate: -50%;
+  rotate: -2deg;
+  background: rgba(241, 232, 213, 0.84);
+  box-shadow: 1px 2px 0 rgba(22, 36, 58, 0.12);
+}
+
 .mini-project-product-card:nth-child(1) {
-  rotate: -0.45deg;
+  rotate: -0.7deg;
 }
 
 .mini-project-product-card:nth-child(2) {
-  rotate: 0.35deg;
+  rotate: 0.55deg;
 }
 
 .mini-project-product-card:nth-child(3) {
-  rotate: -0.25deg;
+  rotate: -0.4deg;
+}
+
+.mini-project-product-card:nth-child(4) {
+  rotate: 0.6deg;
+}
+
+.mini-project-product-card:nth-child(5) {
+  rotate: -0.55deg;
 }
 
 .mini-project-product-card:hover {
   translate: 3px 3px;
-  box-shadow: 5px 7px 0 var(--art-navy);
+  box-shadow: 4px 6px 0 rgba(22, 36, 58, 0.28);
 }
 
 .mini-project-product-image {
   position: relative;
   aspect-ratio: 4 / 3;
+  border: 2px solid var(--art-navy);
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -798,6 +814,18 @@ a {
   background-color: var(--art-tomato);
 }
 
+.mini-project-product-card:nth-child(4) .mini-project-product-image {
+  background-color: var(--art-tomato);
+}
+
+.mini-project-product-card:nth-child(5) .mini-project-product-image {
+  background-color: var(--art-teal);
+}
+
+.mini-project-product-card:nth-child(6) .mini-project-product-image {
+  background-color: var(--art-mustard);
+}
+
 .mini-project-product-image img {
   position: absolute;
   inset: 18px;
@@ -811,8 +839,7 @@ a {
 .mini-project-product-card h3 {
   min-height: 92px;
   margin: 0;
-  padding: 22px 20px;
-  border-top: 3px solid var(--art-navy);
+  padding: 22px 6px;
   display: flex;
   align-items: center;
   color: var(--art-navy);
@@ -1179,8 +1206,12 @@ a {
   }
 
   .mini-project-section {
-    padding-top: 76px;
-    padding-bottom: 76px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .mini-project-section > .shell {
+    padding: 36px 16px;
   }
 
   .mini-project-section::before {
@@ -1205,15 +1236,20 @@ a {
 
   .mini-project-art {
     min-height: 240px;
-    padding: 24px 16px;
-    box-shadow: 7px 8px 0 var(--art-navy);
+    margin-top: -20px;
+    padding: 8px 0 12px;
+    box-shadow: none;
+  }
+
+  .mini-project-art > img {
+    margin-top: -36px;
   }
 
   .mini-project-product-card {
     display: grid;
     grid-template-columns: 120px 1fr;
     align-items: center;
-    box-shadow: 6px 7px 0 var(--art-navy);
+    box-shadow: 5px 7px 0 rgba(22, 36, 58, 0.26);
   }
 
   .mini-project-product-image {
@@ -1227,7 +1263,7 @@ a {
     min-height: 100%;
     padding: 18px 16px;
     border-top: 0;
-    border-left: 3px solid var(--art-navy);
+    border-left: 0;
     font-size: 22px;
   }
 
