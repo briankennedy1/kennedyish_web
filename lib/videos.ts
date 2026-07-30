@@ -16,9 +16,10 @@ export type MiniProjectStep = {
 export type MiniProject = {
   label: string;
   subtitle: string;
+  theme?: "mustard" | "blue";
   note?: string;
-  image: string;
-  imageAlt: string;
+  image?: string;
+  imageAlt?: string;
   products: Product[];
   steps?: MiniProjectStep[];
 };
@@ -155,6 +156,12 @@ export const videos: Video[] = [
             imageAlt: "Electrical panel sharing power with several home circuits",
           },
         ],
+      },
+      {
+        label: "UGLY",
+        subtitle: "it's better than bad",
+        theme: "blue",
+        products: [],
       },
     ],
     products: [],

@@ -635,6 +635,10 @@ a {
   box-shadow: 6px 8px 0 rgba(22, 36, 58, 0.2);
 }
 
+.mini-project-section-blue > .shell {
+  background-color: var(--art-teal);
+}
+
 .mini-project-heading {
   position: relative;
   z-index: 2;
@@ -705,6 +709,16 @@ a {
   display: grid;
   place-items: center;
   overflow: visible;
+}
+
+.mini-project-art.mini-project-art-heading-only {
+  min-height: 0;
+  margin-top: 0;
+  padding-block: 12px;
+}
+
+.mini-project-art-heading-only .mini-project-heading {
+  margin-bottom: 0;
 }
 
 .mini-project-art img {
@@ -990,15 +1004,34 @@ a {
   line-height: 1.35;
 }
 
-.mini-project-section .affiliate-note {
+.mini-project-affiliate-footer {
+  padding: 28px 15px 64px;
+  background-color: #f1e8d5;
+  background-image:
+    radial-gradient(
+      circle at 18% 12%,
+      rgba(37, 36, 34, 0.11) 0 0.65px,
+      transparent 0.9px
+    ),
+    radial-gradient(
+      circle at 72% 76%,
+      rgba(37, 36, 34, 0.07) 0 0.75px,
+      transparent 1px
+    );
+  background-size:
+    13px 13px,
+    19px 19px;
+}
+
+.mini-project-affiliate-footer .affiliate-note {
   width: fit-content;
   position: relative;
   z-index: 1;
-  margin: 28px auto 0;
+  margin: 0 auto;
   padding: 9px 14px;
-  border-left: 7px solid var(--art-teal);
-  color: var(--art-charcoal);
-  background: var(--art-paper);
+  border-left: 7px solid #4e8c87;
+  color: #252422;
+  background: #faf7ef;
   box-shadow: 4px 5px 0 rgba(22, 36, 58, 0.16);
   font-size: 13px;
 }
@@ -1433,7 +1466,7 @@ a {
     gap: 16px;
   }
 
-  .mini-project-section .affiliate-note {
+  .mini-project-affiliate-footer .affiliate-note {
     margin-right: auto;
     margin-left: auto;
   }

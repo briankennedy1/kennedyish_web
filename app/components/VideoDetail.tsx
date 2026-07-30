@@ -38,53 +38,67 @@ export function VideoDetail({ video }: { video: Video }) {
         </section>
 
         {video.projects?.map((project) => (
-          <section className="mini-project-section" key={project.label}>
+          <section
+            className={`mini-project-section mini-project-section-${project.theme ?? "mustard"}`}
+            key={project.label}
+          >
             <div className="shell">
-              <div className="mini-project-art">
+              <div
+                className={`mini-project-art${project.image ? "" : " mini-project-art-heading-only"}`}
+              >
                 <div className="mini-project-heading">
                   <p className="mini-project-label">{project.label}</p>
                   <h2>{project.subtitle}</h2>
                 </div>
-                <img
-                  src={sitePath(project.image)}
-                  alt={project.imageAlt}
-                  loading="lazy"
-                />
+                {project.image && (
+                  <img
+                    src={sitePath(project.image)}
+                    alt={project.imageAlt ?? ""}
+                    loading="lazy"
+                  />
+                )}
               </div>
 
-              <div className="mini-project-product-grid">
-                {project.products.map((product) => (
-                  <a
-                    className="mini-project-product-card"
-                    href={product.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    key={product.name}
-                  >
-                    <div className="mini-project-product-image">
-                      {product.image && (
-                        <img
-                          src={sitePath(product.image)}
-                          alt=""
-                          loading="lazy"
-                        />
-                      )}
-                    </div>
-                    <h3>{product.name}</h3>
-                  </a>
-                ))}
-              </div>
+              {project.products.length > 0 && (
+                <div className="mini-project-product-grid">
+                  {project.products.map((product) => (
+                    <a
+                      className="mini-project-product-card"
+                      href={product.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      key={product.name}
+                    >
+                      <div className="mini-project-product-image">
+                        {product.image && (
+                          <img
+                            src={sitePath(product.image)}
+                            alt=""
+                            loading="lazy"
+                          />
+                        )}
+                      </div>
+                      <h3>{product.name}</h3>
+                    </a>
+                  ))}
+                </div>
+              )}
 
               {project.note && (
                 <p className="mini-project-note">{project.note}</p>
               )}
             </div>
+          </section>
+        ))}
+
+        {video.projects?.some((project) => project.products.length > 0) && (
+          <div className="mini-project-affiliate-footer">
             <p className="affiliate-note">
               Some links may be affiliate links. If you buy through them, it
               will support the channel at no extra cost to you.
             </p>
-          </section>
-        ))}
+          </div>
+        )}
 
         {video.products.length > 0 && (
           <section className="products-section">
