@@ -826,6 +826,10 @@ a {
   background-color: var(--art-mustard);
 }
 
+.mini-project-product-card:nth-child(6) .mini-project-product-image img {
+  transform: rotate(45deg) scale(1.12);
+}
+
 .mini-project-product-image img {
   position: absolute;
   inset: 18px;
