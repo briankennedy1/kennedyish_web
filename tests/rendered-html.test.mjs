@@ -115,6 +115,10 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
   );
   assert.match(html, /If it&#x27;s a life or death situation/);
   assert.match(html, /zombie apocalypse, World War III/);
+  assert.match(
+    html,
+    /one full leg of split phase instead of having to use many extension cords/,
+  );
   assert.doesNotMatch(html, /youtube-nocookie\.com\/embed/);
   assert.doesNotMatch(html, /Products used/);
 });
