@@ -1640,6 +1640,7 @@ a {
   justify-self: center;
   grid-column: 1;
   grid-row: 1;
+  z-index: 1;
   aspect-ratio: 3 / 4;
   overflow: visible;
   border: 3px solid var(--home-navy);
@@ -1678,9 +1679,10 @@ a {
 .home-page .about-content {
   grid-column: 2;
   grid-row: 1;
-  align-self: center;
+  z-index: 2;
+  align-self: start;
   max-width: none;
-  padding: clamp(20px, 3vw, 42px) clamp(10px, 2vw, 28px)
+  padding: clamp(10px, 1.6vw, 22px) clamp(10px, 2vw, 28px)
     clamp(16px, 2vw, 28px);
 }
 
@@ -1738,10 +1740,12 @@ a {
 }
 
 .home-page .about-lower {
+  position: relative;
   grid-column: 1 / -1;
   grid-row: 2;
+  z-index: 3;
   width: 100%;
-  margin-top: 0;
+  margin-top: clamp(-195px, -14vw, -165px);
 }
 
 .home-page .about-intro {
@@ -2041,6 +2045,7 @@ a {
   .home-page .about-lower {
     grid-column: 1;
     grid-row: 3;
+    margin-top: -150px;
   }
 
   .home-page .about-tagline {
@@ -2089,7 +2094,7 @@ a {
   }
 
   .home-page .about-lower {
-    margin-top: 0;
+    margin-top: -145px;
   }
 
   .home-page .about-intro {
