@@ -47,7 +47,7 @@ export const videos: Video[] = [
     title: "Powering my house with my electric truck",
     shortTitle: "Powering my house with my electric truck",
     description:
-      "My truck has a TON of battery energy, but how do I get that power into my house?",
+      "My truck has a TON of battery energy, but how do I get that power into my house? I'm going through the BAD, the UGLY and eventually get to the GOOD way to do this.",
     published: "Today",
     publishedDate: "July 29, 2026",
     image: "/images/powering-house-electric-truck-placeholder.jpg",
