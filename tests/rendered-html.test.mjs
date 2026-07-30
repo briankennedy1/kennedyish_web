@@ -90,33 +90,36 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
     /I&#x27;m going through the UGLY, the BAD and eventually get to the GOOD way to do this\./,
   );
   assert.match(html, /July 29, 2026/);
-  assert.match(html, /powering-house-electric-truck-placeholder\.jpg/);
+  assert.match(
+    html,
+    /powering-house-electric-truck-placeholder-1280\.webp/,
+  );
   assert.match(html, />BAD</);
   assert.match(html, /you know better, don&#x27;t build this/);
-  assert.match(html, /combined-extensioncord-art-v2\.png/);
+  assert.match(html, /combined-extensioncord-art-v2-1400\.webp/);
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/4q6smcN"[^>]*>[\s\S]*?extensioncord-art-v2\.png[\s\S]*?extension cord/,
+    /href="https:\/\/amzn\.to\/4q6smcN"[^>]*>[\s\S]*?extensioncord-art-v2-900\.webp[\s\S]*?extension cord/,
   );
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/4yIkgux"[^>]*>[\s\S]*?lightedoutlet-art-v2\.png[\s\S]*?lighted male plug/,
+    /href="https:\/\/amzn\.to\/4yIkgux"[^>]*>[\s\S]*?lightedoutlet-art-v2-900\.webp[\s\S]*?lighted male plug/,
   );
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/4vTBeU3"[^>]*>[\s\S]*?outletcover-art-v2\.png[\s\S]*?plug cover/,
+    /href="https:\/\/amzn\.to\/4vTBeU3"[^>]*>[\s\S]*?outletcover-art-v2-900\.webp[\s\S]*?plug cover/,
   );
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/4pKtgLP"[^>]*>[\s\S]*?kleincatapult-art-v1\.png[\s\S]*?klein stripper/,
+    /href="https:\/\/amzn\.to\/4pKtgLP"[^>]*>[\s\S]*?kleincatapult-art-v1-900\.webp[\s\S]*?klein stripper/,
   );
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/4x3XJ9U"[^>]*>[\s\S]*?kleindriver-art-redo-v1\.png[\s\S]*?klein screwdriver/,
+    /href="https:\/\/amzn\.to\/4x3XJ9U"[^>]*>[\s\S]*?kleindriver-art-redo-v1-900\.webp[\s\S]*?klein screwdriver/,
   );
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/4fGFnEZ"[^>]*>[\s\S]*?kleinsidecutters-art-v1\.png[\s\S]*?klein sidecutters/,
+    /href="https:\/\/amzn\.to\/4fGFnEZ"[^>]*>[\s\S]*?kleinsidecutters-art-v1-900\.webp[\s\S]*?klein sidecutters/,
   );
   assert.match(html, /If it&#x27;s a life or death situation/);
   assert.match(html, /zombie apocalypse, World War III/);
@@ -125,25 +128,25 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
     /one full leg of a split-phase system instead of having to use many extension cords/,
   );
   assert.doesNotMatch(html, /mini-project-step-grid/);
-  assert.doesNotMatch(html, /step-01-generator-off\.png/);
-  assert.doesNotMatch(html, /step-09-share-power\.png/);
+  assert.doesNotMatch(html, /step-01-generator-off-640\.webp/);
+  assert.doesNotMatch(html, /step-09-share-power-640\.webp/);
   assert.match(html, />LESS BAD</);
   assert.match(html, /it&#x27;s better than bad/);
   assert.match(
     html,
-    /mini-project-section mini-project-section-blue[\s\S]*?inletbox-lighted-cord-assembly-art-v4\.png/,
+    /mini-project-section mini-project-section-blue[\s\S]*?inletbox-lighted-cord-assembly-art-v4-1400\.webp/,
   );
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/3RF9WD2"[^>]*>[\s\S]*?outdoorbox-art-v1\.png[\s\S]*?weatherproof box/,
+    /href="https:\/\/amzn\.to\/3RF9WD2"[^>]*>[\s\S]*?outdoorbox-art-v1-900\.webp[\s\S]*?weatherproof box/,
   );
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/4wx5568"[^>]*>[\s\S]*?strain-art-v1\.png[\s\S]*?strain relief/,
+    /href="https:\/\/amzn\.to\/4wx5568"[^>]*>[\s\S]*?strain-art-v1-900\.webp[\s\S]*?strain relief/,
   );
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/4c8Vb28"[^>]*>[\s\S]*?box-art-v2\.png[\s\S]*?inlet receptacle/,
+    /href="https:\/\/amzn\.to\/4c8Vb28"[^>]*>[\s\S]*?box-art-v2-900\.webp[\s\S]*?inlet receptacle/,
   );
   assert.match(
     html,

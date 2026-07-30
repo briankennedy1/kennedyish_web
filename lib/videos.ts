@@ -50,14 +50,14 @@ export const videos: Video[] = [
       "My truck has a TON of battery energy, but how do I get that power into my house? I'm going through the UGLY, the BAD and eventually get to the GOOD way to do this.",
     published: "Today",
     publishedDate: "July 29, 2026",
-    image: "/images/powering-house-electric-truck-placeholder.jpg",
+    image: "/images/powering-house-electric-truck-placeholder-1280.webp",
     projects: [
       {
         label: "BAD",
         subtitle: "you know better, don't build this",
         note:
           "If it's a life or death situation, you should know how to make a suicide cord. It's called that because once you plug it in to power the other side is energized and EASILY able to give you a shock. I obviously DO NOT recommend this at all. But if it's the zombie apocalypse, World War III or a week after a 9.5 earthquake with no help in sight this is one way to power up a single circuit or to power one full leg of a split-phase system instead of having to use many extension cords.",
-        image: "/images/video-6/combined-extensioncord-art-v2.png",
+        image: "/images/video-6/combined-extensioncord-art-v2-1400.webp",
         imageAlt:
           "A homemade extension cord assembled with a lighted male plug and plug cover",
         products: [
@@ -65,94 +65,94 @@ export const videos: Video[] = [
             name: "extension cord",
             url: "https://amzn.to/4q6smcN",
             source: "Amazon",
-            image: "/images/video-6/extensioncord-art-v2.png",
+            image: "/images/video-6/extensioncord-art-v2-900.webp",
           },
           {
             name: "lighted male plug",
             url: "https://amzn.to/4yIkgux",
             source: "Amazon",
-            image: "/images/video-6/lightedoutlet-art-v2.png",
+            image: "/images/video-6/lightedoutlet-art-v2-900.webp",
           },
           {
             name: "plug cover",
             url: "https://amzn.to/4vTBeU3",
             source: "Amazon",
-            image: "/images/video-6/outletcover-art-v2.png",
+            image: "/images/video-6/outletcover-art-v2-900.webp",
           },
           {
             name: "klein stripper",
             url: "https://amzn.to/4pKtgLP",
             source: "Amazon",
-            image: "/images/video-6/kleincatapult-art-v1.png",
+            image: "/images/video-6/kleincatapult-art-v1-900.webp",
           },
           {
             name: "klein screwdriver",
             url: "https://amzn.to/4x3XJ9U",
             source: "Amazon",
-            image: "/images/video-6/kleindriver-art-redo-v1.png",
+            image: "/images/video-6/kleindriver-art-redo-v1-900.webp",
           },
           {
             name: "klein sidecutters",
             url: "https://amzn.to/4fGFnEZ",
             source: "Amazon",
-            image: "/images/video-6/kleinsidecutters-art-v1.png",
+            image: "/images/video-6/kleinsidecutters-art-v1-900.webp",
           },
         ],
         steps: [
           {
             number: 1,
             text: "Turn generator power off",
-            image: "/images/video-6/steps01/step-01-generator-off.png",
+            image: "/images/video-6/steps01/step-01-generator-off-640.webp",
             imageAlt: "Generator with its power switch turned off",
           },
           {
             number: 2,
             text: "Break connection with main grid power",
-            image: "/images/video-6/steps01/step-02-grid-disconnected.png",
+            image: "/images/video-6/steps01/step-02-grid-disconnected-640.webp",
             imageAlt: "Broken electrical connection between the grid and a house",
           },
           {
             number: 3,
             text: "turn all breakers off",
-            image: "/images/video-6/steps01/step-03-breakers-off.png",
+            image: "/images/video-6/steps01/step-03-breakers-off-640.webp",
             imageAlt: "Electrical panel with every breaker switched off",
           },
           {
             number: 4,
             text: "keep cover plug on non-lighted side",
-            image: "/images/video-6/steps01/step-04-cover-on.png",
+            image: "/images/video-6/steps01/step-04-cover-on-640.webp",
             imageAlt: "Covered plug beside an electrical hazard symbol",
           },
           {
             number: 5,
             text: "Insert lighted plug into DEAD power receptacle",
-            image: "/images/video-6/steps01/step-05-lighted-plug.png",
+            image: "/images/video-6/steps01/step-05-lighted-plug-640.webp",
             imageAlt: "Lighted plug being inserted into a dead receptacle",
           },
           {
             number: 6,
             text:
               "remove plastic cover and plug non lighted side into generator power source",
-            image: "/images/video-6/steps01/step-06-generator-plug.png",
+            image: "/images/video-6/steps01/step-06-generator-plug-640.webp",
             imageAlt: "Uncovered plug aligned with a generator receptacle",
           },
           {
             number: 7,
             text: "turn generator power on",
-            image: "/images/video-6/steps01/step-07-generator-on.png",
+            image: "/images/video-6/steps01/step-07-generator-on-640.webp",
             imageAlt: "Generator with its power switch turned on",
           },
           {
             number: 8,
             text: "Single circuit will be powered",
-            image: "/images/video-6/steps01/step-08-single-circuit.png",
+            image: "/images/video-6/steps01/step-08-single-circuit-640.webp",
             imageAlt: "House with one energized circuit",
           },
           {
             number: 9,
             text:
               "Turn on other home breakers to share power to other circuits on same leg",
-            image: "/images/video-6/steps01/step-09-share-power.png",
+            image: "/images/video-6/steps01/step-09-share-power-640.webp",
             imageAlt: "Electrical panel sharing power with several home circuits",
           },
         ],
@@ -161,7 +161,7 @@ export const videos: Video[] = [
         label: "LESS BAD",
         subtitle: "it's better than bad",
         theme: "blue",
-        image: "/images/video-6/inletbox-lighted-cord-assembly-art-v4.png",
+        image: "/images/video-6/inletbox-lighted-cord-assembly-art-v4-1400.webp",
         imageAlt:
           "A lighted extension cord connected to a covered inlet box assembly",
         note:
@@ -171,19 +171,19 @@ export const videos: Video[] = [
             name: "weatherproof box",
             url: "https://amzn.to/3RF9WD2",
             source: "Amazon",
-            image: "/images/video-6/outdoorbox-art-v1.png",
+            image: "/images/video-6/outdoorbox-art-v1-900.webp",
           },
           {
             name: "strain relief",
             url: "https://amzn.to/4wx5568",
             source: "Amazon",
-            image: "/images/video-6/strain-art-v1.png",
+            image: "/images/video-6/strain-art-v1-900.webp",
           },
           {
             name: "inlet receptacle",
             url: "https://amzn.to/4c8Vb28",
             source: "Amazon",
-            image: "/images/video-6/box-art-v2.png",
+            image: "/images/video-6/box-art-v2-900.webp",
           },
         ],
       },
@@ -201,7 +201,7 @@ export const videos: Video[] = [
       "Now that IKEA has jumped in, Matter over Thread is finally ready for the big leagues AND it's pretty affordable!",
     published: "2 months ago",
     publishedDate: "April 21, 2026",
-    image: "/images/9T-vmiHgYFI.jpg",
+    image: "/images/9T-vmiHgYFI.webp",
     products: [
       {
         name: "CanaKit Raspberry Pi 5 Starter Kit Pro",
@@ -292,7 +292,7 @@ export const videos: Video[] = [
       "It always starts as a simple project: make the network stuff look nice. But I just couldn't help myself and had to give my fancy new rack a fancy new home.",
     published: "3 months ago",
     publishedDate: "March 26, 2026",
-    image: "/images/CT7ARZAsB0E.jpg",
+    image: "/images/CT7ARZAsB0E.webp",
     products: [
       {
         name: "DeskPi RackMate T1",
@@ -306,7 +306,7 @@ export const videos: Video[] = [
         description: "Custom 3D-printed pieces that make small hardware rack-friendly.",
         url: "https://www.etsy.com/shop/Print3DSteve",
         source: "Etsy",
-        image: "/images/products/print3dsteve.png",
+        image: "/images/products/print3dsteve-640.webp",
       },
       {
         name: "GeekPi 12-port patch panel",
@@ -348,7 +348,7 @@ export const videos: Video[] = [
       "I thought my back patio would be covered with overflow WiFi from my backyard shed. But the latest and greatest 6ghz WiFi tech has a tough time penetrating through walls. Let’s build out an outdoor access point and do it right.",
     published: "4 months ago",
     publishedDate: "March 3, 2026",
-    image: "/images/tsxr_ECLVNs.jpg",
+    image: "/images/tsxr_ECLVNs.webp",
     products: [
       {
         name: "UniFi U7 Pro XG",
@@ -453,7 +453,7 @@ export const videos: Video[] = [
       "What better way to fill that hole inside me than to spend a bunch of money so file transfers are faster?",
     published: "5 months ago",
     publishedDate: "February 10, 2026",
-    image: "/images/xtVD7qWAVH0.jpg",
+    image: "/images/xtVD7qWAVH0.webp",
     products: [
       {
         name: "UniFi Cloud Gateway Fiber",
@@ -509,7 +509,7 @@ export const videos: Video[] = [
       "These old wall wart power adapters are such a pain, if only there was a way to replace them with something a little more sleek.",
     published: "6 months ago",
     publishedDate: "December 31, 2025",
-    image: "/images/2_4LWblPQPs.jpg",
+    image: "/images/2_4LWblPQPs.webp",
     products: [
       {
         name: "SUPERDANNY power strip",

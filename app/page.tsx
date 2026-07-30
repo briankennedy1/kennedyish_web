@@ -21,7 +21,12 @@ export default function Home() {
             </div>
             <div className="about-photo">
               <div className="about-photo-frame">
-                <img src={sitePath("/images/000full.jpg")} alt="Brian Kennedy" />
+                <img
+                  src={sitePath("/images/000full-960.webp")}
+                  alt="Brian Kennedy"
+                  fetchPriority="high"
+                  decoding="async"
+                />
               </div>
             </div>
             <div className="about-lower">

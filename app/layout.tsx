@@ -22,8 +22,8 @@ export function generateMetadata(): Metadata {
     description:
       "Brian Kennedy tests smart-home gear, rebuilds home networks, and tackles projects that make the house work better.",
     icons: {
-      icon: sitePath("/images/avatar.jpg"),
-      shortcut: sitePath("/images/avatar.jpg"),
+      icon: sitePath("/images/avatar-256.jpg"),
+      shortcut: sitePath("/images/avatar-256.jpg"),
     },
     openGraph: {
       title: "Brian Kennedy | home improvement tech",

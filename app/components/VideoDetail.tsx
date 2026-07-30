@@ -24,6 +24,7 @@ export function VideoDetail({ video }: { video: Video }) {
                   src={sitePath(video.image)}
                   alt={`Placeholder for ${video.title}`}
                   fetchPriority="high"
+                  decoding="async"
                 />
               )}
             </div>
@@ -55,6 +56,7 @@ export function VideoDetail({ video }: { video: Video }) {
                     src={sitePath(project.image)}
                     alt={project.imageAlt ?? ""}
                     loading="lazy"
+                    decoding="async"
                   />
                 )}
               </div>
@@ -75,6 +77,7 @@ export function VideoDetail({ video }: { video: Video }) {
                             src={sitePath(product.image)}
                             alt=""
                             loading="lazy"
+                            decoding="async"
                           />
                         )}
                       </div>
@@ -123,6 +126,7 @@ export function VideoDetail({ video }: { video: Video }) {
                           src={sitePath(product.image)}
                           alt=""
                           loading="lazy"
+                          decoding="async"
                         />
                       ) : (
                         <span>{product.name.slice(0, 2).toUpperCase()}</span>

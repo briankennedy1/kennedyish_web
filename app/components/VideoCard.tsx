@@ -10,7 +10,12 @@ export function VideoCard({ video }: { video: Video }) {
       aria-label={`View details for ${video.title}`}
     >
       <div className="video-card-image">
-        <img src={sitePath(video.image)} alt="" />
+        <img
+          src={sitePath(video.image)}
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <div className="video-card-copy">
         <h3>{video.title}</h3>
