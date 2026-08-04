@@ -34,6 +34,8 @@ test("server-renders the Brian Kennedy homepage", async () => {
   assert.match(html, /Brian Kennedy \| home improvement tech/);
   assert.match(html, /Brian <span>Kennedy<\/span>/);
   assert.match(html, /home improvement tech/);
+  assert.match(html, /Powering my house with my electric truck/);
+  assert.match(html, /August 3, 2026/);
   assert.match(html, /IKEA’s new Matter over Thread devices/);
   assert.ok(
     html.indexOf("IKEA’s new Matter over Thread devices") <
@@ -43,9 +45,8 @@ test("server-renders the Brian Kennedy homepage", async () => {
     [...html.matchAll(/class="video-card" href="\/(\d+)\//g)].map(
       ([, number]) => Number(number),
     ),
-    [5, 4, 3, 2, 1],
+    [6, 5, 4, 3, 2, 1],
   );
-  assert.doesNotMatch(html, /Powering my house with my electric truck/);
   assert.doesNotMatch(html, /codex-preview|Building your site/);
 });
 
@@ -68,7 +69,7 @@ test("server-renders a chronological short video URL with player and products", 
   assert.match(html, /rel="canonical" href="http:\/\/localhost:3000\/2\/"/);
 });
 
-test("server-renders the unlisted video draft at its direct short URL", async () => {
+test("server-renders the listed video project at its direct short URL", async () => {
   const app = await worker();
   const response = await app.fetch(
     new Request("http://localhost/6", {
@@ -89,7 +90,7 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
     html,
     /I&#x27;m going through the UGLY, the BAD and eventually get to the GOOD way to do this\./,
   );
-  assert.match(html, /July 29, 2026/);
+  assert.match(html, /August 3, 2026/);
   assert.match(html, /video-6\/truck-backup-thumbnail-1920\.webp/);
   assert.match(html, />BAD</);
   assert.match(html, /you know better, don&#x27;t build this/);
