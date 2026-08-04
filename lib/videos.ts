@@ -50,7 +50,7 @@ export const videos: Video[] = [
     description:
       "My truck has a TON of battery energy, but how do I get that power into my house? I'm going through the UGLY, the BAD and eventually get to the GOOD way to do this.",
     published: "Today",
-    publishedDate: "August 3, 2026",
+    publishedDate: "August 4, 2026",
     image: "/images/video-6/truck-backup-thumbnail-1920.webp",
     projects: [
       {

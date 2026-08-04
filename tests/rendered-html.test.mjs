@@ -35,7 +35,7 @@ test("server-renders the Brian Kennedy homepage", async () => {
   assert.match(html, /Brian <span>Kennedy<\/span>/);
   assert.match(html, /home improvement tech/);
   assert.match(html, /Powering my house with my electric truck/);
-  assert.match(html, /August 3, 2026/);
+  assert.match(html, /August 4, 2026/);
   assert.match(html, /IKEA’s new Matter over Thread devices/);
   assert.ok(
     html.indexOf("IKEA’s new Matter over Thread devices") <
@@ -90,7 +90,7 @@ test("server-renders the listed video project at its direct short URL", async ()
     html,
     /I&#x27;m going through the UGLY, the BAD and eventually get to the GOOD way to do this\./,
   );
-  assert.match(html, /August 3, 2026/);
+  assert.match(html, /August 4, 2026/);
   assert.match(html, /youtube-nocookie\.com\/embed\/Nm3KOjhk91Q/);
   assert.match(html, />BAD</);
   assert.match(html, /you know better, don&#x27;t build this/);
