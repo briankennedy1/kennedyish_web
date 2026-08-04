@@ -160,7 +160,7 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
   );
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/4c373Tp"[^>]*>[\s\S]*?71vb7pZyhgL\._AC_SL1500_\.jpg[\s\S]*?Generac HomeLink 30A transfer switch kit/,
+    /href="https:\/\/amzn\.to\/4c373Tp"[^>]*>[\s\S]*?71vb7pZyhgL\._AC_SL1500_\.jpg[\s\S]*?Generac Homelink/,
   );
   assert.match(
     html,

@@ -192,7 +192,7 @@ export const videos: Video[] = [
         theme: "red",
         products: [
           {
-            name: "Generac HomeLink 30A transfer switch kit",
+            name: "Generac Homelink",
             url: "https://amzn.to/4c373Tp",
             source: "Amazon",
             image:
