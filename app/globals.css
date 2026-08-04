@@ -639,6 +639,10 @@ a {
   background-color: var(--art-teal);
 }
 
+.mini-project-section-red > .shell {
+  background-color: var(--art-tomato);
+}
+
 .mini-project-heading {
   position: relative;
   z-index: 2;

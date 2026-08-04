@@ -49,7 +49,7 @@ export function VideoDetail({ video }: { video: Video }) {
               >
                 <div className="mini-project-heading">
                   <p className="mini-project-label">{project.label}</p>
-                  <h2>{project.subtitle}</h2>
+                  {project.subtitle && <h2>{project.subtitle}</h2>}
                 </div>
                 {project.image && (
                   <img

@@ -15,8 +15,8 @@ export type MiniProjectStep = {
 
 export type MiniProject = {
   label: string;
-  subtitle: string;
-  theme?: "mustard" | "blue";
+  subtitle?: string;
+  theme?: "mustard" | "blue" | "red";
   note?: string;
   image?: string;
   imageAlt?: string;
@@ -184,6 +184,19 @@ export const videos: Video[] = [
             url: "https://amzn.to/4c8Vb28",
             source: "Amazon",
             image: "/images/video-6/box-art-v2-900.webp",
+          },
+        ],
+      },
+      {
+        label: "GOOD",
+        theme: "red",
+        products: [
+          {
+            name: "Generac HomeLink 30A transfer switch kit",
+            url: "https://amzn.to/4c373Tp",
+            source: "Amazon",
+            image:
+              "https://m.media-amazon.com/images/I/71vb7pZyhgL._AC_SL1500_.jpg",
           },
         ],
       },

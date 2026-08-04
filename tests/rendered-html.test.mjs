@@ -153,8 +153,18 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
     html,
     /Uses all the same tools and materials as the &quot;BAD&quot; cord with three added pieces\./,
   );
+  assert.match(html, />GOOD</);
+  assert.match(
+    html,
+    /mini-project-section mini-project-section-red[\s\S]*?>GOOD</,
+  );
+  assert.match(
+    html,
+    /href="https:\/\/amzn\.to\/4c373Tp"[^>]*>[\s\S]*?71vb7pZyhgL\._AC_SL1500_\.jpg[\s\S]*?Generac HomeLink 30A transfer switch kit/,
+  );
   assert.ok(
-    html.indexOf(">LESS BAD<") <
+    html.indexOf(">LESS BAD<") < html.indexOf(">GOOD<") &&
+      html.indexOf(">GOOD<") <
       html.indexOf("Some links may be affiliate links"),
   );
   assert.match(html, /mini-project-affiliate-footer/);
