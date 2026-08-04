@@ -174,6 +174,14 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
     html,
     /href="https:\/\/amzn\.to\/4pYJYqP"[^>]*>[\s\S]*?81X1XYbFnoL\._SL1500_\.jpg[\s\S]*?Wago connectors/,
   );
+  assert.match(
+    html,
+    /This is the way to do it\. Remove your 8 critical loads from your panel and wire them up to Generac transfer switch\./,
+  );
+  assert.match(
+    html,
+    /I didn&#x27;t show using the label maker, but it&#x27;s a key piece of the puzzle to do the job right\./,
+  );
   assert.ok(
     html.indexOf(">LESS BAD<") < html.indexOf(">GOOD<") &&
       html.indexOf(">GOOD<") <

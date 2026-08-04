@@ -190,6 +190,8 @@ export const videos: Video[] = [
       {
         label: "GOOD",
         theme: "red",
+        note:
+          "This is the way to do it. Remove your 8 critical loads from your panel and wire them up to Generac transfer switch. I didn't show using the label maker, but it's a key piece of the puzzle to do the job right.",
         products: [
           {
             name: "Generac Homelink",
