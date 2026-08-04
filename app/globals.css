@@ -1718,6 +1718,7 @@ a {
   --brand-badge-padding: 7px 20px 11px 13px;
   --brand-badge-border: 3px;
   --brand-badge-shadow: 9px 10px 0 var(--home-navy);
+  display: flex;
   width: fit-content;
   margin: 0 auto;
 }
