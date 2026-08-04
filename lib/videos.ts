@@ -212,6 +212,13 @@ export const videos: Video[] = [
             image:
               "https://m.media-amazon.com/images/I/61S4E7ff38L._AC_SL1500_.jpg",
           },
+          {
+            name: "Wago connectors",
+            url: "https://amzn.to/4pYJYqP",
+            source: "Amazon",
+            image:
+              "https://m.media-amazon.com/images/I/81X1XYbFnoL._SL1500_.jpg",
+          },
         ],
       },
     ],
