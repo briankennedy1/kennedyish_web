@@ -197,29 +197,25 @@ export const videos: Video[] = [
             name: "Generac Homelink",
             url: "https://amzn.to/4c373Tp",
             source: "Amazon",
-            image:
-              "https://m.media-amazon.com/images/I/71vb7pZyhgL._AC_SL1500_.jpg",
+            image: "/images/video-6/generac-art-v2-900.webp",
           },
           {
             name: "50FT 10/3 NM-B Cable",
             url: "https://amzn.to/4w71871",
             source: "Amazon",
-            image:
-              "https://m.media-amazon.com/images/I/717kMHlRfyL._SL1500_.jpg",
+            image: "/images/video-6/nm-b-cable-art-v1-900.webp",
           },
           {
             name: "Label Maker",
             url: "https://amzn.to/4pYJWiH",
             source: "Amazon",
-            image:
-              "https://m.media-amazon.com/images/I/61S4E7ff38L._AC_SL1500_.jpg",
+            image: "/images/video-6/label-maker-art-v1-900.webp",
           },
           {
             name: "Wago connectors",
             url: "https://amzn.to/4pYJYqP",
             source: "Amazon",
-            image:
-              "https://m.media-amazon.com/images/I/81X1XYbFnoL._SL1500_.jpg",
+            image: "/images/video-6/wago-connectors-art-v1-900.webp",
           },
         ],
       },
