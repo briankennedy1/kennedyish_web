@@ -22,7 +22,7 @@ export function VideoDetail({ video }: { video: Video }) {
               ) : (
                 <img
                   src={sitePath(video.image)}
-                  alt={`Placeholder for ${video.title}`}
+                  alt={`Thumbnail for ${video.title}`}
                   fetchPriority="high"
                   decoding="async"
                 />

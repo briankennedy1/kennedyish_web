@@ -90,10 +90,7 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
     /I&#x27;m going through the UGLY, the BAD and eventually get to the GOOD way to do this\./,
   );
   assert.match(html, /July 29, 2026/);
-  assert.match(
-    html,
-    /powering-house-electric-truck-placeholder-1280\.webp/,
-  );
+  assert.match(html, /video-6\/truck-backup-thumbnail-1920\.webp/);
   assert.match(html, />BAD</);
   assert.match(html, /you know better, don&#x27;t build this/);
   assert.match(html, /combined-extensioncord-art-v2-1400\.webp/);
