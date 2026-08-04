@@ -198,6 +198,13 @@ export const videos: Video[] = [
             image:
               "https://m.media-amazon.com/images/I/71vb7pZyhgL._AC_SL1500_.jpg",
           },
+          {
+            name: "50FT 10/3 NM-B Cable",
+            url: "https://amzn.to/4w71871",
+            source: "Amazon",
+            image:
+              "https://m.media-amazon.com/images/I/717kMHlRfyL._SL1500_.jpg",
+          },
         ],
       },
     ],

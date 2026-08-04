@@ -643,6 +643,11 @@ a {
   background-color: var(--art-tomato);
 }
 
+.mini-project-section-red .mini-project-label {
+  color: var(--art-navy);
+  background: var(--art-mustard);
+}
+
 .mini-project-heading {
   position: relative;
   z-index: 2;
