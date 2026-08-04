@@ -91,7 +91,7 @@ test("server-renders the listed video project at its direct short URL", async ()
     /I&#x27;m going through the UGLY, the BAD and eventually get to the GOOD way to do this\./,
   );
   assert.match(html, /August 3, 2026/);
-  assert.match(html, /video-6\/truck-backup-thumbnail-1920\.webp/);
+  assert.match(html, /youtube-nocookie\.com\/embed\/Nm3KOjhk91Q/);
   assert.match(html, />BAD</);
   assert.match(html, /you know better, don&#x27;t build this/);
   assert.match(html, /combined-extensioncord-art-v2-1400\.webp/);
@@ -189,6 +189,5 @@ test("server-renders the listed video project at its direct short URL", async ()
       html.indexOf("Some links may be affiliate links"),
   );
   assert.match(html, /mini-project-affiliate-footer/);
-  assert.doesNotMatch(html, /youtube-nocookie\.com\/embed/);
   assert.doesNotMatch(html, /Products used/);
 });

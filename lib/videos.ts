@@ -43,6 +43,7 @@ export const videos: Video[] = [
   {
     number: 6,
     slug: "powering-house-electric-truck",
+    youtubeId: "Nm3KOjhk91Q",
     listed: true,
     title: "Powering my house with my electric truck",
     shortTitle: "Powering my house with my electric truck",
