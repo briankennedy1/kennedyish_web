@@ -34,6 +34,8 @@ test("server-renders the Brian Kennedy homepage", async () => {
   assert.match(html, /Brian Kennedy \| home improvement tech/);
   assert.match(html, /Brian <span>Kennedy<\/span>/);
   assert.match(html, /home improvement tech/);
+  assert.match(html, /on YouTube/);
+  assert.doesNotMatch(html, /youtube\.com\/@bkxc/);
   assert.match(html, /Powering my house with my electric truck/);
   assert.match(html, /August 4, 2026/);
   assert.match(html, /IKEA’s new Matter over Thread devices/);

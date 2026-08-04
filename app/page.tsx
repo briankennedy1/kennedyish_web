@@ -36,14 +36,7 @@ export default function Home() {
                   <strong>
                     10 years traveling the world and mountain biking
                   </strong>{" "}
-                  on{" "}
-                  <a
-                    href="https://www.youtube.com/@bkxc"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    YouTube
-                  </a>{" "}
+                  on YouTube{" "}
                   and now I&apos;m trying to make my house nice.
                 </p>
                 <p className="about-copy">
