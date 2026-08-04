@@ -217,6 +217,13 @@ export const videos: Video[] = [
             source: "Amazon",
             image: "/images/video-6/wago-connectors-art-v1-900.webp",
           },
+          {
+            name: "Hubbell NEMA 14-50 Outlet",
+            url: "https://www.amazon.com/dp/B00EN9VO7W/ref=nosim?tag=bkxc-20",
+            source: "Amazon",
+            image:
+              "/images/video-6/hubbell-14-50-outlet-art-v1-900.webp",
+          },
         ],
       },
     ],
