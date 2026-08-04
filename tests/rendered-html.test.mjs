@@ -176,7 +176,7 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
   );
   assert.match(
     html,
-    /This is the way to do it\. Remove your 8 critical loads from your panel and wire them up to Generac transfer switch\./,
+    /This is the way to do it\. Remove your 8 critical loads from your panel and wire them up to a Generac transfer switch\./,
   );
   assert.match(
     html,
