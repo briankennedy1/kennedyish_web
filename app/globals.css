@@ -72,19 +72,37 @@ a {
   gap: 28px;
 }
 
-.wordmark {
-  font-size: 27px;
-  font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: 1;
+.brand-wordmark {
+  --brand-wordmark-size: 27px;
+  --brand-wordmark-gap: 6px;
+  --brand-badge-padding: 4px 8px 6px 5px;
+  --brand-badge-border: 2px;
+  --brand-badge-shadow: 4px 5px 0 #16243a;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: var(--brand-wordmark-gap);
+  color: #16243a;
+  font-size: var(--brand-wordmark-size);
+  font-weight: 900;
+  letter-spacing: -0.075em;
+  line-height: 0.8;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 rgba(250, 247, 239, 0.62);
 }
 
-.wordmark span {
-  color: var(--coral);
-}
-
-.site-header .wordmark {
-  color: var(--ink);
+.brand-wordmark > span {
+  display: inline-block;
+  width: fit-content;
+  margin: 0;
+  padding: var(--brand-badge-padding);
+  border: var(--brand-badge-border) solid #16243a;
+  color: #f1e8d5;
+  background: #d9564a;
+  box-shadow: var(--brand-badge-shadow);
+  clip-path: polygon(1% 5%, 99% 0, 100% 95%, 0 100%);
+  rotate: -1.5deg;
+  text-shadow: 2px 2px 0 rgba(37, 36, 34, 0.16);
 }
 
 .primary-nav {
@@ -212,7 +230,6 @@ a {
 }
 
 .section-heading h2,
-.about-headline,
 .subscribe-inner h2,
 .episode-copy h2,
 .next-video h2 {
@@ -390,14 +407,6 @@ a {
   align-self: center;
   max-width: 920px;
   padding: 68px clamp(40px, 5vw, 90px) 64px clamp(42px, 4vw, 68px);
-}
-
-.about-headline {
-  color: var(--white);
-}
-
-.about-headline span {
-  color: var(--coral);
 }
 
 .about-tagline {
@@ -1704,18 +1713,13 @@ a {
 }
 
 .home-page .about-headline {
+  --brand-wordmark-size: clamp(50px, 6.4vw, 86px);
+  --brand-wordmark-gap: clamp(10px, 1.2vw, 17px);
+  --brand-badge-padding: 7px 20px 11px 13px;
+  --brand-badge-border: 3px;
+  --brand-badge-shadow: 9px 10px 0 var(--home-navy);
   width: fit-content;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  gap: 0.24em;
-  color: var(--ink);
-  font-size: clamp(50px, 6.4vw, 86px);
-}
-
-.home-page .about-headline span {
-  color: var(--coral);
 }
 
 .home-page .about-tagline {
@@ -2308,7 +2312,7 @@ a {
   }
 
   .home-page .about-headline {
-    font-size: clamp(46px, 6.6vw, 72px);
+    --brand-wordmark-size: clamp(46px, 6.6vw, 72px);
   }
 }
 
@@ -2342,9 +2346,9 @@ a {
   }
 
   .home-page .about-headline {
+    --brand-wordmark-size: clamp(38px, 8.8vw, 56px);
     width: fit-content;
     margin: 0 auto;
-    font-size: clamp(38px, 8.8vw, 56px);
   }
 
   .home-page .about-lower {
@@ -2394,8 +2398,10 @@ a {
   }
 
   .home-page .about-headline {
-    gap: 0.24em;
-    font-size: clamp(34px, 10vw, 44px);
+    --brand-wordmark-size: clamp(34px, 10vw, 44px);
+    --brand-wordmark-gap: 8px;
+    --brand-badge-padding: 6px 12px 9px 8px;
+    --brand-badge-shadow: 5px 6px 0 var(--home-navy);
   }
 
   .home-page .about-tagline {

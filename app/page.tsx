@@ -14,7 +14,7 @@ export default function Home() {
         <section className="about-band" id="about">
           <div className="about-layout">
             <div className="about-content">
-              <h1 className="about-headline wordmark">
+              <h1 className="about-headline brand-wordmark">
                 Brian <span>Kennedy</span>
               </h1>
               <p className="about-tagline">home improvement tech</p>
