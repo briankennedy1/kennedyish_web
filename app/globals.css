@@ -1545,6 +1545,7 @@ a {
   --home-navy: #16243a;
   --home-tomato: #d9564a;
   --home-mustard: #d5a437;
+  --home-tan: #c7ad84;
   --home-teal: #4e8c87;
   --home-cream: #f1e8d5;
   --home-paper: #faf7ef;
@@ -1615,7 +1616,7 @@ a {
   column-gap: 0;
   row-gap: clamp(28px, 3vw, 38px);
   align-items: start;
-  background-color: var(--home-mustard);
+  background-color: var(--home-tan);
   background-image:
     radial-gradient(
       circle,
