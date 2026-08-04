@@ -157,6 +157,7 @@ test("server-renders the listed video project at its direct short URL", async ()
     /Uses all the same tools and materials as the &quot;BAD&quot; cord with three added pieces\./,
   );
   assert.match(html, />GOOD</);
+  assert.match(html, /quick and easy emergency power, the right way/);
   assert.match(
     html,
     /mini-project-section mini-project-section-red[\s\S]*?>GOOD</,
