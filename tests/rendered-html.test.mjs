@@ -166,6 +166,10 @@ test("server-renders the unlisted video draft at its direct short URL", async ()
     html,
     /href="https:\/\/amzn\.to\/4w71871"[^>]*>[\s\S]*?717kMHlRfyL\._SL1500_\.jpg[\s\S]*?50FT 10\/3 NM-B Cable/,
   );
+  assert.match(
+    html,
+    /href="https:\/\/amzn\.to\/4pYJWiH"[^>]*>[\s\S]*?61S4E7ff38L\._AC_SL1500_\.jpg[\s\S]*?Label Maker/,
+  );
   assert.ok(
     html.indexOf(">LESS BAD<") < html.indexOf(">GOOD<") &&
       html.indexOf(">GOOD<") <

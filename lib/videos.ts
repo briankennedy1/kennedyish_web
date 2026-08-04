@@ -205,6 +205,13 @@ export const videos: Video[] = [
             image:
               "https://m.media-amazon.com/images/I/717kMHlRfyL._SL1500_.jpg",
           },
+          {
+            name: "Label Maker",
+            url: "https://amzn.to/4pYJWiH",
+            source: "Amazon",
+            image:
+              "https://m.media-amazon.com/images/I/61S4E7ff38L._AC_SL1500_.jpg",
+          },
         ],
       },
     ],
