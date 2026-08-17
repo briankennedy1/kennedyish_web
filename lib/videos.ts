@@ -87,6 +87,11 @@ export const videos: Video[] = [
             source: "Amazon",
             image: "/images/video-7/wire-ferrule-kit-art-v1-900.webp",
           },
+          {
+            name: "ha-eybond-local",
+            url: "https://github.com/groove-max/ha-eybond-local",
+            source: "GitHub",
+          },
         ],
       },
       {

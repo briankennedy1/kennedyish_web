@@ -91,6 +91,11 @@ export function VideoDetail({ video }: { video: Video }) {
                             decoding="async"
                           />
                         )}
+                        {!product.image && (
+                          <span className="mini-project-product-source">
+                            {product.source}
+                          </span>
+                        )}
                       </div>
                       <h3>{product.name}</h3>
                     </a>

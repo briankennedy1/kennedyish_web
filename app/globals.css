@@ -920,6 +920,16 @@ a {
   filter: drop-shadow(6px 7px 0 rgba(22, 36, 58, 0.16));
 }
 
+.mini-project-product-source {
+  position: relative;
+  z-index: 1;
+  color: var(--art-paper);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 900;
+  letter-spacing: -0.06em;
+  text-shadow: 4px 5px 0 rgba(22, 36, 58, 0.28);
+}
+
 .mini-project-product-card h3 {
   min-height: 92px;
   margin: 0;
