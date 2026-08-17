@@ -76,13 +76,13 @@ export const videos: Video[] = [
             image: "/images/video-6/kleindriver-art-redo-v1-900.webp",
           },
           {
-            name: "Wago connectors",
+            name: "wago connectors",
             url: "https://amzn.to/4pYJYqP",
             source: "Amazon",
             image: "/images/video-6/wago-connectors-art-v1-900.webp",
           },
           {
-            name: "Wire ferrule kit",
+            name: "wire ferrule kit",
             url: "https://amzn.to/3SEF1Hp",
             source: "Amazon",
             image: "/images/video-7/wire-ferrule-kit-art-v1-900.webp",
