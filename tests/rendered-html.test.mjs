@@ -243,6 +243,32 @@ test("server-renders the unlisted video 7 draft at its direct short URL", async 
     html,
     /href="https:\/\/amzn\.to\/3SEF1Hp"[^>]*>[\s\S]*?wire-ferrule-kit-art-v1-900\.webp[\s\S]*?Wire ferrule kit/,
   );
+  assert.match(html, />PRODUCTS</);
+  const productCards = [
+    ["https://amzn.to/3U61qha", "solar-panels-art-v1-900.webp", "Solar panels"],
+    ["https://amzn.to/4g28fJh", "long-pv-wire-art-v1-900.webp", "Long PV wire"],
+    ["https://amzn.to/4gmfIlf", "pv-disconnect-art-v1-900.webp", "PV disconnect"],
+    ["https://amzn.to/4idpBEm", "short-pv-wire-art-v1-900.webp", "Short PV wire"],
+    ["https://amzn.to/4wtgl2p", "inverter-art-v1-900.webp", "Inverter"],
+    ["https://amzn.to/4gftWEi", "battery-wire-3ft-art-v1-900.webp", "3 ft battery wire"],
+    ["https://amzn.to/4hEflF2", "circuit-breaker-100a-art-v1-900.webp", "100A circuit breaker"],
+    ["https://amzn.to/45BvbsK", "battery-wire-1ft-art-v1-900.webp", "1 ft battery wire"],
+    ["https://amzn.to/3SBsfte", "battery-24v-100ah-art-v1-900.webp", "24V 100Ah battery"],
+    [
+      "https://www.acehardware.com/departments/storage-and-organization/hand-trucks-and-carts/hand-trucks/7373798",
+      "hand-truck-art-v1-900.webp",
+      "Hand truck",
+    ],
+    ["https://amzn.to/4q6smcN", "extensioncord-art-v2-900.webp", "Extension cord"],
+    [
+      "https://www.acehardware.com/departments/lighting-and-electrical/cable-management-cable-ties-and-electrical-tape/cable-clamps/3181120",
+      "pipe-strap-art-v1-900.webp",
+      "3/4 in. pipe strap",
+    ],
+  ];
+  for (const [url, image, name] of productCards) {
+    assert.match(html, new RegExp(`href="${url}"[^>]*>[\\s\\S]*?${image}[\\s\\S]*?${name}`));
+  }
 
   const homepageResponse = await app.fetch(
     new Request("http://localhost/", { headers: { accept: "text/html" } }),
