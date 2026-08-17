@@ -194,3 +194,35 @@ test("server-renders the listed video project at its direct short URL", async ()
   assert.match(html, /mini-project-affiliate-footer/);
   assert.doesNotMatch(html, /Products used/);
 });
+
+test("server-renders the unlisted video 7 draft at its direct short URL", async () => {
+  const app = await worker();
+  const response = await app.fetch(
+    new Request("http://localhost/7", {
+      headers: { accept: "text/html" },
+    }),
+    environment(),
+    executionContext,
+  );
+
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(
+    html,
+    /BARE BONES solar EV charging should save me \$100 a month/,
+  );
+  assert.match(html, /video-7-placeholder\.svg/);
+  assert.match(html, /rel="canonical" href="http:\/\/localhost:3000\/7\/"/);
+  assert.doesNotMatch(html, /youtube-nocookie\.com\/embed/);
+
+  const homepageResponse = await app.fetch(
+    new Request("http://localhost/", { headers: { accept: "text/html" } }),
+    environment(),
+    executionContext,
+  );
+  const homepageHtml = await homepageResponse.text();
+  assert.doesNotMatch(
+    homepageHtml,
+    /BARE BONES solar EV charging should save me \$100 a month/,
+  );
+});

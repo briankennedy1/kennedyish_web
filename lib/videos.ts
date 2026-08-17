@@ -41,6 +41,18 @@ export type Video = {
 
 export const videos: Video[] = [
   {
+    number: 7,
+    slug: "bare-bones-solar-ev-charging",
+    listed: false,
+    title: "BARE BONES solar EV charging should save me $100 a month",
+    shortTitle: "BARE BONES solar EV charging should save me $100 a month",
+    description: "",
+    published: "Draft",
+    publishedDate: "August 17, 2026",
+    image: "/images/video-7-placeholder.svg",
+    products: [],
+  },
+  {
     number: 6,
     slug: "powering-house-electric-truck",
     youtubeId: "Nm3KOjhk91Q",
