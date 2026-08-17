@@ -211,6 +211,14 @@ test("server-renders the unlisted video 7 draft at its direct short URL", async 
     html,
     /BARE BONES solar EV charging should save me \$100 a month/,
   );
+  assert.match(
+    html,
+    /The panels have spent a long time in my garage gathering dust\./,
+  );
+  assert.match(
+    html,
+    /get SOMETHING up and running that will be able to charge my truck\./,
+  );
   assert.match(html, /video-7-placeholder\.svg/);
   assert.match(html, /rel="canonical" href="http:\/\/localhost:3000\/7\/"/);
   assert.doesNotMatch(html, /youtube-nocookie\.com\/embed/);

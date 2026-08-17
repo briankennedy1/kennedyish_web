@@ -46,7 +46,8 @@ export const videos: Video[] = [
     listed: false,
     title: "BARE BONES solar EV charging should save me $100 a month",
     shortTitle: "BARE BONES solar EV charging should save me $100 a month",
-    description: "",
+    description:
+      "I’ve got six solar panels sitting around and I’ve got an electric truck. The panels have spent a long time in my garage gathering dust. Today I’m just going to see how bare bones I can go to get SOMETHING up and running that will be able to charge my truck.",
     published: "Draft",
     publishedDate: "August 17, 2026",
     image: "/images/video-7-placeholder.svg",
