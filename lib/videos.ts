@@ -81,6 +81,13 @@ export const videos: Video[] = [
             source: "Amazon",
             image: "/images/video-6/wago-connectors-art-v1-900.webp",
           },
+          {
+            name: "Wire ferrule kit",
+            url: "https://amzn.to/3SEF1Hp",
+            source: "Amazon",
+            image:
+              "https://m.media-amazon.com/images/I/81gEnrmf3rL._AC_SL1500_.jpg",
+          },
         ],
       },
     ],
