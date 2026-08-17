@@ -76,6 +76,11 @@ export function VideoDetail({ video }: { video: Video }) {
                           <img
                             src={sitePath(product.image)}
                             alt=""
+                            className={
+                              product.imageTilt
+                                ? "mini-project-product-image-tilted"
+                                : undefined
+                            }
                             loading="lazy"
                             decoding="async"
                           />

@@ -876,7 +876,7 @@ a {
   background-color: var(--art-mustard);
 }
 
-.mini-project-product-card:nth-child(6) .mini-project-product-image img {
+.mini-project-product-image img.mini-project-product-image-tilted {
   transform: rotate(45deg) scale(1.12);
 }
 

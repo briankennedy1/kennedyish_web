@@ -119,7 +119,7 @@ test("server-renders the listed video project at its direct short URL", async ()
   );
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/4fGFnEZ"[^>]*>[\s\S]*?kleinsidecutters-art-v1-900\.webp[\s\S]*?klein sidecutters/,
+    /href="https:\/\/amzn\.to\/4fGFnEZ"[^>]*>[\s\S]*?kleinsidecutters-art-v1-900\.webp[^>]*mini-project-product-image-tilted[\s\S]*?klein sidecutters/,
   );
   assert.match(html, /If it&#x27;s a life or death situation/);
   assert.match(html, /zombie apocalypse, World War III/);
@@ -225,7 +225,7 @@ test("server-renders the unlisted video 7 draft at its direct short URL", async 
   assert.match(html, />TOOLS</);
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/4fGFnEZ"[^>]*>[\s\S]*?kleinsidecutters-art-v1-900\.webp[\s\S]*?klein sidecutters/,
+    /href="https:\/\/amzn\.to\/4fGFnEZ"[^>]*>[\s\S]*?kleinsidecutters-art-v1-900\.webp[^>]*mini-project-product-image-tilted[\s\S]*?klein sidecutters/,
   );
   assert.match(
     html,

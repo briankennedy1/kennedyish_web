@@ -4,6 +4,7 @@ export type Product = {
   url: string;
   source: string;
   image?: string;
+  imageTilt?: boolean;
 };
 
 export type MiniProjectStep = {
@@ -60,6 +61,7 @@ export const videos: Video[] = [
             url: "https://amzn.to/4fGFnEZ",
             source: "Amazon",
             image: "/images/video-6/kleinsidecutters-art-v1-900.webp",
+            imageTilt: true,
           },
           {
             name: "klein stripper",
@@ -141,6 +143,7 @@ export const videos: Video[] = [
             url: "https://amzn.to/4fGFnEZ",
             source: "Amazon",
             image: "/images/video-6/kleinsidecutters-art-v1-900.webp",
+            imageTilt: true,
           },
         ],
         steps: [
