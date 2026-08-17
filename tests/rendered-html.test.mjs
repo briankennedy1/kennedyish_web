@@ -222,6 +222,23 @@ test("server-renders the unlisted video 7 draft at its direct short URL", async 
   assert.match(html, /video-7-placeholder\.svg/);
   assert.match(html, /rel="canonical" href="http:\/\/localhost:3000\/7\/"/);
   assert.doesNotMatch(html, /youtube-nocookie\.com\/embed/);
+  assert.match(html, />TOOLS</);
+  assert.match(
+    html,
+    /href="https:\/\/amzn\.to\/4fGFnEZ"[^>]*>[\s\S]*?kleinsidecutters-art-v1-900\.webp[\s\S]*?klein sidecutters/,
+  );
+  assert.match(
+    html,
+    /href="https:\/\/amzn\.to\/4pKtgLP"[^>]*>[\s\S]*?kleincatapult-art-v1-900\.webp[\s\S]*?klein stripper/,
+  );
+  assert.match(
+    html,
+    /href="https:\/\/amzn\.to\/4x3XJ9U"[^>]*>[\s\S]*?kleindriver-art-redo-v1-900\.webp[\s\S]*?klein screwdriver/,
+  );
+  assert.match(
+    html,
+    /href="https:\/\/amzn\.to\/4pYJYqP"[^>]*>[\s\S]*?wago-connectors-art-v1-900\.webp[\s\S]*?Wago connectors/,
+  );
 
   const homepageResponse = await app.fetch(
     new Request("http://localhost/", { headers: { accept: "text/html" } }),

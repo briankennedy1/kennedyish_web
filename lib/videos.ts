@@ -51,6 +51,37 @@ export const videos: Video[] = [
     published: "Draft",
     publishedDate: "August 17, 2026",
     image: "/images/video-7-placeholder.svg",
+    projects: [
+      {
+        label: "TOOLS",
+        products: [
+          {
+            name: "klein sidecutters",
+            url: "https://amzn.to/4fGFnEZ",
+            source: "Amazon",
+            image: "/images/video-6/kleinsidecutters-art-v1-900.webp",
+          },
+          {
+            name: "klein stripper",
+            url: "https://amzn.to/4pKtgLP",
+            source: "Amazon",
+            image: "/images/video-6/kleincatapult-art-v1-900.webp",
+          },
+          {
+            name: "klein screwdriver",
+            url: "https://amzn.to/4x3XJ9U",
+            source: "Amazon",
+            image: "/images/video-6/kleindriver-art-redo-v1-900.webp",
+          },
+          {
+            name: "Wago connectors",
+            url: "https://amzn.to/4pYJYqP",
+            source: "Amazon",
+            image: "/images/video-6/wago-connectors-art-v1-900.webp",
+          },
+        ],
+      },
+    ],
     products: [],
   },
   {
