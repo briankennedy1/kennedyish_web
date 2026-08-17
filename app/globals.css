@@ -1530,7 +1530,7 @@ a {
   .mini-project-product-card h3 {
     margin: 0;
     min-height: 100%;
-    padding: 14px 12px;
+    padding: 14px 20px 14px 24px;
     border-top: 0;
     border-left: 0;
     font-size: clamp(17px, 4.8vw, 20px);
