@@ -774,6 +774,24 @@ a {
   background-color: var(--art-mustard);
 }
 
+.mini-project-section-products
+  .mini-project-product-card:nth-child(3n + 1)
+  .mini-project-product-image {
+  background-color: var(--art-mustard);
+}
+
+.mini-project-section-products
+  .mini-project-product-card:nth-child(3n + 2)
+  .mini-project-product-image {
+  background-color: var(--art-teal);
+}
+
+.mini-project-section-products
+  .mini-project-product-card:nth-child(3n)
+  .mini-project-product-image {
+  background-color: var(--art-tomato);
+}
+
 .mini-project-product-card {
   position: relative;
   min-width: 0;

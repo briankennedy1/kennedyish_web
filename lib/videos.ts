@@ -94,31 +94,31 @@ export const videos: Video[] = [
         theme: "blue",
         products: [
           {
-            name: "Solar panels",
+            name: "solar panels",
             url: "https://amzn.to/3U61qha",
             source: "Amazon",
             image: "/images/video-7/products/solar-panels-art-v1-900.webp",
           },
           {
-            name: "Long PV wire",
+            name: "long pv wire",
             url: "https://amzn.to/4g28fJh",
             source: "Amazon",
             image: "/images/video-7/products/long-pv-wire-art-v1-900.webp",
           },
           {
-            name: "PV disconnect",
+            name: "pv disconnect",
             url: "https://amzn.to/4gmfIlf",
             source: "Amazon",
             image: "/images/video-7/products/pv-disconnect-art-v1-900.webp",
           },
           {
-            name: "Short PV wire",
+            name: "short pv wire",
             url: "https://amzn.to/4idpBEm",
             source: "Amazon",
             image: "/images/video-7/products/short-pv-wire-art-v1-900.webp",
           },
           {
-            name: "Inverter",
+            name: "inverter",
             url: "https://amzn.to/4wtgl2p",
             source: "Amazon",
             image: "/images/video-7/products/inverter-art-v1-900.webp",
@@ -130,7 +130,7 @@ export const videos: Video[] = [
             image: "/images/video-7/products/battery-wire-3ft-art-v1-900.webp",
           },
           {
-            name: "100A circuit breaker",
+            name: "100a circuit breaker",
             url: "https://amzn.to/4hEflF2",
             source: "Amazon",
             image: "/images/video-7/products/circuit-breaker-100a-art-v1-900.webp",
@@ -142,19 +142,19 @@ export const videos: Video[] = [
             image: "/images/video-7/products/battery-wire-1ft-art-v1-900.webp",
           },
           {
-            name: "24V 100Ah battery",
+            name: "24v 100ah battery",
             url: "https://amzn.to/3SBsfte",
             source: "Amazon",
             image: "/images/video-7/products/battery-24v-100ah-art-v1-900.webp",
           },
           {
-            name: "Hand truck",
+            name: "hand truck",
             url: "https://www.acehardware.com/departments/storage-and-organization/hand-trucks-and-carts/hand-trucks/7373798",
             source: "Ace Hardware",
             image: "/images/video-7/products/hand-truck-art-v1-900.webp",
           },
           {
-            name: "Extension cord",
+            name: "extension cord",
             url: "https://amzn.to/4q6smcN",
             source: "Amazon",
             image: "/images/video-6/extensioncord-art-v2-900.webp",

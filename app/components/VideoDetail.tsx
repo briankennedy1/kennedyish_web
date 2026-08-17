@@ -40,7 +40,13 @@ export function VideoDetail({ video }: { video: Video }) {
 
         {video.projects?.map((project) => (
           <section
-            className={`mini-project-section mini-project-section-${project.theme ?? "mustard"}`}
+            className={`mini-project-section mini-project-section-${
+              project.theme ?? "mustard"
+            }${
+              project.label === "PRODUCTS"
+                ? " mini-project-section-products"
+                : ""
+            }`}
             key={project.label}
           >
             <div className="shell">
