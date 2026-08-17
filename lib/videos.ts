@@ -51,7 +51,7 @@ export const videos: Video[] = [
       "I’ve got six solar panels sitting around and I’ve got an electric truck. The panels have spent a long time in my garage gathering dust. Today I’m just going to see how bare bones I can go to get SOMETHING up and running that will be able to charge my truck.",
     published: "Draft",
     publishedDate: "August 17, 2026",
-    image: "/images/video-7-placeholder.svg",
+    image: "/images/video-7/thumb.jpg",
     projects: [
       {
         label: "TOOLS",
