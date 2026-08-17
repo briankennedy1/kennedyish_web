@@ -241,7 +241,7 @@ test("server-renders the unlisted video 7 draft at its direct short URL", async 
   );
   assert.match(
     html,
-    /href="https:\/\/amzn\.to\/3SEF1Hp"[^>]*>[\s\S]*?81gEnrmf3rL\._AC_SL1500_\.jpg[\s\S]*?Wire ferrule kit/,
+    /href="https:\/\/amzn\.to\/3SEF1Hp"[^>]*>[\s\S]*?wire-ferrule-kit-art-v1-900\.webp[\s\S]*?Wire ferrule kit/,
   );
 
   const homepageResponse = await app.fetch(
