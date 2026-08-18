@@ -45,13 +45,13 @@ export const videos: Video[] = [
     number: 7,
     slug: "bare-bones-solar-ev-charging",
     youtubeId: "ktAx4RC6QMc",
-    listed: false,
+    listed: true,
     title: "Saving $100 a month with BARE BONES solar EV charging",
     shortTitle: "Saving $100 a month with BARE BONES solar EV charging",
     description:
       "I’ve got six solar panels sitting around and I’ve got an electric truck. The panels have spent a long time in my garage gathering dust. Today I’m just going to see how bare bones I can go to get SOMETHING up and running that will be able to charge my truck.",
-    published: "Draft",
-    publishedDate: "August 17, 2026",
+    published: "Tomorrow",
+    publishedDate: "August 18, 2026",
     image: "/images/video-7/thumb.jpg",
     projects: [
       {
