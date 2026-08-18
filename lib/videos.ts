@@ -44,6 +44,7 @@ export const videos: Video[] = [
   {
     number: 7,
     slug: "bare-bones-solar-ev-charging",
+    youtubeId: "ktAx4RC6QMc",
     listed: false,
     title: "Saving $100 a month with BARE BONES solar EV charging",
     shortTitle: "Saving $100 a month with BARE BONES solar EV charging",
