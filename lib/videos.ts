@@ -125,8 +125,8 @@ export const videos: Video[] = [
           },
           {
             name: "inverter",
-            url: "https://amzn.to/4wtgl2p",
-            source: "Amazon",
+            url: "https://s.vevor.com/QT1B7M",
+            source: "VEVOR",
             image: "/images/video-7/products/inverter-art-v1-900.webp",
           },
           {
