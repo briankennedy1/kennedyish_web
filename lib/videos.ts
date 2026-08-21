@@ -107,8 +107,8 @@ export const videos: Video[] = [
           },
           {
             name: "long pv wire",
-            url: "https://amzn.to/4g28fJh",
-            source: "Amazon",
+            url: "https://s.vevor.com/QT1CDO",
+            source: "VEVOR",
             image: "/images/video-7/products/long-pv-wire-art-v1-900.webp",
           },
           {
@@ -149,8 +149,8 @@ export const videos: Video[] = [
           },
           {
             name: "24v 100ah battery",
-            url: "https://amzn.to/3SBsfte",
-            source: "Amazon",
+            url: "https://s.vevor.com/QT1CC2",
+            source: "VEVOR",
             image: "/images/video-7/products/battery-24v-100ah-art-v1-900.webp",
           },
           {

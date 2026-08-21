@@ -47,7 +47,7 @@ test("server-renders the Brian Kennedy homepage", async () => {
     [...html.matchAll(/class="video-card" href="\/(\d+)\//g)].map(
       ([, number]) => Number(number),
     ),
-    [6, 5, 4, 3, 2, 1],
+    [7, 6, 5, 4, 3, 2, 1],
   );
   assert.doesNotMatch(html, /codex-preview|Building your site/);
 });
@@ -195,7 +195,7 @@ test("server-renders the listed video project at its direct short URL", async ()
   assert.doesNotMatch(html, /Products used/);
 });
 
-test("server-renders the unlisted video 7 draft at its direct short URL", async () => {
+test("server-renders video 7 at its direct short URL", async () => {
   const app = await worker();
   const response = await app.fetch(
     new Request("http://localhost/7", {
@@ -207,10 +207,7 @@ test("server-renders the unlisted video 7 draft at its direct short URL", async 
 
   assert.equal(response.status, 200);
   const html = await response.text();
-  assert.match(
-    html,
-    /BARE BONES solar EV charging should save me \$100 a month/,
-  );
+  assert.match(html, /Saving \$100 a month with BARE BONES solar EV charging/);
   assert.match(
     html,
     /The panels have spent a long time in my garage gathering dust\./,
@@ -219,9 +216,9 @@ test("server-renders the unlisted video 7 draft at its direct short URL", async 
     html,
     /get SOMETHING up and running that will be able to charge my truck\./,
   );
-  assert.match(html, /video-7-placeholder\.svg/);
+  assert.match(html, /images\/video-7\/thumb\.jpg/);
   assert.match(html, /rel="canonical" href="http:\/\/localhost:3000\/7\/"/);
-  assert.doesNotMatch(html, /youtube-nocookie\.com\/embed/);
+  assert.match(html, /youtube-nocookie\.com\/embed\/ktAx4RC6QMc/);
   assert.match(html, />TOOLS</);
   assert.match(
     html,
@@ -250,14 +247,14 @@ test("server-renders the unlisted video 7 draft at its direct short URL", async 
   );
   const productCards = [
     ["https://amzn.to/3U61qha", "solar-panels-art-v1-900.webp", "solar panels"],
-    ["https://amzn.to/4g28fJh", "long-pv-wire-art-v1-900.webp", "long pv wire"],
+    ["https://s.vevor.com/QT1CDO", "long-pv-wire-art-v1-900.webp", "long pv wire"],
     ["https://amzn.to/4gmfIlf", "pv-disconnect-art-v1-900.webp", "pv disconnect"],
     ["https://amzn.to/4idpBEm", "short-pv-wire-art-v1-900.webp", "short pv wire"],
-    ["https://amzn.to/4wtgl2p", "inverter-art-v1-900.webp", "inverter"],
+    ["https://s.vevor.com/QT1B7M", "inverter-art-v1-900.webp", "inverter"],
     ["https://amzn.to/4gftWEi", "battery-wire-3ft-art-v1-900.webp", "3 ft battery wire"],
     ["https://amzn.to/4hEflF2", "circuit-breaker-100a-art-v1-900.webp", "100a circuit breaker"],
     ["https://amzn.to/45BvbsK", "battery-wire-1ft-art-v1-900.webp", "1 ft battery wire"],
-    ["https://amzn.to/3SBsfte", "battery-24v-100ah-art-v1-900.webp", "24v 100ah battery"],
+    ["https://s.vevor.com/QT1CC2", "battery-24v-100ah-art-v1-900.webp", "24v 100ah battery"],
     [
       "https://www.acehardware.com/departments/storage-and-organization/hand-trucks-and-carts/hand-trucks/7373798",
       "hand-truck-art-v1-900.webp",
@@ -280,8 +277,8 @@ test("server-renders the unlisted video 7 draft at its direct short URL", async 
     executionContext,
   );
   const homepageHtml = await homepageResponse.text();
-  assert.doesNotMatch(
+  assert.match(
     homepageHtml,
-    /BARE BONES solar EV charging should save me \$100 a month/,
+    /Saving \$100 a month with BARE BONES solar EV charging/,
   );
 });
