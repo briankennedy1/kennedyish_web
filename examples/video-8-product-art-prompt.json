@@ -1,0 +1,7 @@
+{
+  "method": "Built-in image_gen; transparent_background: true",
+  "asset": "public/images/video-8/ugreen-dxp4800-gt-art-v1-900.webp",
+  "productReference": "public/images/video-8/ugreen-dxp4800-gt.webp",
+  "styleReference": "public/images/video-6/kleinsidecutters-art-v1-900.webp",
+  "prompt": "Use case: style-transfer. Create a SQUARE 1:1 product illustration for kennedyish.com in the same vintage paper-cutout style as the existing website artwork. Image 1 is the product identity and geometry reference: UGREEN NAS DXP4800 GT, dark charcoal box with bronze-gray front rim, exactly FOUR vertical front drive trays labeled 01, 02, 03, 04, small power button and ports below, right side visible in three-quarter perspective. Preserve the recognizable design, proportions, four drive bays, original colors and camera angle. Image 2 is ONLY the illustration-style reference: matte hand-painted forms, fine printed paper grain, subtly simplified shading, restrained charcoal contours and a narrow crisp warm cream cut-paper edge. Do not include the reference pliers. Center the entire NAS in a square canvas with modest clear padding. Genuinely transparent alpha background around the crisp cutout. No ambient glow, vignette, blur, shadow, white rectangle, checkerboard, floor, scene, captions or extra objects. It should be a tactile illustrated hardware-catalog cutout, not a photograph with a border or a glossy 3D render."
+}

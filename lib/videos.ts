@@ -188,7 +188,7 @@ export const videos: Video[] = [
         name: "UGREEN NAS DXP4800 GT",
         url: "https://amzn.to/4yaflld",
         source: "Amazon",
-        image: "/images/video-8/ugreen-dxp4800-gt.webp",
+        image: "/images/video-8/ugreen-dxp4800-gt-art-v1-900.webp",
       },
       {
         name: "UGREEN NAS official store",
