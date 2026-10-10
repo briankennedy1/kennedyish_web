@@ -42,6 +42,167 @@ export type Video = {
 
 export const videos: Video[] = [
   {
+    number: 9,
+    slug: "klein-modbox-wall",
+    youtubeId: "blamRjb8QvE",
+    listed: true,
+    title: "Going ALL-IN on Klein ModBox Wall",
+    shortTitle: "Going ALL-IN on Klein ModBox Wall",
+    description:
+      "It's going to be a rainy winter, so I'd like to turn my shed into a workshop. Right now it's more of a YouTuber studio. So the first step is to get my tools out of the garage.",
+    published: "September 15, 2026",
+    publishedDate: "September 15, 2026",
+    image: "/images/video-9/thumb.jpg",
+    projects: [
+      {
+        label: "PRODUCTS",
+        theme: "blue",
+        note:
+          "I bought all of this stuff with my own money. If you shop through my affiliate links below I get a small cut.",
+        products: [
+          {
+            name: "32” ModBox Wall Rail - 2 pack",
+            url: "https://amzn.to/4cPua4h",
+            source: "Amazon",
+            image: "/images/video-9/wall-rail.jpg",
+          },
+          {
+            name: "ModBox Tool Carrier",
+            url: "https://amzn.to/4yIfz3e",
+            source: "Amazon",
+            image: "/images/video-9/tool-carrier.jpg",
+          },
+          {
+            name: "Made in USA Flush Cutters",
+            url: "https://amzn.to/4xSugk1",
+            source: "Amazon",
+            image: "/images/video-9/flush-cutters.jpg",
+          },
+          {
+            name: "ModBox Power Tool Dock",
+            url: "https://amzn.to/3T227YP",
+            source: "Amazon",
+            image: "/images/video-9/power-tool-dock.jpg",
+          },
+          {
+            name: "ModBox Compact Tool Carrier",
+            url: "https://amzn.to/3TxhTuQ",
+            source: "Amazon",
+            image: "/images/video-9/compact-carrier.jpg",
+          },
+          {
+            name: "ModBox Steel Mounting Plate",
+            url: "https://amzn.to/4halUNy",
+            source: "Amazon",
+            image: "/images/video-9/mounting-plate.jpg",
+          },
+          {
+            name: "ModBox Case Adapter",
+            url: "https://amzn.to/46Zek3A",
+            source: "Amazon",
+            image: "/images/video-9/case-adapter.jpg",
+          },
+          {
+            name: "Klein Impact bit set",
+            url: "https://amzn.to/4xWNEfP",
+            source: "Amazon",
+            image: "/images/video-9/impact-bits.jpg",
+          },
+          {
+            name: "ModBox Narrow Shelf",
+            url: "https://amzn.to/4y2rbhu",
+            source: "Amazon",
+            image: "/images/video-9/narrow-shelf.jpg",
+          },
+          {
+            name: "ModBox Large Bins",
+            url: "https://amzn.to/4hv5f8M",
+            source: "Amazon",
+            image: "/images/video-9/large-bins.jpg",
+          },
+          {
+            name: "ModBox Small Bins",
+            url: "https://amzn.to/4gWboLc",
+            source: "Amazon",
+            image: "/images/video-9/small-bins.jpg",
+          },
+          {
+            name: "ModBox Roll Dispenser",
+            url: "https://amzn.to/46KRwEZ",
+            source: "Amazon",
+            image: "/images/video-9/roll-dispenser.jpg",
+          },
+          {
+            name: "ModBox Long Prong Hooks",
+            url: "https://amzn.to/4xrtKZm",
+            source: "Amazon",
+            image: "/images/video-9/long-hooks.jpg",
+          },
+          {
+            name: "ModBox Multi Hook Rail Attachment",
+            url: "https://amzn.to/4jbHJyO",
+            source: "Amazon",
+            image: "/images/video-9/multi-hook.jpg",
+          },
+          {
+            name: "ModBox Parts Bin",
+            url: "https://amzn.to/3Vgoryq",
+            source: "Amazon",
+            image: "/images/video-9/parts-bin.jpg",
+          },
+          {
+            name: "Klein Pouches",
+            url: "https://amzn.to/46rlhdK",
+            source: "Amazon",
+            image: "/images/video-9/pouches.jpg",
+          },
+          {
+            name: "Magnets with double sided tape",
+            url: "https://amzn.to/4xnGn7F",
+            source: "Amazon",
+          },
+          {
+            name: "Klein MODbox collection",
+            url: "https://www.kleintools.com/modbox",
+            source: "Klein Tools",
+          }
+        ],
+      }
+    ],
+    products: [],
+  },
+  {
+    number: 8,
+    slug: "ugreen-nas-dxp4800-gt",
+    youtubeId: "WPZGSAZzwwk",
+    listed: true,
+    title: "The MISSING PIECE in my home network | UGREEN NAS DXP4800 GT",
+    shortTitle: "The missing piece in my home network",
+    description:
+      "I’m adding the UGREEN NAS DXP4800 GT to my home network. Thanks to UGREEN for sponsoring this video!",
+    published: "August 31, 2026",
+    publishedDate: "August 31, 2026",
+    image: "/images/video-8/thumb.jpg",
+    products: [
+      {
+        name: "UGREEN NAS DXP4800 GT",
+        url: "https://amzn.to/4yaflld",
+        source: "Amazon",
+        image: "/images/video-8/ugreen-dxp4800-gt.webp",
+      },
+      {
+        name: "UGREEN NAS official store",
+        url: "https://ai.us.ugreen.com/RZgaYg",
+        source: "UGREEN",
+      },
+      {
+        name: "UGREEN NAS series",
+        url: "https://amzn.to/4y0gDiq",
+        source: "Amazon",
+      }
+    ],
+  },
+  {
     number: 7,
     slug: "bare-bones-solar-ev-charging",
     youtubeId: "ktAx4RC6QMc",

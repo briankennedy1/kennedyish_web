@@ -47,7 +47,7 @@ test("server-renders the Brian Kennedy homepage", async () => {
     [...html.matchAll(/class="video-card" href="\/(\d+)\//g)].map(
       ([, number]) => Number(number),
     ),
-    [7, 6, 5, 4, 3, 2, 1],
+    [9, 8, 7, 6, 5, 4, 3, 2, 1],
   );
   assert.doesNotMatch(html, /codex-preview|Building your site/);
 });
