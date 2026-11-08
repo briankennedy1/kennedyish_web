@@ -1,7 +1,10 @@
 #!/usr/bin/env node
 // Adds a page for every new @kennedyish upload.
 //
-// Reads the channel's public RSS feed (no API key), and for each long-form
+// Reads the channel's public RSS feed (no API key), falling back to the
+// channel's Videos tab + watch pages when the feed is down (it often 404s).
+// If both fail, it exits non-zero so the GitHub run fails and emails.
+// For each long-form
 // video that isn't in lib/videos.ts yet and is at least as new as the newest
 // video already on the site, it:
 //   - downloads the YouTube thumbnail to public/images/video-<n>/thumb.jpg
@@ -30,6 +33,17 @@ const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
 const feedFileIndex = args.indexOf("--feed");
 const feedFile = feedFileIndex >= 0 ? args[feedFileIndex + 1] : undefined;
+const sourceIndex = args.indexOf("--source");
+const source_ = sourceIndex >= 0 ? args[sourceIndex + 1] : "auto"; // auto | page
+
+const CHANNEL_VIDEOS_URL = "https://www.youtube.com/@kennedyish/videos";
+const browserHeaders = {
+  "user-agent":
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36",
+  "accept-language": "en-US,en;q=0.9",
+  // Skip the EU cookie-consent interstitial if a runner lands there.
+  cookie: "SOCS=CAI",
+};
 
 const dateFormat = new Intl.DateTimeFormat("en-US", {
   timeZone: TIME_ZONE,
@@ -38,13 +52,11 @@ const dateFormat = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
 });
 
-async function fetchWithRetry(url, attempts = 3) {
+async function fetchWithRetry(url, attempts = 3, headers = { "user-agent": "kennedyish-site-sync" }) {
   let lastError;
   for (let attempt = 1; attempt <= attempts; attempt++) {
     try {
-      const response = await fetch(url, {
-        headers: { "user-agent": "kennedyish-site-sync" },
-      });
+      const response = await fetch(url, { headers });
       if (response.ok) return response;
       lastError = new Error(`${url} returned HTTP ${response.status}`);
       if (response.status === 404 && url !== FEED_URL) break;
@@ -167,20 +179,86 @@ const newestSiteDate = Math.max(
   ...[...source.matchAll(/publishedDate:\s*"([^"]+)"/g)].map(([, d]) => Date.parse(d)).filter(Number.isFinite),
 );
 
-let xml;
-if (feedFile) {
-  xml = await readFile(feedFile, "utf8");
-} else {
-  try {
-    xml = await (await fetchWithRetry(FEED_URL)).text();
-  } catch (error) {
-    // YouTube's feed endpoint has occasional outages; the next scheduled run will catch up.
-    console.warn(`::warning::Skipping this run, couldn't fetch the YouTube feed: ${error.message}`);
-    process.exit(0);
+// Fallback source: the channel's Videos tab (long-form only, newest first)
+// plus each new video's watch page for its exact title/date/description.
+async function fromChannelPage() {
+  const page = await (await fetchWithRetry(CHANNEL_VIDEOS_URL, 3, browserHeaders)).text();
+  const ids = [];
+  walk(jsonAfter(page, "var ytInitialData = "), (key, value) => {
+    const id =
+      (key === "lockupViewModel" && value.contentType === "LOCKUP_CONTENT_TYPE_VIDEO" && value.contentId) ||
+      (key === "videoRenderer" && value.videoId);
+    if (id && !ids.includes(id)) ids.push(id);
+  });
+  if (ids.length === 0) throw new Error("No videos found on the channel page");
+
+  const videos = [];
+  for (const youtubeId of ids.slice(0, 15).filter((id) => !existingIds.has(id))) {
+    const watch = await (await fetchWithRetry(`https://www.youtube.com/watch?v=${youtubeId}`, 3, browserHeaders)).text();
+    const player = jsonAfter(watch, "var ytInitialPlayerResponse = ");
+    const details = player.videoDetails ?? {};
+    const micro = player.microformat?.playerMicroformatRenderer ?? {};
+    const published = new Date(micro.publishDate ?? micro.uploadDate);
+    if (!details.title || isNaN(published)) {
+      throw new Error(`Couldn't read details for ${youtubeId} (${player.playabilityStatus?.status})`);
+    }
+    if (details.isUpcoming || details.isLive) continue;
+    videos.push({
+      youtubeId,
+      title: details.title,
+      published,
+      description: details.shortDescription ?? "",
+      isShort: false,
+    });
+  }
+  return videos;
+}
+
+function jsonAfter(html, marker) {
+  const start = html.indexOf(marker);
+  if (start < 0) throw new Error(`Missing ${marker.trim()}`);
+  // Find the end of the JSON object by matching braces outside of strings.
+  let depth = 0, inString = false, escaped = false;
+  for (let i = start + marker.length; i < html.length; i++) {
+    const c = html[i];
+    if (inString) {
+      if (escaped) escaped = false;
+      else if (c === "\\") escaped = true;
+      else if (c === '"') inString = false;
+    } else if (c === '"') inString = true;
+    else if (c === "{") depth++;
+    else if (c === "}" && --depth === 0) return JSON.parse(html.slice(start + marker.length, i + 1));
+  }
+  throw new Error(`Unterminated ${marker.trim()}`);
+}
+
+function walk(value, visit) {
+  if (!value || typeof value !== "object") return;
+  for (const [key, child] of Object.entries(value)) {
+    if (child && typeof child === "object") {
+      visit(key, child);
+      walk(child, visit);
+    }
   }
 }
 
-const candidates = parseFeed(xml)
+let feedVideos;
+if (feedFile) {
+  feedVideos = parseFeed(await readFile(feedFile, "utf8"));
+} else if (source_ === "page") {
+  feedVideos = await fromChannelPage();
+} else {
+  try {
+    feedVideos = parseFeed(await (await fetchWithRetry(FEED_URL)).text());
+  } catch (error) {
+    // YouTube's RSS endpoint has frequent outages (random 404s), so fall back
+    // to the channel page. If that fails too, the run fails and GitHub emails.
+    console.warn(`::warning::RSS feed failed (${error.message}); using the channel page instead.`);
+    feedVideos = await fromChannelPage();
+  }
+}
+
+const candidates = feedVideos
   .filter((video) => !video.isShort && !existingIds.has(video.youtubeId))
   .map((video) => ({ ...video, date: dateFormat.format(video.published) }))
   // Only videos on or after the newest video already on the site, so older

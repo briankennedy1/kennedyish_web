@@ -28,8 +28,14 @@ at kennedyish.com/<n>/.
   (more setup) and a manual-only button (an extra tap every upload).
 - RSS polling over the YouTube Data API: no key/secret to manage, and the feed
   includes everything needed.
-- Feed fetch failures (YouTube's feed endpoint is occasionally flaky) log a
-  warning and exit 0; the next run catches up instead of emailing a failure.
+- ~~Feed failures exit 0 quietly~~ — wrong: first real run on GitHub got a
+  404 from the RSS feed and silently did nothing. The feed was 404ing from
+  the Mac too at the same moment, then 200 minutes later, so it's YouTube-side
+  flakiness. Fix: fall back to `@kennedyish/videos` (ytInitialData,
+  `lockupViewModel.contentId`) + each new video's watch page
+  (ytInitialPlayerResponse: title, shortDescription, microformat.publishDate).
+  Both paths verified to produce identical entries. If both fail → exit 1 so
+  GitHub emails. `--source page` forces the fallback for testing.
 
 ### Verified
 - Dry run and real run against the live feed: found exactly the two videos

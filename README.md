@@ -44,6 +44,10 @@ of `lib/videos.ts` with the next number, the YouTube title, and the first
 paragraph of the description. The workflow then commits, pushes, and starts the
 Pages deploy. Products and projects are left empty to fill in by hand.
 
+YouTube's RSS feed has frequent outages (random 404s), so when it fails the
+script reads the channel's Videos tab and each new video's watch page instead.
+If both fail, the run fails and GitHub emails you.
+
 Only videos published on or after the newest video already on the site are
 added, so older uploads left off on purpose won't come back. Preview with
 `node scripts/sync-youtube-videos.mjs --dry-run`.
