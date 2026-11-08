@@ -53,7 +53,20 @@ export const videos: Video[] = [
     published: "October 24, 2026",
     publishedDate: "October 24, 2026",
     image: "/images/video-11/thumb.jpg",
-    products: [],
+    products: [
+      {
+        name: "Stego crawl space encapsulation",
+        description: "New Stego customers: use code BKCRAWL10 for 10% off.",
+        url: "https://shop.stegoindustries.com/stegocrawl-crawl-space-encapsulation",
+        source: "Stego",
+      },
+      {
+        name: "Argendon Shield 60P dehumidifier",
+        description: "Use discount code BKHOME.",
+        url: "https://bit.ly/4hierxu",
+        source: "Argendon",
+      },
+    ],
   },
   {
     number: 10,
@@ -67,7 +80,31 @@ export const videos: Video[] = [
     published: "October 10, 2026",
     publishedDate: "October 10, 2026",
     image: "/images/video-10/thumb.jpg",
-    products: [],
+    products: [
+      {
+        name: "WattCycle inverter + battery combo",
+        description: "Use code Brian Kennedy to save 7%.",
+        url: "https://kennedyish.com/watt-combo",
+        source: "WattCycle",
+      },
+      {
+        name: "WattCycle 12kW all-in-one inverter",
+        description: "Use code Brian Kennedy to save 7%.",
+        url: "https://kennedyish.com/12kw-inverter",
+        source: "WattCycle",
+      },
+      {
+        name: "WattCycle 16kWh battery",
+        description: "Use code Brian Kennedy to save 7%.",
+        url: "https://kennedyish.com/16kwh-battery",
+        source: "WattCycle",
+      },
+      {
+        name: "StarCharge EV charger",
+        url: "https://amzn.to/4zom9Mz",
+        source: "Amazon",
+      },
+    ],
   },
   {
     number: 9,

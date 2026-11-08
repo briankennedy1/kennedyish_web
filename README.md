@@ -41,8 +41,12 @@ tab to publish right away). For each new long-form upload (Shorts
 are skipped) it runs `scripts/sync-youtube-videos.mjs`, which saves the
 thumbnail to `public/images/video-<n>/thumb.jpg` and adds an entry to the top
 of `lib/videos.ts` with the next number, the YouTube title, and the first
-paragraph of the description. The workflow then commits, pushes, and starts the
-Pages deploy. Products and projects are left empty to fill in by hand.
+paragraph of the description. Product links in the description become
+"Products used" cards: lines like `Name: URL` or `🔶 Name - URL` (a
+parenthetical such as `(15% off)` becomes the card's note). Links with no name
+are titled from the product page. Social and YouTube links are skipped. The
+workflow then commits, pushes, and starts the Pages deploy. Product art,
+discount codes, and project sections are still added by hand.
 
 YouTube's RSS feed has frequent outages (random 404s), so when it fails the
 script reads the channel's Videos tab and each new video's watch page instead.

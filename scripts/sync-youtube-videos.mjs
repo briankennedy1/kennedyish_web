@@ -112,6 +112,101 @@ function summarize(description) {
   return paragraph ?? "";
 }
 
+// Product links from description lines like "Name: URL", "🔶 Name - URL",
+// or "Name (15% off): URL". Sentences, social links and "Get yours here"
+// style lines without a product name are skipped.
+const skipHosts = /(^|\.)(youtube\.com|youtu\.be|instagram\.com|tiktok\.com|facebook\.com|twitter\.com|x\.com|patreon\.com)$/i;
+const genericNames = /^(get (it|one|yours)( here)?|shop( now| here)?|buy( it)?( now| here)?|link|here|click here|available here|check (it|them) out)$/i;
+
+function parseProducts(description) {
+  const products = [];
+  for (const rawLine of description.split("\n")) {
+    const line = rawLine.replace(/(\s+#\w+)+\s*$/u, "").trim().replace(/^[^\p{L}\p{N}]+/u, "");
+    const match =
+      line.match(/^(.+?)\s*(?:[:\-–—]\s*|\s)(https?:\/\/\S+)$/u) ?? line.match(/^()(https?:\/\/\S+)$/u);
+    if (!match) continue;
+    let [, name, url] = match;
+    let note;
+    const paren = name.match(/^(.*?)\s*\(([^)]*)\)\s*$/);
+    if (paren) [, name, note] = paren;
+    name = name.replace(/[\s:–—-]+$/u, "").trim();
+    let host;
+    try {
+      host = new URL(url).hostname.replace(/^www\./, "");
+    } catch {
+      continue;
+    }
+    // No usable name ("🔗 URL", "Get yours here: URL"): named later from the page title.
+    if (name.length < 2 || genericNames.test(name)) name = "";
+    if (
+      name.length > 60 ||
+      skipHosts.test(host) ||
+      /^kennedyish\.com\/\d+\/?$/.test(`${host}${new URL(url).pathname}`) ||
+      products.some((p) => p.url === url)
+    ) {
+      continue;
+    }
+    products.push({ name, url, ...(note ? { description: note } : {}) });
+  }
+  return products;
+}
+
+const knownSources = {
+  amazon: "Amazon",
+  amzn: "Amazon",
+  kleintools: "Klein Tools",
+  ugreen: "UGREEN",
+  ikea: "IKEA",
+  ui: "Ubiquiti",
+  ubnt: "Ubiquiti",
+  wattcycle: "WattCycle",
+  stegoindustries: "Stego",
+  homedepot: "Home Depot",
+  acehardware: "Ace Hardware",
+  vevor: "VEVOR",
+  etsy: "Etsy",
+  lowes: "Lowe's",
+};
+
+function sourceFromHost(host) {
+  const parts = host.replace(/^www\./, "").split(".");
+  const label = parts.length > 2 && parts.at(-2).length <= 3 ? parts.at(-3) : parts.at(-2);
+  return knownSources[label] ?? label.charAt(0).toUpperCase() + label.slice(1);
+}
+
+// Where a link really goes (short links, kennedyish.com redirect pages), for
+// the store label, plus the page's title for links that had no name.
+async function productInfo(url) {
+  const { hostname, pathname } = new URL(url);
+  if (/(^|\.)kennedyish\.com$/.test(hostname)) {
+    const slug = pathname.replace(/^\/|\/$/g, "");
+    try {
+      const page = await readFile(join(root, "public", slug, "index.html"), "utf8");
+      const target = page.match(/https?:\/\/[^"'\s<]+/)?.[0];
+      if (target) return { source: sourceFromHost(new URL(target).hostname) };
+    } catch {
+      // not a local shortlink page
+    }
+  }
+  if (!/(^|\.)(amzn\.to|amazon\.[a-z.]+)$/.test(hostname)) {
+    try {
+      const response = await fetch(url, { headers: browserHeaders, signal: AbortSignal.timeout(10000) });
+      const html = await response.text();
+      const title = decodeXml(
+        html.match(/<meta property="og:title" content="([^"]*)"/)?.[1] ||
+          html.match(/<title[^>]*>([^<]*)</)?.[1] ||
+          "",
+      )
+        .split(/\s[|–—]\s/)[0]
+        .trim();
+      return { source: sourceFromHost(new URL(response.url).hostname), title };
+    } catch {
+      // fall through to the link's own host
+    }
+  }
+  return { source: sourceFromHost(hostname) };
+}
+
 function slugify(title, taken) {
   const words = title
     .split("|")[0]
@@ -148,7 +243,22 @@ function renderEntry(video) {
     `    published: ${s(video.date)},`,
     `    publishedDate: ${s(video.date)},`,
     `    image: ${s(video.image)},`,
-    "    products: [],",
+    video.products.length === 0
+      ? "    products: [],"
+      : [
+          "    products: [",
+          ...video.products.map((p) =>
+            [
+              "      {",
+              `        name: ${s(p.name)},`,
+              ...(p.description ? [`        description: ${s(p.description)},`] : []),
+              `        url: ${s(p.url)},`,
+              `        source: ${s(p.source)},`,
+              "      },",
+            ].join("\n"),
+          ),
+          "    ],",
+        ].join("\n"),
     "  },",
     "",
   ].join("\n");
@@ -278,7 +388,13 @@ for (const video of candidates) {
   const slug = slugify(video.title, existingSlugs);
   existingSlugs.add(slug);
   const image = `/images/video-${number}/thumb.jpg`;
-  const entry = { ...video, number, slug, image, description: summarize(video.description) };
+  const products = [];
+  for (const product of parseProducts(video.description)) {
+    const { source, title } = await productInfo(product.url);
+    const name = product.name || (title && title.length <= 60 ? title : source);
+    products.push({ ...product, name, source });
+  }
+  const entry = { ...video, number, slug, image, products, description: summarize(video.description) };
 
   if (!dryRun) {
     const size = await downloadThumbnail(video.youtubeId, join(root, "public", image));
@@ -286,6 +402,7 @@ for (const video of candidates) {
   }
   added.push(entry);
   console.log(`Video ${number}: ${video.title} (${video.youtubeId}, ${video.date}) -> /${number}/`);
+  console.log(`  products: ${products.length ? products.map((p) => `${p.name} [${p.source}]`).join(", ") : "none found"}`);
 }
 
 const newEntries = added.slice().reverse().map(renderEntry).join("");
