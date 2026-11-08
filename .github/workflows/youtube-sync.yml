@@ -1,0 +1,57 @@
+name: Add pages for new YouTube videos
+
+on:
+  schedule:
+    # Once a day at 02:00 UTC (6 or 7pm Pacific). GitHub may start it a bit late.
+    # To publish a page right away, run it from the Actions tab.
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: youtube-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Add pages for new videos
+        id: sync
+        run: node scripts/sync-youtube-videos.mjs
+
+      - name: Commit and push
+        id: commit
+        run: |
+          if git diff --quiet && [ -z "$(git ls-files --others --exclude-standard public/images)" ]; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add lib/videos.ts public/images
+          git commit -m "Add video page: ${ADDED}"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+        env:
+          ADDED: ${{ steps.sync.outputs.added }}
+
+      # Pushes made with GITHUB_TOKEN don't trigger other workflows,
+      # so kick off the Pages deploy explicitly.
+      - name: Deploy site
+        if: steps.commit.outputs.pushed == 'true'
+        run: gh workflow run pages.yml --ref main
+        env:
+          GH_TOKEN: ${{ github.token }}

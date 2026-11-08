@@ -33,6 +33,21 @@ Video pages use chronological short URLs: `/1`, `/2`, and so on. A video with
 `listed: false` remains available by direct URL but is omitted from the
 homepage.
 
+### Automatic video pages
+
+[The YouTube sync workflow](.github/workflows/youtube-sync.yml) checks the
+@kennedyish RSS feed once a day (02:00 UTC; use "Run workflow" in the Actions
+tab to publish right away). For each new long-form upload (Shorts
+are skipped) it runs `scripts/sync-youtube-videos.mjs`, which saves the
+thumbnail to `public/images/video-<n>/thumb.jpg` and adds an entry to the top
+of `lib/videos.ts` with the next number, the YouTube title, and the first
+paragraph of the description. The workflow then commits, pushes, and starts the
+Pages deploy. Products and projects are left empty to fill in by hand.
+
+Only videos published on or after the newest video already on the site are
+added, so older uploads left off on purpose won't come back. Preview with
+`node scripts/sync-youtube-videos.mjs --dry-run`.
+
 ## Shortlinks
 
 Shortlinks are static redirect pages in `public/<shortlink>/index.html`, so
