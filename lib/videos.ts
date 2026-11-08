@@ -42,6 +42,34 @@ export type Video = {
 
 export const videos: Video[] = [
   {
+    number: 11,
+    slug: "my-crawlspace-was-awful-i-finally-did-something",
+    youtubeId: "sNOJS-1I-tU",
+    listed: true,
+    title: "My Crawlspace Was Awful. I Finally Did Something About It.",
+    shortTitle: "My Crawlspace Was Awful. I Finally Did Something About It.",
+    description:
+      "Thanks a ton to Stego for sending out a full suite of their products to make this DIY crawlspace encapsulation possible.",
+    published: "October 24, 2026",
+    publishedDate: "October 24, 2026",
+    image: "/images/video-11/thumb.jpg",
+    products: [],
+  },
+  {
+    number: 10,
+    slug: "a-dead-simple-guide-to-diy-solar-power",
+    youtubeId: "c00mj78NjUU",
+    listed: true,
+    title: "A Dead Simple Guide to DIY Solar Power | WattCycle Inverter & Battery",
+    shortTitle: "A Dead Simple Guide to DIY Solar Power | WattCycle Inverter & Battery",
+    description:
+      "Thanks to WattCycle for sending over this incredibly powerful and easy to use all-in-one inverter and battery. DIY solar has never been cheaper or easier.",
+    published: "October 10, 2026",
+    publishedDate: "October 10, 2026",
+    image: "/images/video-10/thumb.jpg",
+    products: [],
+  },
+  {
     number: 9,
     slug: "klein-modbox-wall",
     youtubeId: "blamRjb8QvE",
