@@ -5,7 +5,8 @@
 **Goal:** every new video on youtube.com/@kennedyish automatically gets a page
 at kennedyish.com/<n>/.
 
-**Status:** built and tested locally, not yet committed/pushed.
+**Status:** live since 2026-11-08. First successful run created /10/ and /11/
+(commit 717c96f) and deployed them.
 
 ### How it works
 - `.github/workflows/youtube-sync.yml` runs once a day at 02:00 UTC
@@ -45,7 +46,7 @@ at kennedyish.com/<n>/.
   correct embeds; homepage lists 11, 10, 9 first. Changes reverted after test.
 
 ### Open questions / notes
-- First run after pushing will publish #10 and #11 (with empty product lists).
+- #10 and #11 are live with empty product lists — add products by hand.
 - GitHub disables scheduled workflows after 60 days with no repo activity;
   re-enable from the Actions tab if that happens.
 - Titles/descriptions come straight from YouTube; hand-edit `shortTitle` etc.
